@@ -1,10 +1,10 @@
 FROM python:3.11-slim
 
-# Get everything up-to-date; takes 10 seconds
+# Get everything up-to-date
 RUN apt-get update
 RUN apt-get upgrade -qy
 
-# Install system dependencies; takes 1.5 mins
+# Install system dependencies
 RUN apt-get install -qy \
     build-essential \
     chromium \
@@ -19,19 +19,23 @@ RUN apt-get install -qy \
 
 RUN pip install --upgrade pip
 
-# Install Jupyter; takes 50 seconds
-RUN pip install jupyter
+RUN pip install jupyter transformers
+RUN pip install -U "huggingface_hub[cli]"
 
-# Install PyTorch
+# Install TextWorld; not sure if needed
+# RUN pip install textworld
+
 RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
-# Clone the TextWorld repo; takes 3 seconds
-RUN git clone --single-branch --branch main https://github.com/microsoft/TextWorld.git /TextWorld
+RUN git clone --single-branch --branch main https://github.com/microsoft/TextWorld.git /Main/TextWorld
 
-# Install the visualization package for TW; takes 2 mins
-RUN pip install /TextWorld[vis]
+RUN git clone --single-branch --branch main https://username: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@github.com/MizuGreg/LLMs-Play-Textual-Games.git /Main/LLM-PTG
+
+# Install the visualization package for TW
+RUN pip install /Main/TextWorld[vis]
 
 # Environment variables
 ENV DISPLAY=:99
 
-CMD ["jupyter", "notebook", "/TextWorld/notebooks", "--ip", "0.0.0.0", "--allow-root"]
+# Allow access through jupyter server
+CMD ["jupyter", "notebook", "/Main", "--ip", "0.0.0.0", "--allow-root"]
