@@ -13,3 +13,5 @@ For applying changes to the container and storing them in images, you can run th
 `docker commit -m "{commit comments}" politw_cont politw:{new version number}`
 
 The HuggingFace access token might be required for certain models who are not open access. In that case, please create a `webapp.env` file here, with the line `HF_TOKEN =` followed by your HuggingFace token (either copy-paste it from HuggingFace, or use `$HF_TOKEN` if it's already set as an environment variable in your OS). It will be pulled automatically through the `compose.yaml` file.
+
+The GitHub token to clone this repository has to be requested to me personally instead. It is pulled from the `webapp.env` file too.

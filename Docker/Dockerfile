@@ -29,7 +29,7 @@ RUN pip install torch torchvision torchaudio --index-url https://download.pytorc
 
 RUN git clone --single-branch --branch main https://github.com/microsoft/TextWorld.git /Main/TextWorld
 
-RUN git clone --single-branch --branch main https://username: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@github.com/MizuGreg/LLMs-Play-Textual-Games.git /Main/LLM-PTG
+RUN git clone --single-branch --branch main https://${GITHUB_TOKEN}/MizuGreg/LLMs-Play-Textual-Games.git /Main/LLM-PTG
 
 # Install the visualization package for TW
 RUN pip install /Main/TextWorld[vis]
