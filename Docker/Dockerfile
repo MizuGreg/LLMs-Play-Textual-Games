@@ -17,13 +17,13 @@ RUN apt-get install -qy \
     wget \
     graphviz
 
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip setuptools wheel
 
 RUN pip install jupyter transformers
 RUN pip install -U "huggingface_hub[cli]"
 
-# Install TextWorld; not sure if needed
-# RUN pip install textworld
+# Install TextWorld
+RUN pip install textworld
 
 RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
@@ -31,8 +31,8 @@ RUN git clone --single-branch --branch main https://github.com/microsoft/TextWor
 
 RUN git clone --single-branch --branch main https://${GITHUB_TOKEN}/MizuGreg/LLMs-Play-Textual-Games.git /Main/LLM-PTG
 
-# Install the visualization package for TW
-RUN pip install /Main/TextWorld[vis]
+# Install the visualization package for TW (optional)
+# RUN pip install /Main/TextWorld[vis]
 
 # Environment variables
 ENV DISPLAY=:99
