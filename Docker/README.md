@@ -1,6 +1,6 @@
 # Files for running a Docker container
 
-In this folder is a Dockerfile. Run its image with `docker build --secret id=GITHUB_TOKEN -t politw:{version number} .` and optional tags.
+In this folder is a Dockerfile. Run its image with `docker build --secret id=GITHUB_TOKEN -t politw:{new version number} .` and optional tags.
 
 TextWorld unfortunately cannot be run on Windows. An alternative is running the Docker container (available on DockerHub). We will be running a modified version of that container, which I called politw. The command, to be run in an appropriate terminal, is:
 
