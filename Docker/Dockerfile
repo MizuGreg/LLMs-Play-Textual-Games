@@ -20,7 +20,7 @@ FROM mizugreg/politw:0.6
 # RUN pip install --upgrade pip setuptools wheel
 # RUN pip install jupyter
 
-RUN pip install transformers
+RUN pip install transformers accelerate bitsandbytes
 RUN pip install -U "huggingface_hub[cli]"
 
 # Install TextWorld
