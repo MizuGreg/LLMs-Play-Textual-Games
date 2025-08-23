@@ -18,9 +18,10 @@ FROM mizugreg/politw:0.6
 #     graphviz
 
 # RUN pip install --upgrade pip setuptools wheel
+# RUN pip install jupyter
 
-# RUN pip install jupyter transformers
-# RUN pip install -U "huggingface_hub[cli]"
+RUN pip install transformers
+RUN pip install -U "huggingface_hub[cli]"
 
 # Install TextWorld
 # RUN pip install textworld
@@ -34,7 +35,7 @@ RUN --mount=type=secret,id=GITHUB_TOKEN,env=GITHUB_TOKEN \
 # RUN pip install /Main/TextWorld[vis]
 
 # Environment variables
-ENV DISPLAY=:99
+# ENV DISPLAY=:99
 
 # Allow access through jupyter server
-CMD ["jupyter", "notebook", "/Main", "--ip", "0.0.0.0", "--allow-root"]
+# CMD ["jupyter", "notebook", "/Main", "--ip", "0.0.0.0", "--allow-root"]
