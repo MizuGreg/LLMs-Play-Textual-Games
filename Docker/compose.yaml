@@ -1,4 +1,24 @@
 services:
-  webapp:
-    build: .
-    env_file: "variables.env"
+  politw:
+    image: mizugreg/politw:1.0
+    container_name: politw_cont
+    build:
+      secrets:
+        - GITHUB_TOKEN # for cloning repo
+      context: .
+    ports:
+      - "8888:8888"
+    env_file: "variables.env" # passes current version and HuggingFace token; technically useless bc compose already fetches it
+    # environment:
+    #   - HF_TOKEN=${HF_TOKEN}
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            device_ids: ['0'] # for using nvidia gpu inside container
+            capabilities: [gpu]
+
+secrets:
+  GITHUB_TOKEN:
+    file: GITHUB_TOKEN
