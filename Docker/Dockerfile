@@ -1,4 +1,6 @@
-FROM mizugreg/politw:0.6
+FROM marccote19/textworld
+# FROM python:3.11-slim
+# FROM mizugreg/politw:0.6
 
 # Get everything up-to-date
 # RUN apt-get update
@@ -28,9 +30,9 @@ RUN pip install -U "huggingface_hub[cli]"
 
 # RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
-ARG GITHUB_CACHED_VERSION=df93a7383e4920faf7325d3df9418666a7740af0
+ARG GITHUB_CACHED_VERSION=a71e60cba127c864b14e83a4bf8019371503a076
 RUN --mount=type=secret,id=GITHUB_TOKEN,env=GITHUB_TOKEN \
-    git clone --single-branch --branch main https://${GITHUB_TOKEN}/MizuGreg/LLMs-Play-Textual-Games.git /Main/LLM-PTG
+    git clone --single-branch --branch main https://${GITHUB_TOKEN}/MizuGreg/LLMs-Play-Textual-Games.git /TextWorld/notebooks/LLM-PTG
 
 # Install the visualization package for TW
 # RUN pip install /Main/TextWorld[vis]
