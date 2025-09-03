@@ -30,7 +30,7 @@ RUN pip install -U "huggingface_hub[cli]"
 
 # RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
-ARG GITHUB_CACHED_VERSION=a71e60cba127c864b14e83a4bf8019371503a076
+ARG GITHUB_CACHED_VERSION=71faff81ede96b38596fdf64d605df6e5b9389fe
 RUN --mount=type=secret,id=GITHUB_TOKEN,env=GITHUB_TOKEN \
     git clone --single-branch --branch main https://${GITHUB_TOKEN}/MizuGreg/LLMs-Play-Textual-Games.git /TextWorld/notebooks/LLM-PTG
 
