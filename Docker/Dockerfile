@@ -28,6 +28,9 @@ RUN pip install -U "huggingface_hub[cli]"
 # Install TextWorld
 # RUN pip install textworld
 
+# This fucker...
+RUN pip install --upgrade jericho
+
 # RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
 ARG GITHUB_CACHED_VERSION=d074e0de31324f61e06ec2e0500751af6fec7bf2
