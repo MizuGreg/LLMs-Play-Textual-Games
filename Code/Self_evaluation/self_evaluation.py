@@ -220,7 +220,7 @@ class LLMAgentSelfEvaluate(LLMAgent):
     verbose = False
     reads_own_reasoning = False
 
-    def __init__(self, model=model, tokenizer=tokenizer, selfeval_turns = 5, handheld = True, verbose = False, reads_own_reasoning = False):
+    def __init__(self, model=model, tokenizer=tokenizer, selfeval_turns = 5, handheld = False, verbose = False, reads_own_reasoning = False):
         """Initialization function.
         selfeval_turns: how many turns should pass between a self-evaluation and the next one.
         handheld: if this is set to True there are a few simple changes in the function that make it easier for the LLM to understand and correct its course
