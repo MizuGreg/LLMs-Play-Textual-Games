@@ -8,14 +8,14 @@ import re
 import os
 from glob import glob
 from typing import Mapping, Any
-import pickle
+
 import random
 random.seed("polietilene")
 import numpy as np
 
 # %%
 import torch
-import accelerate
+
 torch.set_default_device('cuda')
 torch.cuda.device("cuda")
 # torch.backends.cuda.matmul.allow_tf32 = True
