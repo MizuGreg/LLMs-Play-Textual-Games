@@ -33,7 +33,7 @@ RUN pip install --upgrade jericho
 
 # RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
-ARG GITHUB_CACHED_VERSION=67ec6b3b33956d6d38f6df5e44ff3e388a70d73d
+ARG GITHUB_CACHED_VERSION=16277b70c49dea10c1a820b73eff0596b016e229
 RUN --mount=type=secret,id=GITHUB_TOKEN,env=GITHUB_TOKEN \
     git clone --single-branch --branch main https://${GITHUB_TOKEN}/MizuGreg/LLMs-Play-Textual-Games.git /TextWorld/notebooks/LLM-PTG
 
