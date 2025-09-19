@@ -22,6 +22,8 @@ FROM marccote19/textworld
 # RUN pip install --upgrade pip setuptools wheel
 # RUN pip install jupyter
 
+RUN pip install scipy
+
 RUN pip install transformers accelerate bitsandbytes
 RUN pip install -U "huggingface_hub[cli]"
 
