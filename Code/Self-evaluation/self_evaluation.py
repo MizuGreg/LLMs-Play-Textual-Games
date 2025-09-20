@@ -56,7 +56,7 @@ def play(agent, path, max_steps=100, n_episodes=10, verbose=True):
         if os.path.isdir(path):
             print(os.path.dirname(path), end="")
         else:
-            print(os.path.basename(path), end="")
+            print(path, end=" ")
 
     # Collect some statistics
     avg_moves, avg_scores, avg_norm_scores = [], [], []
@@ -215,6 +215,7 @@ class LLMAgentSelfEvaluate(LLMAgent):
 
     selfeval_turn_counter = 0
     selfeval_turns = 5
+    selfevaluated_last_turn = False
     random_selfeval = False
     handheld = True
     verbose = False
@@ -247,6 +248,7 @@ class LLMAgentSelfEvaluate(LLMAgent):
         self.selfeval_turn_counter = 0
         if self.random_selfeval:
             self.randomize_selfeval_turn()
+        self.selvaluated_last_turn = False
 
     def randomize_selfeval_turn(self):
         """This function randomizes the self-evaluation turn counter every time the model is
@@ -315,7 +317,12 @@ class LLMAgentSelfEvaluate(LLMAgent):
             return self.self_evaluation(obs)
             
         try:
-            self.context += self.token_user + obs + self.token_endofturn
+            if self.selfevaluated_last_turn and self.selfeval_turns > 1: # we need to disable thinking
+                self.context += self.token_user + obs + self.token_nothink + self.token_endofturn
+                self.selfevaluated_last_turn = False
+            else:    
+                self.context += self.token_user + obs + self.token_endofturn
+
             self.context += self.token_assistant # induces model to generate answer
 
             if self.first_move and self.handheld:
@@ -346,7 +353,8 @@ class LLMAgentSelfEvaluate(LLMAgent):
     def self_evaluation(self, obs) -> str :
 
         self_evaluation_prompt = """
-Do you think you're making the right actions in the game? Do you think you're close to reaching the original goal? Think about it, and then say your next action. 
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. 
 """
         self.context += self.token_user + obs + self_evaluation_prompt + self.token_think + self.token_endofturn 
         self.context += self.token_assistant # induce thinking
@@ -359,9 +367,9 @@ Do you think you're making the right actions in the game? Do you think you're cl
             print(thinking_response + response + self.token_nothink)
 
         if self.reads_own_reasoning:
-            self.context += thinking_response + response + self.token_nothink + self.token_endofturn
+            self.context += thinking_response + response + self.token_endofturn
         else:
-            self.context += response + self.token_nothink + self.token_endofturn
+            self.context += response + self.token_endofturn
 
         if len(response.split()) <= 10 or not self.handheld:
             command = response
@@ -371,5 +379,6 @@ Do you think you're making the right actions in the game? Do you think you're cl
         self.selfeval_turn_counter += 1
         if self.random_selfeval:
             self.randomize_selfeval_turn()
+        self.selfevaluated_last_turn = True
         return command
         

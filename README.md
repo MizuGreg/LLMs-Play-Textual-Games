@@ -8,8 +8,8 @@ WIP.
 
 - [x] Establish rudimental pipeline for playing a game
 - [ ] Figure out model context and feed it continuously (do we really need this?)
-- [ ] Implement draft of self-evaluation during play
+- [x] Implement draft of self-evaluation during play
 - [ ] Implement draft of self-prompting during play
 - [ ] Establish training pipeline
-- [ ] Establish evaluation pipeline
+- [x] Establish evaluation pipeline
 - [ ] Substitute all security-sensitive tokens with new ones
