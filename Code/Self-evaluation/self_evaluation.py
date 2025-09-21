@@ -245,14 +245,14 @@ class LLMAgentSelfEvaluate(LLMAgent):
     random_selfeval = False
 
     verbose = False
-    log = False
+    log = ""
 
     handheld = True
     reads_own_reasoning = False
 
     def __init__(self, model=model, tokenizer=tokenizer,
     selfeval_turns = 5, random_selfeval = False,
-    verbose = False, log = None,
+    verbose = False, log = "",
     handheld = False, reads_own_reasoning = False):
         """Initialization function.
         selfeval_turns: how many turns should pass between a self-evaluation and the next one.
@@ -268,7 +268,7 @@ class LLMAgentSelfEvaluate(LLMAgent):
             self.selfeval_turns = selfeval_turns
         self.random_selfeval = random_selfeval
         
-        self.initialize_context()
+        self.initialize_context() # might be redundant; already called in super init
 
         self.verbose = verbose
         self.log = log
@@ -277,10 +277,10 @@ class LLMAgentSelfEvaluate(LLMAgent):
         self.reads_own_reasoning = reads_own_reasoning
 
     def write_on_log(self, text):
-        if self.log is not None:
+        if self.log != "":
             with open(self.log, "a") as f:
-                f.write(text)
-                f.close()
+                f.write(text + "\n")
+                # file closing done automatically
 
     def initialize_context(self):
         """A helper function for resetting the internal state of the model before starting a new game.
@@ -290,10 +290,7 @@ class LLMAgentSelfEvaluate(LLMAgent):
         if self.random_selfeval:
             self.randomize_selfeval_turn()
         self.selvaluated_last_turn = False
-
-        if self.log is not None:
-            with open(self.log, "a") as f:
-                f.write("Now the file has more content!")
+        self.write_on_log("CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-")
 
     def randomize_selfeval_turn(self):
         """This function randomizes the self-evaluation turn counter every time the model is
@@ -386,10 +383,10 @@ class LLMAgentSelfEvaluate(LLMAgent):
             turn_string = "GAME ++++++++++++++++++++++++++++++++++++++++++++++++++\n"                                           \
                         + obs + (self.token_nothink if self.selfevaluated_last_turn and self.selfeval_turns > 1 else "") + "\n" \
                         + "AGENT -------------------------------------------------\n"                                           \
-                        + command + "\n"
+                        + command
             if self.verbose:
                 print(turn_string)
-            if self.log:
+            if self.log != "":
                 self.write_on_log(turn_string)
 
             self.selfeval_turn_counter += 1
@@ -412,10 +409,10 @@ Think about it, and then say your next action. Remember to only say the command 
         turn_string = "GAME ++++++++++++++++++++++++++++++++++++++++++++++++++\n" \
                     + obs + "\n"                                                  \
                     + "SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-\n" \
-                    + thinking_response + response + "\n"
+                    + thinking_response + response
         if self.verbose:
             print(turn_string)
-        if self.log:
+        if self.log != "":
             self.write_on_log(turn_string)
 
         if self.reads_own_reasoning:
