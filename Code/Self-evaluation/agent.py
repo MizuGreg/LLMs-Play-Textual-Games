@@ -36,98 +36,6 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-# %% [markdown]
-# ## Play function
-
-# %%
-def play(agent, path, max_steps=100, n_episodes=10, verbose=True):
-    torch.manual_seed(46)  # For reproducibility when using action sampling.
-
-    infos_to_request = agent.infos_to_request
-    infos_to_request.max_score = True  # Needed to normalize the scores.
-
-    gamefiles = [path]
-    if os.path.isdir(path):
-        gamefiles = glob(os.path.join(path, "*.z8"))
-
-    env_id = textworld.gym.register_games(gamefiles,
-                                          request_infos=infos_to_request,
-                                          max_episode_steps=max_steps)
-    env = textworld.gym.make(env_id)  # Create a Gym environment to play the text game.
-    if verbose:
-        if os.path.isdir(path):
-            print(os.path.dirname(path), end="")
-        else:
-            print(path, end=" ")
-
-    # Collect some statistics
-    avg_moves, avg_scores, avg_norm_scores = [], [], []
-    moves_scores_times_list = []
-    
-    for _ in range(n_episodes):
-        episode_start = time.process_time()
-        obs, infos = env.reset()  # Start new episode.
-
-        score = 0
-        done = False
-        nb_moves = 0
-        moves_scores_times = [(0, 0, 0)] # starting point
-        
-        while not done:
-            command = agent.act(obs, score, done, infos)
-            timestamp = time.process_time()
-            obs, score, done, infos = env.step(command)
-            nb_moves += 1
-            moves_scores_times.append((nb_moves, score, timestamp - episode_start))
-
-        agent.act(obs, score, done, infos)  # Let the agent know the game is done.
-        moves_scores_times_list.append(moves_scores_times)
-
-        if verbose:
-            print(".", end="")
-        avg_moves.append(nb_moves)
-        avg_scores.append(score)
-        avg_norm_scores.append(score / infos["max_score"])
-
-    env.close()
-    if verbose:
-        if os.path.isdir(path):
-            msg = "  \tavg. steps: {:5.1f}; avg. normalized score: {:4.1f} / {}."
-            print(msg.format(np.mean(avg_moves), np.mean(avg_norm_scores), 1))
-            if len(avg_moves) > 1:
-                print(f"Detailed steps: {avg_moves}\t Detailed normalized scores: {avg_norm_scores}")
-        else:
-            msg = "  \tavg. steps: {:5.1f}; avg. score: {:4.1f} / {}."
-            print(msg.format(np.mean(avg_moves), np.mean(avg_scores), infos["max_score"]))
-            if len(avg_moves) > 1:
-                print(f"Detailed steps: {avg_moves}\t Detailed scores: {avg_scores}")
-        return moves_scores_times_list
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # %% [markdown]
 # ## Agents
 
@@ -170,6 +78,7 @@ class LLMAgent(textworld.gym.Agent):
 # The user gives you information on the environment and you reply with a short command, like \"take box\" or \"open chest with key\".
 # /no_think
 # """
+
     system_prompt = """
 You are an assistant playing a textual game.
 The user gives you information on the environment and you reply with a short command, like \"go north\". Only output the action, nothing else.
@@ -243,16 +152,13 @@ class LLMAgentSelfEvaluate(LLMAgent):
     selfeval_turns = 5
     selfevaluated_last_turn = False
     random_selfeval = False
-
-    verbose = False
-    log = False
-
     handheld = True
+    verbose = False
     reads_own_reasoning = False
 
     def __init__(self, model=model, tokenizer=tokenizer,
     selfeval_turns = 5, random_selfeval = False,
-    verbose = False, log = None,
+    verbose = False, log = False,
     handheld = False, reads_own_reasoning = False):
         """Initialization function.
         selfeval_turns: how many turns should pass between a self-evaluation and the next one.
@@ -270,17 +176,9 @@ class LLMAgentSelfEvaluate(LLMAgent):
         
         self.initialize_context()
 
+        self.handheld = handheld
         self.verbose = verbose
-        self.log = log
-
-        self.handheld = handheld 
         self.reads_own_reasoning = reads_own_reasoning
-
-    def write_on_log(self, text):
-        if self.log is not None:
-            with open(self.log, "a") as f:
-                f.write(text)
-                f.close()
 
     def initialize_context(self):
         """A helper function for resetting the internal state of the model before starting a new game.
@@ -290,10 +188,6 @@ class LLMAgentSelfEvaluate(LLMAgent):
         if self.random_selfeval:
             self.randomize_selfeval_turn()
         self.selvaluated_last_turn = False
-
-        if self.log is not None:
-            with open(self.log, "a") as f:
-                f.write("Now the file has more content!")
 
     def randomize_selfeval_turn(self):
         """This function randomizes the self-evaluation turn counter every time the model is
@@ -383,14 +277,12 @@ class LLMAgentSelfEvaluate(LLMAgent):
             
             self.context += command + self.token_endofturn
 
-            turn_string = "GAME ++++++++++++++++++++++++++++++++++++++++++++++++++\n"                                           \
-                        + obs + (self.token_nothink if self.selfevaluated_last_turn and self.selfeval_turns > 1 else "") + "\n" \
-                        + "AGENT -------------------------------------------------\n"                                           \
-                        + command + "\n"
+            
             if self.verbose:
-                print(turn_string)
-            if self.log:
-                self.write_on_log(turn_string)
+                print("GAME ++++++++++++++++++++++++++++++++++++++++++++++++++")
+                print(obs)
+                print("AGENT -------------------------------------------------")
+                print(command)
 
             self.selfeval_turn_counter += 1
             return command
@@ -408,15 +300,11 @@ Think about it, and then say your next action. Remember to only say the command 
         self.context += self.token_assistant # induce thinking
         
         (thinking_response, response) = self.generate_response(think=True)
-
-        turn_string = "GAME ++++++++++++++++++++++++++++++++++++++++++++++++++\n" \
-                    + obs + "\n"                                                  \
-                    + "SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-\n" \
-                    + thinking_response + response + "\n"
         if self.verbose:
-            print(turn_string)
-        if self.log:
-            self.write_on_log(turn_string)
+            print("GAME ++++++++++++++++++++++++++++++++++++++++++++++++++")
+            print(obs + self_evaluation_prompt + self.token_think)
+            print("SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-")
+            print(thinking_response + response + self.token_nothink)
 
         if self.reads_own_reasoning:
             self.context += thinking_response + response + self.token_endofturn
