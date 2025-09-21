@@ -133,22 +133,22 @@ class LLMAgent(textworld.gym.Agent):
     token_endofturn = "<|im_end|>\n"
     token_user = "<|im_start|>user\n"
     token_assistant = "<|im_start|>assistant\n"
-    system_prompt = """
-You are an assistant playing a textual game.
-The user gives you information on the environment and you reply exclusively in the form \"verb noun\", like \"open box\" or \"take key\".
-/no_think
-"""
+#     system_prompt = """
+# You are an assistant playing a textual game.
+# The user gives you information on the environment and you reply exclusively in the form \"verb noun\", like \"open box\" or \"take key\".
+# /no_think
+# """
 #     system_prompt = """
 # You are an assistant playing a textual game.
 # The user gives you information on the environment and you reply with a short command, like \"take box\" or \"open chest with key\".
 # /no_think
 # """
 
-#     system_prompt = """
-# You are an assistant playing a textual game.
-# The user gives you information on the environment and you reply with a short command, like \"go north\".
-# /no_think
-# """
+    system_prompt = """
+You are an assistant playing a textual game.
+The user gives you information on the environment and you reply with a short command, like \"go north\". Only output the action, nothing else.
+/no_think
+"""
 
     first_move = False
     
@@ -354,7 +354,7 @@ class LLMAgentSelfEvaluate(LLMAgent):
 
         self_evaluation_prompt = """
 Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
-Think about it, and then say your next action. 
+Think about it, and then say your next action. Remember to only say the command and nothing else.
 """
         self.context += self.token_user + obs + self_evaluation_prompt + self.token_think + self.token_endofturn 
         self.context += self.token_assistant # induce thinking
