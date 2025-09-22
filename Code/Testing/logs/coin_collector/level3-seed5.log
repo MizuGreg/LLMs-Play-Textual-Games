@@ -1,0 +1,1578 @@
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+                    ________  ________  __    __  ________        
+                   |        \|        \|  \  |  \|        \       
+                    \$$$$$$$$| $$$$$$$$| $$  | $$ \$$$$$$$$       
+                      | $$   | $$__     \$$\/  $$   | $$          
+                      | $$   | $$  \     >$$  $$    | $$          
+                      | $$   | $$$$$    /  $$$$\    | $$          
+                      | $$   | $$_____ |  $$ \$$\   | $$          
+                      | $$   | $$     \| $$  | $$   | $$          
+                       \$$    \$$$$$$$$ \$$   \$$    \$$          
+              __       __   ______   _______   __        _______  
+             |  \  _  |  \ /      \ |       \ |  \      |       \ 
+             | $$ / \ | $$|  $$$$$$\| $$$$$$$\| $$      | $$$$$$$\
+             | $$/  $\| $$| $$  | $$| $$__| $$| $$      | $$  | $$
+             | $$  $$$\ $$| $$  | $$| $$    $$| $$      | $$  | $$
+             | $$ $$\$$\$$| $$  | $$| $$$$$$$\| $$      | $$  | $$
+             | $$$$  \$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$
+             | $$$    \$$$ \$$    $$| $$  | $$| $$     \| $$    $$
+              \$$      \$$  \$$$$$$  \$$   \$$ \$$$$$$$$ \$$$$$$$ 
+
+Hey, thanks for coming over to the TextWorld today, there is something I need you to do for me. First of all, go to the north. And then, go to the east. With that over with, retrieve the coin from the floor of the study. And once you've done that, you win!
+
+-= Cookhouse =-
+You find yourself in a cookhouse. A typical kind of place.
+
+
+
+There is an exit to the north. Don't worry, it is unguarded.
+
+>                                                                                                                                -= Cookhouse =-0/1
+AGENT -------------------------------------------------
+go north
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Kitchenette =-
+Well, here we are in a kitchenette. Let's see what's in here.
+
+
+
+There is an exit to the east. Don't worry, it is unblocked. You need an unblocked exit? You should try going south.
+
+
+
+>                                                                                                                                -= Kitchenette =-0/2
+AGENT -------------------------------------------------
+go east
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/3
+AGENT -------------------------------------------------
+go west
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Kitchenette =-
+Well, here we are in a kitchenette. Let's see what's in here.
+
+
+
+There is an exit to the east. Don't worry, it is unblocked. You need an unblocked exit? You should try going south.
+
+
+
+>                                                                                                                                -= Kitchenette =-0/4
+AGENT -------------------------------------------------
+go south
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Cookhouse =-
+You find yourself in a cookhouse. A typical kind of place.
+
+
+
+There is an exit to the north. Don't worry, it is unguarded.
+
+
+
+>                                                                                                                                -= Cookhouse =-0/5
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text-based game where they have to navigate through different rooms and retrieve a coin. The goal is to go north, then east, get the coin from the study, and then win.
+
+So far, the user has gone north from the cookhouse to the kitchenette, then east to the study. In the study, they found the coin on the floor. But then they went west back to the kitchenette, and then south back to the cookhouse. Now they're back at the cookhouse, and the next step is to figure out what to do next.
+
+The original plan was to go north, then east, get the coin, and win. But the user has already gone north and east. Wait, maybe they got the coin in the study, but didn't pick it up yet. The problem is that in the study, the coin is on the floor, so they need to pick it up. But the game's current state shows that after going west and south, they're back at the cookhouse. So they need to go back to the study again to pick up the coin.
+
+But how? The current location is the cookhouse. The exit to the north is the cookhouse, so maybe the path is: cookhouse (current) -> kitchenette (east) -> study (east again?) Wait, earlier steps: from cookhouse north to kitchenette, then east to study. Then west back to kitchenette, then south back to cookhouse. So now, to get back to the study, they need to go east from the cookhouse again? Wait, no. The cookhouse's exit is north, but the kitchenette is to the east of the cookhouse? Wait, maybe the directions are a bit confusing here.
+
+Wait, the initial movement was go north from cookhouse to kitchenette. Then from kitchenette, go east to study. Then from study, go west back to kitchenette, then south back to cookhouse. So now, the user is back at the cookhouse. To reach the study again, they need to go north (to kitchenette) and then east (to study). Once there, pick up the coin. Then, perhaps, go west again to get back to the kitchenette, then south to cookhouse, but the goal is to win. Wait, the original instruction was to retrieve the coin from the study and then win. So once the coin is picked up, the game ends.
+
+But in the current state, the user is at the cookhouse. So the next step is to go north to kitchenette, then east to study, pick up the coin. Then, perhaps, the game ends. But the user hasn't picked up the coin yet. So the next action should be to go north to kitchenette, then east to study, then pick up the coin. But the user's last action was go south, ending up back at cookhouse. So the next step is to go north again to kitchenette, then east to study, then pick up the coin. But the user's next command should be "go north" again to get back to kitchenette. Then "go east" to study. Then "take coin" or something similar. But the game's commands might be limited to movement. Wait, in the study, the coin is on the floor. So the user needs to pick it up. But in the game, maybe the action is to "take coin" once in the study. But the user hasn't done that yet. So the current location is cookhouse. The user needs to go north to kitchenette, then east to study, then take the coin. Then the game is won.
+
+But the user's last action was go south, so now they are at cookhouse. The next step is to go north again to kitchenette. Then east to study. Then take the coin. But the user hasn't done that yet. So the next command should be "go north" to get back to kitchenette. Then "go east" to study. Then "take coin". But the user's next move is to go north again. So the answer should be "go north".
+</think>go north
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Kitchenette =-
+Well, here we are in a kitchenette. Let's see what's in here.
+
+
+
+There is an exit to the east. Don't worry, it is unblocked. You need an unblocked exit? You should try going south.
+
+
+
+>                                                                                                                                -= Kitchenette =-0/6
+AGENT -------------------------------------------------
+go south
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Cookhouse =-
+You find yourself in a cookhouse. A typical kind of place.
+
+
+
+There is an exit to the north. Don't worry, it is unguarded.
+
+
+
+>                                                                                                                                -= Cookhouse =-0/7
+AGENT -------------------------------------------------
+go north
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Kitchenette =-
+Well, here we are in a kitchenette. Let's see what's in here.
+
+
+
+There is an exit to the east. Don't worry, it is unblocked. You need an unblocked exit? You should try going south.
+
+
+
+>                                                                                                                                -= Kitchenette =-0/8
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's try to figure out what's going on here. The user is playing a text-based game where they need to navigate through different rooms and retrieve a coin from the study. The goal is to go north, then east, get the coin, and win.
+
+Looking at the history, the player started in the Cookhouse, went north to the Kitchenette, then east to the Study where the coin is. But then they kept going back and forth between Kitchenette and Cookhouse, maybe getting confused with the directions. The user is now asking if they're on the right track and what the next move should be.
+
+The current room is the Kitchenette again. The exit to the east is unblocked, and the hint says to try going south. But the player has already been here before. The original plan was to go north, then east, then west to the Study to get the coin. But maybe the path is a loop, and the player is stuck going back and forth.
+
+Wait, in the Study, the coin is on the floor, and the exit to the west leads back to the Kitchenette. So once the player is in the Study, they need to pick up the coin. But in the previous steps, after getting to the Study (room 3), the player went west back to Kitchenette (room 4), then south to Cookhouse (room 5), then north again to Kitchenette (room 6), and so on. It seems like the player is stuck in a loop between Kitchenette and Cookhouse, not going back to the Study where the coin is.
+
+The user is asking if they're close to the goal. The coin is in the Study, which was reached after going east from the Kitchenette. But the player hasn't gone back to the Study since. So the next step should be to go west from the Kitchenette back to the Study to pick up the coin. However, in the current state, the player is in the Kitchenette again, so the correct action would be to go west to the Study, pick up the coin, and then exit. But the user's last action was going south from Kitchenette to Cookhouse, which is not helpful. So the next action should be to go west back to the Study to retrieve the coin and win.
+</think>go west
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't go that way.
+
+
+>                                                                                                                                -= Kitchenette =-0/9
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is trying to navigate through different rooms in a text-based game. The goal is to retrieve a coin from the study and then win. Let me recap the path so far.
+
+Starting in the Cookhouse, they went north to the Kitchenette. From there, they went east to the Study, found the coin, but then kept moving around, going west, south, north again, and back to Kitchenette. Now they're stuck again because they can't go west from the Kitchenette.
+
+Wait, the original instructions said to go north, then east, get the coin, and win. But the user kept looping between rooms. Maybe they didn't realize they already got the coin. Let me check the game's state.
+
+In the Study, there's a coin on the floor. Once you pick it up, you win. But the user hasn't picked it up yet. They went from Cookhouse to Kitchenette to Study, saw the coin, but then kept moving instead of picking it up. That's the problem. The game might require interacting with the coin, not just moving.
+
+But according to the game's feedback, when they were in the Study (0/3), the coin was there. Then they went west back to Kitchenette (0/4), then south to Cookhouse (0/5), then north again to Kitchenette (0/6), then south again (0/7), north (0/8), then tried west (0/9) which was invalid.
+
+So the user hasn't picked up the coin. The correct action after finding the coin in the Study is to pick it up, which would trigger winning. But the game's messages don't mention a "pick up coin" command. Maybe the coin is automatically picked up when you interact with it, or perhaps the game expects the player to just take it.
+
+But in the game's description, the user is supposed to "retrieve the coin from the floor of the study." So maybe the correct action is to take the coin once you're in the Study. However, the user didn't do that and kept moving around. The game's feedback doesn't show any command to pick up the coin, so maybe the player is supposed to just take it without a specific command.
+
+But in the current state, the user is in the Kitchenette again, stuck. The correct path is: Cookhouse -> Kitchenette -> Study (where the coin is), pick up the coin, then win. The user didn't pick it up, so they're looping. The next action should be to go back to the Study and pick up the coin. But since they can't go west from Kitchenette, maybe they need to go south to Cookhouse again, then north to Kitchenette again, then east to Study. But that's the same loop.
+
+Wait, maybe the user is supposed to pick up the coin when they are in the Study. So after arriving in the Study (0/3), the correct action is to take the coin, which would end the game. But the user didn't do that and kept moving. So the next step is to go back to the Study and pick up the coin. However, the user is currently in the Kitchenette (0/9), so they need to go east to Study again. But the previous attempt to go west was invalid. So the correct next action is to go east from Kitchenette to Study, then pick up the coin.
+
+But the user's last action was going west, which was invalid. Now they're stuck. The next step should be to go east again to Study, then take the coin. But the user hasn't done that yet. So the answer should be to go east from Kitchenette to Study again.
+</think>go east
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/10
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/11
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/12
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/13
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/14
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/15
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/16
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/17
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/18
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/19
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/20
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/21
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/22
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/23
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/24
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/25
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/26
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/27
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/28
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/29
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/30
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/31
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/31
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/32
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/33
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/34
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/35
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/36
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/37
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/38
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/39
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/39
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/40
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/41
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/42
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/43
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/44
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/45
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/46
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/46
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/47
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/48
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/49
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/49
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/50
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/50
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/51
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/51
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/52
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/53
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/54
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/55
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/55
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/56
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/56
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/57
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/57
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/58
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/58
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/59
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/59
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/60
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/60
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/61
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/61
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/62
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/62
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/63
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/63
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/64
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/64
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/65
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/65
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/66
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/66
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/67
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/67
+AGENT -------------------------------------------------
+help
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Available commands:
+  look:                describe the current room
+  goal:                print the goal of this game
+  inventory:           print player's inventory
+  go <dir>:            move the player north, east, south or west
+  examine ...:         examine something more closely
+  eat ...:             eat edible food
+  open ...:            open a door or a container
+  close ...:           close a door or a container
+  drop ...:            drop an object on the floor
+  take ...:            take an object that is on the floor
+  put ... on ...:      place an object on a supporter
+  take ... from ...:   take an object from a container or a supporter
+  insert ... into ...: place an object into a container
+  lock ... with ...:   lock a door or a container with a key
+  unlock ... with ...: unlock a door or a container with a key
+
+
+
+>                                                                                                                                -= Study =-0/68
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/68
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/69
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/69
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/70
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/70
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/71
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/71
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/72
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/72
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/73
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/73
+AGENT -------------------------------------------------
+look
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-= Study =-
+You arrive in a study. An usual one.
+
+
+
+You need an unblocked exit? You should try going west.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Study =-0/74
+AGENT -------------------------------------------------
+take coin from floor
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Study =-0/74
+AGENT -------------------------------------------------
+look
+CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
