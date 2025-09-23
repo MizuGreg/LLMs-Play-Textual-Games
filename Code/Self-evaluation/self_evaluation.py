@@ -262,7 +262,7 @@ class LLMAgentSelfEvaluate(LLMAgent):
         """
         super().__init__(model, tokenizer)
 
-        if selfeval_turns == 0:
+        if selfeval_turns <= 0:
             selfeval_turns = -1 # actual default value for deactivating self-evaluation
         else:
             self.selfeval_turns = selfeval_turns
@@ -297,7 +297,7 @@ class LLMAgentSelfEvaluate(LLMAgent):
         (re-)initialized and every time it does a self-evaluation turn.
         """
         mean = self.selfeval_turns
-        self.selfeval_turns = random.randint(math.floor(mean/2), math.ceil(mean + mean/2))
+        self.selfeval_turns = random.randint(max(1, math.floor(mean/2)), math.ceil(mean + mean/2))
 
     def generate_response(self, think=False):
         if think:
@@ -354,13 +354,12 @@ class LLMAgentSelfEvaluate(LLMAgent):
         if done:
             self.initialize_context() # resets context
             return ":)"
-        
         elif self.selfeval_turn_counter == self.selfeval_turns: # time for self-evaluation
             self.selfeval_turn_counter = 0 # reset counter
             return self.self_evaluation(obs)
             
         try:
-            if self.selfevaluated_last_turn and self.selfeval_turns > 1: # we need to disable thinking
+            if self.selfevaluated_last_turn: # we need to disable thinking
                 self.context += self.token_user + obs + self.token_nothink + self.token_endofturn
                 self.selfevaluated_last_turn = False
             else:    
@@ -373,7 +372,7 @@ class LLMAgentSelfEvaluate(LLMAgent):
                 command = "help"
             else:
                 response = self.generate_response()
-                if len(response.split()) <= 10 or not self.handheld:
+                if not self.handheld or len(response.split()) <= 10:
                     command = response
                 else: # more than 10 words, output is surely wrong
                     command = "look"
@@ -381,7 +380,7 @@ class LLMAgentSelfEvaluate(LLMAgent):
             self.context += command + self.token_endofturn
 
             turn_string = "GAME ++++++++++++++++++++++++++++++++++++++++++++++++++\n"                                           \
-                        + obs + (self.token_nothink if self.selfevaluated_last_turn and self.selfeval_turns > 1 else "") + "\n" \
+                        + obs + (self.token_nothink if self.selfevaluated_last_turn else "") + "\n" \
                         + "AGENT -------------------------------------------------\n"                                           \
                         + command
             if self.verbose:
@@ -425,9 +424,9 @@ Think about it, and then say your next action. Remember to only say the command 
         else: # more than 10 words, output is surely wrong
             command = "look"
 
-        self.selfeval_turn_counter += 1
         if self.random_selfeval:
             self.randomize_selfeval_turn()
         self.selfevaluated_last_turn = True
+        self.selfeval_turn_counter += 1
         return command
         
