@@ -160,16 +160,7 @@ class LLMAgent(textworld.gym.Agent):
     token_endofturn = "<|im_end|>\n"
     token_user = "<|im_start|>user\n"
     token_assistant = "<|im_start|>assistant\n"
-#     system_prompt = """
-# You are an assistant playing a textual game.
-# The user gives you information on the environment and you reply exclusively in the form \"verb noun\", like \"open box\" or \"take key\".
-# /no_think
-# """
-#     system_prompt = """
-# You are an assistant playing a textual game.
-# The user gives you information on the environment and you reply with a short command, like \"take box\" or \"open chest with key\".
-# /no_think
-# """
+
     system_prompt = """
 You are an assistant playing a textual game.
 The user gives you information on the environment and you reply with a short command, like \"go north\". Only output the action, nothing else.
@@ -250,8 +241,13 @@ class LLMAgentSelfEvaluate(LLMAgent):
     handheld = True
     reads_own_reasoning = False
 
-    system_prompt = ""
-    selfeval_prompt = ""
+    system_prompt = """You are an assistant playing a textual game.
+The user gives you information on the environment and you reply with a short command, like \"go north\". Only output the action, nothing else.
+/no_think
+"""
+    selfeval_prompt ="""Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+"""
     prompt_version = "default"
 
     def __init__(self, model=model, tokenizer=tokenizer, prompt_version = "default",
@@ -267,21 +263,26 @@ class LLMAgentSelfEvaluate(LLMAgent):
         super().__init__(model, tokenizer)
 
         if selfeval_turns <= 0:
-            selfeval_turns = -1 # actual default value for deactivating self-evaluation
+            self.selfeval_turns = -1 # actual default value for deactivating self-evaluation
         else:
             self.selfeval_turns = selfeval_turns
         self.random_selfeval = random_selfeval
-        
-        self.initialize_context() # might be redundant; already called in super init
 
         self.verbose = verbose
         self.log = log
+        if self.log != "":
+            self.clear_log()
 
         self.handheld = handheld 
         self.reads_own_reasoning = reads_own_reasoning
 
         self.prompt_version = prompt_version
         self.set_prompts()
+
+        self.initialize_context()
+
+    def clear_log(self):
+        open(self.log, "w").close()
 
     def write_on_log(self, text):
         if self.log != "":
@@ -326,7 +327,8 @@ Think about it, and then say your next action. Remember to only say the command 
     def initialize_context(self):
         """A helper function for resetting the internal state of the model before starting a new game.
         """
-        super().initialize_context()
+        self.context = self.token_system + self.system_prompt + self.token_endofturn
+        self.first_move = True
         self.selfeval_turn_counter = 0
         if self.random_selfeval:
             self.randomize_selfeval_turn()
@@ -342,9 +344,9 @@ Think about it, and then say your next action. Remember to only say the command 
 
     def generate_response(self, think=False):
         if think:
-            max_new_tokens = 20000 # allow reasoning models to be talkative
+            max_new_tokens = 30000 # allow reasoning models to be talkative
         else:
-            max_new_tokens = 20 # reduce generation almost to a minimum
+            max_new_tokens = 100 # reduce generation almost to a minimum
         
         input_ids = self.tokenizer.encode(
                 self.context,
@@ -355,21 +357,20 @@ Think about it, and then say your next action. Remember to only say the command 
                     input_ids.to("cuda"),
                     max_new_tokens = max_new_tokens,
                     eos_token_id = self.tokenizer.eos_token_id,
-                    temperature=0.6, top_p=0.95, top_k=20, min_p=0,
-                    repetition_penalty = 1.01 # just a small nudge lol
+                    # temperature=0.6, top_p=0.95, top_k=20, min_p=0,
                     )
             else:
                 generated_ids = self.model.generate(
                     input_ids.to("cuda"),
                     max_new_tokens = max_new_tokens,
                     eos_token_id = self.tokenizer.eos_token_id,
-                    temperature=0.7, top_p=0.8, top_k=20, min_p=0
+                    # temperature=0.7, top_p=0.8, top_k=20, min_p=0
                     )
             output_ids = generated_ids[0][len(input_ids[0]):].tolist()
         except:
             return "help" # model is in distress :)
 
-        if len(output_ids) >= 0.9 * max_new_tokens: # reached or almost reached cap -- let's help the model a bit
+        if len(output_ids) >= 0.95 * max_new_tokens: # reached or almost reached cap -- let's help the model a bit
             substitute_command = random.choice(["help", "look"])
             if think:
                 return ("", substitute_command)
@@ -402,6 +403,7 @@ Think about it, and then say your next action. Remember to only say the command 
             return response
 
     def act(self, obs: str, score: int, done: bool, infos: Mapping[str, Any]) -> str:
+        # print(f"{self.selfeval_turn_counter}/{self.selfeval_turns}")
         if done:
             self.initialize_context() # resets context
             return ":)"
@@ -422,6 +424,7 @@ Think about it, and then say your next action. Remember to only say the command 
                 self.first_move = False
                 command = "help"
             else:
+                self.first_move = False
                 response = self.generate_response()
                 if not self.handheld or len(response.split()) <= 10:
                     command = response
