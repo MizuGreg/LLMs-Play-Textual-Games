@@ -224,7 +224,7 @@ The user gives you information on the environment and you reply with a short com
             return command
             
         except KeyboardInterrupt:
-            pass  # Try stopping the game prematurely.
+            raise KeyboardInterrupt
 
 # %%
 class LLMAgentSelfEvaluate(LLMAgent):
@@ -367,6 +367,8 @@ Think about it, and then say your next action. Remember to only say the command 
                     # temperature=0.7, top_p=0.8, top_k=20, min_p=0
                     )
             output_ids = generated_ids[0][len(input_ids[0]):].tolist()
+        except KeyboardInterrupt:
+            raise KeyboardInterrupt
         except:
             return "help" # model is in distress :)
 
@@ -444,9 +446,8 @@ Think about it, and then say your next action. Remember to only say the command 
 
             self.selfeval_turn_counter += 1
             return command
-            
         except KeyboardInterrupt:
-            pass  # Try stopping the game prematurely.
+            raise KeyboardInterrupt
 
     def self_evaluation(self, obs) -> str :
         self.context += self.token_user + obs + self.selfeval_prompt + self.token_think + self.token_endofturn 
