@@ -295,12 +295,18 @@ class LLMAgentSelfEvaluate(LLMAgent):
 The user gives you information on the environment and you reply exclusively in the form \"verb noun\", like \"open box\" or \"take key\".
 /no_think
 """
+            self.selfeval_prompt ="""Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+"""
         elif self.prompt_version == 2:
             self.system_prompt = """You are an assistant playing a textual game.
 The user gives you information on the environment and you reply with a short command, like \"take box\" or \"open chest with key\".
 /no_think
 """
-        else: # default
+            self.selfeval_prompt ="""Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+"""
+        elif self.prompt_version == 3:
             self.system_prompt = """You are an assistant playing a textual game.
 The user gives you information on the environment and you reply with a short command, like \"go north\". Only output the action, nothing else.
 /no_think
@@ -308,6 +314,14 @@ The user gives you information on the environment and you reply with a short com
             self.selfeval_prompt ="""Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
 Think about it, and then say your next action. Remember to only say the command and nothing else.
 """
+        elif self.prompt_version == 4 or self.prompt_version == "default": # default
+            self.system_prompt = """You are an assistant playing a textual game.
+The user gives you information on the environment and you reply with a short command, like \"go north\". Only output the action, nothing else.
+/no_think
+"""
+            self.selfeval_prompt ="""Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+""" # this will become CoT prompt in a future version
 
     def initialize_context(self):
         """A helper function for resetting the internal state of the model before starting a new game.
