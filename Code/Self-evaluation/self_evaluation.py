@@ -250,7 +250,11 @@ class LLMAgentSelfEvaluate(LLMAgent):
     handheld = True
     reads_own_reasoning = False
 
-    def __init__(self, model=model, tokenizer=tokenizer,
+    system_prompt = ""
+    selfeval_prompt = ""
+    prompt_version = "default"
+
+    def __init__(self, model=model, tokenizer=tokenizer, prompt_version = "default",
     selfeval_turns = 5, random_selfeval = False,
     verbose = False, log = "",
     handheld = False, reads_own_reasoning = False):
@@ -276,11 +280,34 @@ class LLMAgentSelfEvaluate(LLMAgent):
         self.handheld = handheld 
         self.reads_own_reasoning = reads_own_reasoning
 
+        self.prompt_version = prompt_version
+        self.set_prompts()
+
     def write_on_log(self, text):
         if self.log != "":
             with open(self.log, "a") as f:
                 f.write(text + "\n")
                 # file closing done automatically
+
+    def set_prompts(self):
+        if self.prompt_version == 1:
+            self.system_prompt = """You are an assistant playing a textual game.
+The user gives you information on the environment and you reply exclusively in the form \"verb noun\", like \"open box\" or \"take key\".
+/no_think
+"""
+        elif self.prompt_version == 2:
+            self.system_prompt = """You are an assistant playing a textual game.
+The user gives you information on the environment and you reply with a short command, like \"take box\" or \"open chest with key\".
+/no_think
+"""
+        else: # default
+            self.system_prompt = """You are an assistant playing a textual game.
+The user gives you information on the environment and you reply with a short command, like \"go north\". Only output the action, nothing else.
+/no_think
+"""
+            self.selfeval_prompt ="""Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+"""
 
     def initialize_context(self):
         """A helper function for resetting the internal state of the model before starting a new game.
@@ -309,11 +336,21 @@ class LLMAgentSelfEvaluate(LLMAgent):
                 self.context,
                 return_tensors = "pt")
         try:
-            generated_ids = self.model.generate(
-                input_ids.to("cuda"),
-                max_new_tokens = max_new_tokens,
-                eos_token_id = self.tokenizer.eos_token_id
-                )
+            if think:
+                generated_ids = self.model.generate(
+                    input_ids.to("cuda"),
+                    max_new_tokens = max_new_tokens,
+                    eos_token_id = self.tokenizer.eos_token_id,
+                    temperature=0.6, top_p=0.95, top_k=20, min_p=0,
+                    repetition_penalty = 1.01 # just a small nudge lol
+                    )
+            else:
+                generated_ids = self.model.generate(
+                    input_ids.to("cuda"),
+                    max_new_tokens = max_new_tokens,
+                    eos_token_id = self.tokenizer.eos_token_id,
+                    temperature=0.7, top_p=0.8, top_k=20, min_p=0
+                    )
             output_ids = generated_ids[0][len(input_ids[0]):].tolist()
         except:
             return "help" # model is in distress :)
@@ -395,12 +432,7 @@ class LLMAgentSelfEvaluate(LLMAgent):
             pass  # Try stopping the game prematurely.
 
     def self_evaluation(self, obs) -> str :
-
-        self_evaluation_prompt = """
-Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
-Think about it, and then say your next action. Remember to only say the command and nothing else.
-"""
-        self.context += self.token_user + obs + self_evaluation_prompt + self.token_think + self.token_endofturn 
+        self.context += self.token_user + obs + self.selfeval_prompt + self.token_think + self.token_endofturn 
         self.context += self.token_assistant # induce thinking
         
         (thinking_response, response) = self.generate_response(think=True)
