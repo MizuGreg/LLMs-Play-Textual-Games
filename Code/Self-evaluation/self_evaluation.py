@@ -357,14 +357,14 @@ Think about it, and then say your next action. Remember to only say the command 
                     input_ids.to("cuda"),
                     max_new_tokens = max_new_tokens,
                     eos_token_id = self.tokenizer.eos_token_id,
-                    # temperature=0.6, top_p=0.95, top_k=20, min_p=0,
+                    # temperature=0.65, top_p=0.95, top_k=20, min_p=0,
                     )
             else:
                 generated_ids = self.model.generate(
                     input_ids.to("cuda"),
                     max_new_tokens = max_new_tokens,
                     eos_token_id = self.tokenizer.eos_token_id,
-                    # temperature=0.7, top_p=0.8, top_k=20, min_p=0
+                    # temperature=0.7, top_p=0.85, top_k=20, min_p=0
                     )
             output_ids = generated_ids[0][len(input_ids[0]):].tolist()
         except KeyboardInterrupt:
