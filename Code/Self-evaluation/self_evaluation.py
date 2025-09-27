@@ -344,7 +344,7 @@ Think about it, and then say your next action. Remember to only say the command 
 
     def generate_response(self, think=False):
         if think:
-            max_new_tokens = 30000 # allow reasoning models to be talkative
+            max_new_tokens = 10000 # allow reasoning models to be talkative
         else:
             max_new_tokens = 100 # reduce generation almost to a minimum
         
