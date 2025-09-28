@@ -23,6 +23,8 @@ FROM marccote19/textworld
 # RUN pip install jupyter
 
 RUN pip install scipy
+RUN pip install --upgrade matplotlib
+RUN pip install seaborn
 
 RUN pip install transformers accelerate bitsandbytes
 RUN pip install -U "huggingface_hub[cli]"

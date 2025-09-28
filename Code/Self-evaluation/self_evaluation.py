@@ -52,7 +52,7 @@ model = AutoModelForCausalLM.from_pretrained(
 # ## Play function
 
 # %%
-def play(agent, path, max_steps=100, n_episodes=10, verbose=True):
+def play(agent, path, max_steps=100, n_episodes=10, verbose=True, return_max_score=False):
     torch.manual_seed(46)  # For reproducibility when using action sampling.
 
     infos_to_request = agent.infos_to_request
@@ -75,10 +75,12 @@ def play(agent, path, max_steps=100, n_episodes=10, verbose=True):
     # Collect some statistics
     avg_moves, avg_scores, avg_norm_scores = [], [], []
     moves_scores_times_list = []
+    max_score = 0
     
     for _ in range(n_episodes):
         episode_start = time.process_time()
         obs, infos = env.reset()  # Start new episode.
+        max_score = infos["max_score"]
 
         score = 0
         done = False
@@ -99,7 +101,7 @@ def play(agent, path, max_steps=100, n_episodes=10, verbose=True):
             print(".", end="")
         avg_moves.append(nb_moves)
         avg_scores.append(score)
-        avg_norm_scores.append(score / infos["max_score"])
+        avg_norm_scores.append(score / max_score)
 
     env.close()
     if verbose:
@@ -113,7 +115,10 @@ def play(agent, path, max_steps=100, n_episodes=10, verbose=True):
             print(msg.format(np.mean(avg_moves), np.mean(avg_scores), infos["max_score"]))
             if len(avg_moves) > 1:
                 print(f"Detailed steps: {avg_moves}\t Detailed scores: {avg_scores}")
-        return moves_scores_times_list
+        if return_max_score:
+            return (moves_scores_times_list, max_score)
+        else:
+            return moves_scores_times_list
 
 
 
@@ -323,6 +328,12 @@ The user gives you information on the environment and you reply with a short com
             self.selfeval_prompt ="""Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
 Think about it, and then say your next action. Remember to only say the command and nothing else.
 """ # this will become CoT prompt in a future version
+        elif self.prompt_version == 5 or self.prompt_version == "no_selfeval":
+            self.system_prompt = """You are an assistant playing a textual game.
+The game gives you information on the environment and you reply with a short command, like \"go north\". Only output the action, nothing else.
+/no_think
+"""
+            self.selfeval_prompt =""
 
     def initialize_context(self):
         """A helper function for resetting the internal state of the model before starting a new game.
