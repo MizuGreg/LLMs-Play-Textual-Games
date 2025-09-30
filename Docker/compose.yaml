@@ -1,16 +1,23 @@
 services:
   politw:
+    env_file: "variables.env" # passes current version and HuggingFace token; technically useless bc compose already fetches it
+
     image: mizugreg/politw:1.7
     container_name: politw_cont
+
     build:
       secrets:
         - GITHUB_TOKEN # for cloning repo
       context: .
+    
     ports:
       - "8888:8888"
-    env_file: "variables.env" # passes current version and HuggingFace token; technically useless bc compose already fetches it
+
     volumes:
       - ../:/TextWorld/notebooks/LLM-PTG
+    
+    # user: "${UID}:${GID}"
+
     deploy:
       resources:
         reservations:
