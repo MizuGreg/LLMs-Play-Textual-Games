@@ -76,6 +76,7 @@ def play(agent, path, max_steps=100, n_episodes=10, verbose=True, return_max_sco
     avg_moves, avg_scores, avg_norm_scores = [], [], []
     moves_scores_times_list = []
     max_score = 0
+    play_start_time = time.process_time()
     
     for _ in range(n_episodes):
         episode_start = time.process_time()
@@ -104,6 +105,8 @@ def play(agent, path, max_steps=100, n_episodes=10, verbose=True, return_max_sco
         avg_norm_scores.append(score / max_score)
 
     env.close()
+    play_end_time = time.process_time()
+    
     if verbose:
         if os.path.isdir(path):
             msg = "  \tavg. steps: {:5.1f}; avg. normalized score: {:4.1f} / {}."
@@ -111,8 +114,8 @@ def play(agent, path, max_steps=100, n_episodes=10, verbose=True, return_max_sco
             if len(avg_moves) > 1:
                 print(f"Detailed steps: {avg_moves}\t Detailed normalized scores: {avg_norm_scores}")
         else:
-            msg = "  \tavg. steps: {:5.1f}; avg. score: {:4.1f} / {}."
-            print(msg.format(np.mean(avg_moves), np.mean(avg_scores), infos["max_score"]))
+            msg = "  \tavg. steps: {:5.1f}; avg. score: {:4.1f} / {}; total execution time: {:.0f} s."
+            print(msg.format(np.mean(avg_moves), np.mean(avg_scores), infos["max_score"], play_end_time - play_start_time))
             if len(avg_moves) > 1:
                 print(f"Detailed steps: {avg_moves}\t Detailed scores: {avg_scores}")
         if return_max_score:
