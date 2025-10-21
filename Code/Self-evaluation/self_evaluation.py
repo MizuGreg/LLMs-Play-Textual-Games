@@ -338,7 +338,7 @@ The user gives you information on the environment and you reply with a short com
             self.selfeval_prompt ="""
 Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
 Think about it, and then say your next action. Remember to only say the command and nothing else.
-""" # this will become CoT prompt in a future version
+"""
         elif self.prompt_version == 5 or self.prompt_version == "no_selfeval":
             self.system_prompt = """
 You are an assistant playing a textual game.
@@ -346,6 +346,25 @@ The game gives you information on the environment and you reply with a short com
 /no_think
 """
             self.selfeval_prompt =""
+        elif self.prompt_version == 6 or self.prompt_version == "CoT": #Chain-of-Thought
+            self.system_prompt = """
+You are an expert assistant playing a textual game. It is very important that you attentively analyze the game environment and find the best course of action.
+The user gives you information on the environment and you reply with a short command, like \"go north\". Think thoroughly about how to reach the objective and then output the action, nothing else.
+Sometimes the user will ask you to think more in depth about the game and the objective; in that case, follow the instructions.
+/no_think
+"""
+            self.selfeval_prompt ="""
+SELF-EVALUATION - Try to think more in depth about the game: your past actions, the action you should take now, and how to get closer to the goal.
+Begin the thinking content with the <think> tag and end it with the </think> tag.
+Explore multiple approaches and reason about which might be the best course of action, and what result you expect.
+Break down the solution into clear and separated steps with the <step> and </step> tags. You start with a budget of 10 steps, but you can request more steps if needed. In every step, decrease the count by 1 and display the remaining budget within the tags <count> and </count>. When the count is 0, stop the thinking and output your final action. If you think you have reached the right answer and you don't need to reason on it any longer, you can directly skip the other steps, stop the thinking, and output your final action.
+Every step is at most 5 sentences long, where every sentence ends with a dot ".", but you can reason for a longer time if you feel that it is needed. At every step you should adjust your reasoning based on reflections, and adapting your strategy as you progress. Try to understand, for your proposed action, what the game's next output would be: your objective is to obtain a "good" state where you follow the goal.
+It is very important that you think about the following issues:
+- the action must bring you closer to the goal, so you have to remember what the goal is and what the game said in the previous turns, and find out what the next step is and focus only on that next step;
+- you have to use precise words when saying your action, so if you tried the action and it is not recognized, try using synonyms or changing the order of the words a bit;
+- you have to recognize if you find yourself in a loop. A loop is when you say the same action over and over again, or when you repeat the same set of actions, with no progress. Your goal in this case is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using synonyms or by understanding what the next step is. It is fundamental that you do not repeat the same actions many times in a row if the action keeps not getting recognized.
+When you settle on a final answer close the thinking with the </think> tag, say your action as a short command.
+"""
 
     def initialize_context(self):
         """A helper function for resetting the internal state of the model before starting a new game.
