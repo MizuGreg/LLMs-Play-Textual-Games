@@ -394,20 +394,27 @@ When you settle on a final answer close the thinking with the </think> tag, say 
                 self.context,
                 return_tensors = "pt")
         try:
-            if think:
-                generated_ids = self.model.generate(
-                    input_ids.to("cuda"),
-                    max_new_tokens = max_new_tokens,
-                    eos_token_id = self.tokenizer.eos_token_id,
-                    # temperature=0.65, top_p=0.95, top_k=20, min_p=0,
-                    )
+            if self.prompt_version == "CoT" or self.prompt_version == 6:
+                if think:
+                    generated_ids = self.model.generate(
+                        input_ids.to("cuda"),
+                        max_new_tokens = max_new_tokens,
+                        eos_token_id = self.tokenizer.eos_token_id,
+                        temperature=0.65, top_p=0.9, min_p=0.05, top_k=25
+                        )
+                else:
+                    generated_ids = self.model.generate(
+                        input_ids.to("cuda"),
+                        max_new_tokens = max_new_tokens,
+                        eos_token_id = self.tokenizer.eos_token_id,
+                        temperature=0.7, top_p=0.9, min_p=0.1, top_k=20
+                        )
             else:
                 generated_ids = self.model.generate(
-                    input_ids.to("cuda"),
-                    max_new_tokens = max_new_tokens,
-                    eos_token_id = self.tokenizer.eos_token_id,
-                    # temperature=0.7, top_p=0.85, top_k=20, min_p=0
-                    )
+                        input_ids.to("cuda"),
+                        max_new_tokens = max_new_tokens,
+                        eos_token_id = self.tokenizer.eos_token_id
+                        ) # default temperature=0.6, top_p=0.95, min_p=0, top_k=20
             output_ids = generated_ids[0][len(input_ids[0]):].tolist()
         except KeyboardInterrupt:
             raise KeyboardInterrupt
