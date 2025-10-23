@@ -48,8 +48,21 @@ You need an unblocked exit? You should try going south. You don't like doors? Wh
 
 
 >                                                                                                                                -= Cubicle =-0/2
-AGENT -------------------------------------------------
-go south
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text-based game and has a series of objectives. The first goal was to go east, then south, then east again, and finally pick up the coin from the attic. So far, they started in the study, went east to a cubicle. Now, in the cubicle, the options are to go south or west.
+
+The user is asking if they're making the right moves and if they're close to the goal. Let me break down the steps. The original plan was: east, south, east, then attic coin. 
+
+In the study, they went east to the cubicle. Now, in the cubicle, the next step according to the original plan was to go south. The user's current location is the cubicle. So, if they go south from the cubicle, that would be the next step. The user is asking if they're on the right track. 
+
+The cubicle's description says that going south is unblocked. So, following the original plan, after the first east (to cubicle), the next step is south. Then, after that, the next step would be east again. Then, eventually, reach the attic. So, the user is on the correct path. 
+
+The user's next action should be to go south. The user's question is whether they're making the right moves. Since they've followed the plan so far, the answer is yes. So the next command is "go south".
+</think>go south
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -63,8 +76,23 @@ There is an exit to the east. Don't worry, it is unblocked. You need an unguarde
 
 
 >                                                                                                                                -= Office =-0/3
-AGENT -------------------------------------------------
-go east
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is in a text-based game where they need to follow specific directions to reach the attic and pick up a coin. The original goal was to go east, then south, then east again, and finally pick up the coin in the attic.
+
+So far, the user has gone east from the study, then south to the cubicle, then south again to the office. Now they're in the office. The current prompt says there's an exit to the east, which is unblocked, and suggests going north. 
+
+Wait, the original plan was after going south from the study, then east again. But the user's path so far is study -> east (cubicle) -> south (office). Wait, maybe I need to track the steps again. Let me check:
+
+Original steps: 1. Go east (from study). 2. Go south (from study's east, which is cubicle). 3. Then take a trip east. But in the current state, they're in the office. The office's exit to the east is unblocked. But according to the original plan, after going south (from study), the next step was to go east again. But maybe the user is confused.
+
+Wait, the user's path is study (start) -> east (cubicle) -> south (office). Now, in the office, the possible exits are east and north. The original plan was after going south (from study), then east again. But the user is now in the office. So maybe the next step should be to go east from the office? But the office's east exit is unblocked. However, the original plan said after going south, take a trip east. So perhaps the user is supposed to go east from the cubicle, but they went south instead. Wait, maybe there's a confusion here.
+
+Alternatively, maybe the user is on the correct path. The original steps were: go east (study), then south (cubicle), then east again. But in the office, the user is now. So perhaps from the office, going north would take them back to the cubicle, but the original plan was to go east again. Wait, maybe the user is supposed to go east from the office. But the office's east exit is unblocked. So the next step should be to go east from the office. But the current prompt says that in the office, the exit to the east is unblocked, and suggests going north. But according to the original plan, after going south (from study), the next step is to go east. So maybe the user is in the office, and the next step is to go east. But the current prompt says that the office has an exit to the east. So the correct next action would be to go east. However, the user's previous action was going south to the office. So maybe the next step is to go east from the office. But the original plan was to go east again after going south. So the user should go east from the office. But the current prompt says that in the office, the exit to the east is unblocked. So the next action should be go east. But the user's previous steps were study -> east (cubicle) -> south (office). Now, in the office, the next step is to go east. But the original plan said after going south (from study), take a trip east. So perhaps the user is on the right track. Therefore, the next action is go east.
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -79,6 +107,13 @@ There is a coin on the floor.
 
 
 >                                                                                                                                -= Attic =-0/4
-AGENT -------------------------------------------------
-take coin
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let me figure out what to do next. The user's goal was to go east, then south, then east again, and pick up the coin from the attic.
+
+So far, they've been moving east from the study to the cubicle, then south to the office, then east to the attic. Now they're in the attic, which is the fourth step. The next thing they need to do is pick up the coin. But the current prompt says there's a coin on the floor. So the next action should be to pick it up. But the user's instructions said to only output the action, like "go north". However, picking up the coin is a different action. Wait, in TextWorld, the command would be "take coin" or "get coin". But the user's previous actions were all "go" commands. Maybe the correct action here is "take coin" or "pick up coin". But the user's example in the first message had "go north" as the command. So perhaps the correct action here is "take coin". But I need to check if that's the right command. Alternatively, maybe the game expects "get coin". But since the user hasn't mentioned any other commands, maybe "take coin" is the right one. However, the user's previous actions were all movement commands. Wait, the original goal was to pick up the coin from the attic. So in the attic, the coin is on the floor. So the correct action is to take the coin. Therefore, the next command should be "take coin".
+</think>take coin
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

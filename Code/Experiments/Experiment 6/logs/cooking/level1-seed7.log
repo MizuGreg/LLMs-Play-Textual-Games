@@ -253,6 +253,13 @@ Useful for roasting things.
 
 
 >                                                                                                                                -= Kitchen =-0/16
+AGENT -------------------------------------------------
+look at the counter again.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/16
 Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
 Think about it, and then say your next action. Remember to only say the command and nothing else.
 
@@ -260,20 +267,20 @@ SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 <think>
 Okay, the user is stuck in the kitchen trying to find a cookbook. They've checked the fridge, oven, stove, table, and counter multiple times but can't find the cookbook. The fridge has cheese and a bell pepper, but no cookbook. The table has a knife, but that doesn't help. The oven and stove are useful but empty. The user is repeating the same actions without success.
 
-Maybe the cookbook is actually in the fridge, but the description didn't mention it. Wait, the initial description said the cookbook is on the counter, but the user can't see it. Maybe the user needs to check the oven or stove again, but those are empty. The user is going in circles. The next step should be to check the oven again, but that's already been done. Alternatively, maybe the user needs to look under the table or in the oven, but the oven is empty. The user is stuck without the cookbook, so they can't proceed. The answer is that the user needs to find the cookbook, but it's not there. The game might have an error, but the user has to keep trying. The next action is to look at the stove again, but that's not helpful. The user is stuck.
-</think>look at the stove.
+Maybe the cookbook is actually in the fridge, but the description didn't mention it. Wait, the initial description said the cookbook is on the counter, but the user can't see it. Maybe the user needs to check the oven or stove again. But those are empty. Alternatively, maybe the user is supposed to look in the fridge again, but the contents are already listed. The user is going in circles. The next action should be to check the oven again, but that's already been done. The user might need to give up, but the game requires a command. The only possible action left is to check the stove again, but that's not helpful. The user is stuck without the cookbook.
+</think>look at the oven.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Useful for frying things.
+Useful for roasting things.
 
 
 
 >                                                                                                                                -= Kitchen =-0/17
 AGENT -------------------------------------------------
-look at the oven.
+look at the stove.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Useful for roasting things.
+Useful for frying things.
 
 
 
@@ -330,36 +337,13 @@ Useful for roasting things.
 
 
 >                                                                                                                                -= Kitchen =-0/22
-Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
-Think about it, and then say your next action. Remember to only say the command and nothing else.
-
-SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-<think>
-Okay, the user is really stuck here. They've checked every possible location multiple times, but the cookbook is nowhere to be found. The fridge has cheese and a bell pepper, the table has a knife, the oven and stove are useful but empty. The user is just repeating the same actions without success. Maybe the cookbook is actually in the fridge, but the initial description didn't mention it. Or maybe the user is supposed to look elsewhere, but the kitchen only has the mentioned items. The user is going in circles, so the next action should be to check the oven again, but that's already been done. The answer is that the user needs to find the cookbook, but it's not there. The game might have an error, but the user has to keep trying. The next action is to look at the stove again, but that's not helpful. The user is stuck.
-</think>look at the stove.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for frying things.
-
-
-
->                                                                                                                                -= Kitchen =-0/23
-AGENT -------------------------------------------------
-look at the oven.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for roasting things.
-
-
-
->                                                                                                                                -= Kitchen =-0/24
 AGENT -------------------------------------------------
 look at the counter again.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 You can't see any such thing.
 
->                                                                                                                                -= Kitchen =-0/24
+>                                                                                                                                -= Kitchen =-0/22
 AGENT -------------------------------------------------
 look at the table.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -368,25 +352,32 @@ The table is undependable.
 
 
 
->                                                                                                                                -= Kitchen =-0/25
+>                                                                                                                                -= Kitchen =-0/23
 AGENT -------------------------------------------------
 look at the cookbook on the counter.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 You can't see any such thing.
 
->                                                                                                                                -= Kitchen =-0/25
-AGENT -------------------------------------------------
-look at the fridge.
+>                                                                                                                                -= Kitchen =-0/23
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, the user is really stuck here. They've checked every possible location in the kitchen multiple times but can't find the cookbook. The fridge, oven, stove, table, and counter have all been examined, but the cookbook isn't there. The only items found are cheese, bell pepper, a knife, and the oven/stove descriptions. The user is repeatedly looking at the same places without success.
+
+Maybe the cookbook is actually in the fridge, but the initial description didn't mention it. Wait, the user opened the fridge and saw cheese and a bell pepper. The cookbook wasn't there. The table has a knife, but that's not helpful. The oven and stove are empty. The user is going in circles.
+
+The user needs to find the cookbook to proceed. Since all other locations have been checked and the cookbook isn't there, maybe the user is supposed to look in the oven or stove again, but those are empty. The only remaining option is to check the counter again, but the game says it's not there. The user might have to give up, but the game requires a command. The next action should be to look at the oven again, but that's already been done. The user is stuck.
+</think>look at the oven.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The fridge looks ominous. It is open.
-
-In the fridge are a block of cheese and an orange bell pepper.
+Useful for roasting things.
 
 
 
->                                                                                                                                -= Kitchen =-0/26
+>                                                                                                                                -= Kitchen =-0/24
 AGENT -------------------------------------------------
 look at the stove.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -395,12 +386,53 @@ Useful for frying things.
 
 
 
->                                                                                                                                -= Kitchen =-0/27
+>                                                                                                                                -= Kitchen =-0/25
 AGENT -------------------------------------------------
-look at the oven.
+look at the counter again.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/25
+AGENT -------------------------------------------------
+look at the table.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The table is undependable.
+
+
+
+>                                                                                                                                -= Kitchen =-0/26
+AGENT -------------------------------------------------
+look at the cookbook on the counter.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/26
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, the user is stuck in the kitchen trying to find a cookbook. They've checked the fridge, oven, stove, table, and counter multiple times but can't find the cookbook. The fridge has cheese and a bell pepper, the table has a knife, but no cookbook. The oven and stove are empty. The user is repeating the same actions without success.
+
+Maybe the cookbook is actually in the fridge, but the description didn't mention it. Wait, the user opened the fridge and saw cheese and a bell pepper. The cookbook wasn't there. The table has a knife, but that's not helpful. The oven and stove are empty. The user is going in circles.
+
+The user needs to find the cookbook to proceed. Since all other locations have been checked and the cookbook isn't there, maybe the user is supposed to look in the oven or stove again, but those are empty. The only remaining option is to check the counter again, but the game says it's not there. The user might have to give up, but the game requires a command. The next action should be to look at the oven again, but that's already been done. The user is stuck.
+</think>look at the oven.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Useful for roasting things.
+
+
+
+>                                                                                                                                -= Kitchen =-0/27
+AGENT -------------------------------------------------
+look at the stove.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Useful for frying things.
 
 
 
@@ -439,13 +471,8 @@ In the fridge are a block of cheese and an orange bell pepper.
 
 
 >                                                                                                                                -= Kitchen =-0/30
-Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
-Think about it, and then say your next action. Remember to only say the command and nothing else.
-
-SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-<think>
-Okay, the user is really stuck here. They've checked every possible location multiple times, but the cookbook is nowhere to be found. The fridge has cheese and a bell pepper, the table has a knife, the oven and stove are useful but empty. The user is going in circles, so the next action should be to check the oven again, but that's already been done. The answer is that the user needs to find the cookbook, but it's not there. The game might have an error, but the user has to keep trying. The next action is to look at the stove again, but that's not helpful. The user is stuck.
-</think>look at the stove.
+AGENT -------------------------------------------------
+look at the stove.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Useful for frying things.
@@ -453,126 +480,139 @@ Useful for frying things.
 
 
 >                                                                                                                                -= Kitchen =-0/31
-AGENT -------------------------------------------------
-look at the oven.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for roasting things.
-
-
-
->                                                                                                                                -= Kitchen =-0/32
-AGENT -------------------------------------------------
-look at the counter again.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-You can't see any such thing.
-
->                                                                                                                                -= Kitchen =-0/32
-AGENT -------------------------------------------------
-look at the table.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-The table is undependable.
-
-
-
->                                                                                                                                -= Kitchen =-0/33
-AGENT -------------------------------------------------
-look at the cookbook on the counter.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-You can't see any such thing.
-
->                                                                                                                                -= Kitchen =-0/33
-AGENT -------------------------------------------------
-look at the fridge.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-The fridge looks ominous. It is open.
-
-In the fridge are a block of cheese and an orange bell pepper.
-
-
-
->                                                                                                                                -= Kitchen =-0/34
-AGENT -------------------------------------------------
-look at the stove.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for frying things.
-
-
-
->                                                                                                                                -= Kitchen =-0/35
-AGENT -------------------------------------------------
-look at the oven.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for roasting things.
-
-
-
->                                                                                                                                -= Kitchen =-0/36
-AGENT -------------------------------------------------
-look at the counter again.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-You can't see any such thing.
-
->                                                                                                                                -= Kitchen =-0/36
-AGENT -------------------------------------------------
-look at the table.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-The table is undependable.
-
-
-
->                                                                                                                                -= Kitchen =-0/37
-AGENT -------------------------------------------------
-look at the cookbook on the counter.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-You can't see any such thing.
-
->                                                                                                                                -= Kitchen =-0/37
-AGENT -------------------------------------------------
-look at the fridge.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-The fridge looks ominous. It is open.
-
-In the fridge are a block of cheese and an orange bell pepper.
-
-
-
->                                                                                                                                -= Kitchen =-0/38
-AGENT -------------------------------------------------
-look at the stove.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for frying things.
-
-
-
->                                                                                                                                -= Kitchen =-0/39
-AGENT -------------------------------------------------
-look at the oven.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for roasting things.
-
-
-
->                                                                                                                                -= Kitchen =-0/40
 Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
 Think about it, and then say your next action. Remember to only say the command and nothing else.
 
 SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 <think>
-Okay, the user is really stuck here. They've checked every possible location multiple times, but the cookbook is nowhere to be found. The fridge has cheese and a bell pepper, the table has a knife, the oven and stove are useful but empty. The user is going in circles, so the next action should be to check the oven again, but that's already been done. The answer is that the user needs to find the cookbook, but it's not there. The game might have an error, but the user has to keep trying. The next action is to look at the stove again, but that's not helpful. The user is stuck.
-</think>look at the stove.
+Okay, the user is stuck in the kitchen trying to find a cookbook. They've checked the fridge, oven, stove, table, and counter multiple times but can't find the cookbook. The fridge has cheese and a bell pepper, the table has a knife, but no cookbook. The oven and stove are empty. The user is going in circles.
+
+Maybe the cookbook is actually in the fridge, but the description didn't mention it. Wait, the user opened the fridge and saw cheese and a bell pepper. The cookbook wasn't there. The table has a knife, but that's not helpful. The oven and stove are empty. The user is stuck.
+
+The user needs to find the cookbook to proceed. Since all other locations have been checked and the cookbook isn't there, maybe the user is supposed to look in the oven or stove again, but those are empty. The only remaining option is to check the counter again, but the game says it's not there. The user might have to give up, but the game requires a command. The next action should be to look at the oven again, but that's already been done. The user is stuck.
+</think>look at the oven.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Useful for roasting things.
+
+
+
+>                                                                                                                                -= Kitchen =-0/32
+AGENT -------------------------------------------------
+look at the stove.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Useful for frying things.
+
+
+
+>                                                                                                                                -= Kitchen =-0/33
+AGENT -------------------------------------------------
+look at the counter again.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/33
+AGENT -------------------------------------------------
+look at the table.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The table is undependable.
+
+
+
+>                                                                                                                                -= Kitchen =-0/34
+AGENT -------------------------------------------------
+look at the cookbook on the counter.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/34
+AGENT -------------------------------------------------
+look at the fridge.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The fridge looks ominous. It is open.
+
+In the fridge are a block of cheese and an orange bell pepper.
+
+
+
+>                                                                                                                                -= Kitchen =-0/35
+AGENT -------------------------------------------------
+look at the stove.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Useful for frying things.
+
+
+
+>                                                                                                                                -= Kitchen =-0/36
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, the user is stuck in the kitchen trying to find a cookbook. They've checked the fridge, oven, stove, table, and counter multiple times but can't find the cookbook. The fridge has cheese and a bell pepper, the table has a knife, but no cookbook. The oven and stove are empty. The user is going in circles.
+
+Maybe the cookbook is actually in the fridge, but the description didn't mention it. Wait, the user opened the fridge and saw cheese and a bell pepper. The cookbook wasn't there. The table has a knife, but that's not helpful. The oven and stove are empty. The user is stuck.
+
+The user needs to find the cookbook to proceed. Since all other locations have been checked and the cookbook isn't there, maybe the user is supposed to look in the oven or stove again, but those are empty. The only remaining option is to check the counter again, but the game says it's not there. The user might have to give up, but the game requires a command. The next action should be to look at the oven again, but that's already been done. The user is stuck.
+</think>look at the oven.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Useful for roasting things.
+
+
+
+>                                                                                                                                -= Kitchen =-0/37
+AGENT -------------------------------------------------
+look at the stove.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Useful for frying things.
+
+
+
+>                                                                                                                                -= Kitchen =-0/38
+AGENT -------------------------------------------------
+look at the counter again.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/38
+AGENT -------------------------------------------------
+look at the table.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The table is undependable.
+
+
+
+>                                                                                                                                -= Kitchen =-0/39
+AGENT -------------------------------------------------
+look at the cookbook on the counter.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/39
+AGENT -------------------------------------------------
+look at the fridge.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The fridge looks ominous. It is open.
+
+In the fridge are a block of cheese and an orange bell pepper.
+
+
+
+>                                                                                                                                -= Kitchen =-0/40
+AGENT -------------------------------------------------
+look at the stove.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Useful for frying things.
@@ -612,13 +652,20 @@ GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 You can't see any such thing.
 
 >                                                                                                                                -= Kitchen =-0/43
-AGENT -------------------------------------------------
-look at the fridge.
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, the user is stuck in the kitchen trying to find a cookbook. They've checked the fridge, oven, stove, table, and counter multiple times but can't find the cookbook. The fridge has cheese and a bell pepper, the table has a knife, but no cookbook. The oven and stove are empty. The user is going in circles.
+
+Maybe the cookbook is actually in the fridge, but the description didn't mention it. Wait, the user opened the fridge and saw cheese and a bell pepper. The cookbook wasn't there. The table has a knife, but that's not helpful. The oven and stove are empty. The user is stuck.
+
+The user needs to find the cookbook to proceed. Since all other locations have been checked and the cookbook isn't there, maybe the user is supposed to look in the oven or stove again, but those are empty. The only remaining option is to check the counter again, but the game says it's not there. The user might have to give up, but the game requires a command. The next action should be to look at the oven again, but that's already been done. The user is stuck.
+</think>look at the oven.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The fridge looks ominous. It is open.
-
-In the fridge are a block of cheese and an orange bell pepper.
+Useful for roasting things.
 
 
 
@@ -633,21 +680,12 @@ Useful for frying things.
 
 >                                                                                                                                -= Kitchen =-0/45
 AGENT -------------------------------------------------
-look at the oven.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for roasting things.
-
-
-
->                                                                                                                                -= Kitchen =-0/46
-AGENT -------------------------------------------------
 look at the counter again.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 You can't see any such thing.
 
->                                                                                                                                -= Kitchen =-0/46
+>                                                                                                                                -= Kitchen =-0/45
 AGENT -------------------------------------------------
 look at the table.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -656,14 +694,14 @@ The table is undependable.
 
 
 
->                                                                                                                                -= Kitchen =-0/47
+>                                                                                                                                -= Kitchen =-0/46
 AGENT -------------------------------------------------
 look at the cookbook on the counter.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 You can't see any such thing.
 
->                                                                                                                                -= Kitchen =-0/47
+>                                                                                                                                -= Kitchen =-0/46
 AGENT -------------------------------------------------
 look at the fridge.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -671,21 +709,39 @@ GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 The fridge looks ominous. It is open.
 
 In the fridge are a block of cheese and an orange bell pepper.
+
+
+
+>                                                                                                                                -= Kitchen =-0/47
+AGENT -------------------------------------------------
+look at the stove.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Useful for frying things.
 
 
 
 >                                                                                                                                -= Kitchen =-0/48
 AGENT -------------------------------------------------
-look at the stove.
+look at the oven.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Useful for frying things.
+Useful for roasting things.
 
 
 
 >                                                                                                                                -= Kitchen =-0/49
-AGENT -------------------------------------------------
-look at the oven.
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, the user is stuck in the kitchen trying to find a cookbook. They've checked the fridge, oven, stove, table, and counter multiple times but can't find the cookbook. The fridge has cheese and a bell pepper, the table has a knife, but no cookbook. The oven and stove are empty. The user is going in circles.
+
+Maybe the cookbook is actually in the fridge, but the description didn't mention it. Wait, the user opened the fridge and saw cheese and a bell pepper. The cookbook wasn't there. The table has a knife, but that's not helpful. The oven and stove are empty. The user is stuck.
+
+The user needs to find the cookbook to proceed. Since all other locations have been checked and the cookbook isn't there, maybe the user is supposed to look in the oven or stove again, but those are empty. The only remaining option is to check the counter again, but the game says it's not there. The user might have to give up, but the game requires a command. The next action should be to look at the oven again, but that's already been done. The user is stuck.
+</think>look at the oven.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Useful for roasting things.
@@ -694,67 +750,37 @@ Useful for roasting things.
 
 >                                                                                                                                -= Kitchen =-0/50
 AGENT -------------------------------------------------
+look at the stove.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Useful for frying things.
+
+
+
+>                                                                                                                                -= Kitchen =-0/51
+AGENT -------------------------------------------------
 look at the counter again.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 You can't see any such thing.
 
->                                                                                                                                -= Kitchen =-0/50
+>                                                                                                                                -= Kitchen =-0/51
 AGENT -------------------------------------------------
 look at the table.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The table is undependable.
-
-
-
->                                                                                                                                -= Kitchen =-0/51
-Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
-Think about it, and then say your next action. Remember to only say the command and nothing else.
-
-SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-<think>
-Okay, the user is really stuck here. They've checked every possible location multiple times, but the cookbook is nowhere to be found. The fridge has cheese and a bell pepper, the table has a knife, the oven and stove are useful but empty. The user is going in circles, so the next action should be to check the oven again, but that's already been done. The answer is that the user needs to find the cookbook, but it's not there. The game might have an error, but the user has to keep trying. The next action is to look at the stove again, but that's not helpful. The user is stuck.
-</think>look at the stove.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for frying things.
 
 
 
 >                                                                                                                                -= Kitchen =-0/52
 AGENT -------------------------------------------------
-look at the oven.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for roasting things.
-
-
-
->                                                                                                                                -= Kitchen =-0/53
-AGENT -------------------------------------------------
-look at the counter again.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-You can't see any such thing.
-
->                                                                                                                                -= Kitchen =-0/53
-AGENT -------------------------------------------------
-look at the table.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-The table is undependable.
-
-
-
->                                                                                                                                -= Kitchen =-0/54
-AGENT -------------------------------------------------
 look at the cookbook on the counter.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 You can't see any such thing.
 
->                                                                                                                                -= Kitchen =-0/54
+>                                                                                                                                -= Kitchen =-0/52
 AGENT -------------------------------------------------
 look at the fridge.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -762,35 +788,35 @@ GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 The fridge looks ominous. It is open.
 
 In the fridge are a block of cheese and an orange bell pepper.
+
+
+
+>                                                                                                                                -= Kitchen =-0/53
+AGENT -------------------------------------------------
+look at the stove.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Useful for frying things.
+
+
+
+>                                                                                                                                -= Kitchen =-0/54
+AGENT -------------------------------------------------
+look at the oven.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Useful for roasting things.
 
 
 
 >                                                                                                                                -= Kitchen =-0/55
 AGENT -------------------------------------------------
-look at the stove.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for frying things.
-
-
-
->                                                                                                                                -= Kitchen =-0/56
-AGENT -------------------------------------------------
-look at the oven.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for roasting things.
-
-
-
->                                                                                                                                -= Kitchen =-0/57
-AGENT -------------------------------------------------
 look at the counter again.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 You can't see any such thing.
 
->                                                                                                                                -= Kitchen =-0/57
+>                                                                                                                                -= Kitchen =-0/55
 AGENT -------------------------------------------------
 look at the table.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -799,14 +825,14 @@ The table is undependable.
 
 
 
->                                                                                                                                -= Kitchen =-0/58
+>                                                                                                                                -= Kitchen =-0/56
 AGENT -------------------------------------------------
 look at the cookbook on the counter.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 You can't see any such thing.
 
->                                                                                                                                -= Kitchen =-0/58
+>                                                                                                                                -= Kitchen =-0/56
 AGENT -------------------------------------------------
 look at the fridge.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -817,7 +843,25 @@ In the fridge are a block of cheese and an orange bell pepper.
 
 
 
->                                                                                                                                -= Kitchen =-0/59
+>                                                                                                                                -= Kitchen =-0/57
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, the user is stuck in the kitchen trying to find a cookbook. They've checked the fridge, oven, stove, table, and counter multiple times but can't find the cookbook. The fridge has cheese and a bell pepper, the table has a knife, but no cookbook. The oven and stove are empty. The user is going in circles.
+
+Maybe the cookbook is actually in the fridge, but the description didn't mention it. Wait, the user opened the fridge and saw cheese and a bell pepper. The cookbook wasn't there. The table has a knife, but that's not helpful. The oven and stove are empty. The user is stuck.
+
+The user needs to find the cookbook to proceed. Since all other locations have been checked and the cookbook isn't there, maybe the user is supposed to look in the oven or stove again, but those are empty. The only remaining option is to check the counter again, but the game says it's not there. The user might have to give up, but the game requires a command. The next action should be to look at the oven again, but that's already been done. The user is stuck.
+</think>look at the oven.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Useful for roasting things.
+
+
+
+>                                                                                                                                -= Kitchen =-0/58
 AGENT -------------------------------------------------
 look at the stove.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -826,30 +870,43 @@ Useful for frying things.
 
 
 
->                                                                                                                                -= Kitchen =-0/60
-AGENT -------------------------------------------------
-look at the oven.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for roasting things.
-
-
-
->                                                                                                                                -= Kitchen =-0/61
+>                                                                                                                                -= Kitchen =-0/59
 AGENT -------------------------------------------------
 look at the counter again.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 You can't see any such thing.
 
->                                                                                                                                -= Kitchen =-0/61
-Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
-Think about it, and then say your next action. Remember to only say the command and nothing else.
+>                                                                                                                                -= Kitchen =-0/59
+AGENT -------------------------------------------------
+look at the table.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-<think>
-Okay, the user is really stuck here. They've checked every possible location multiple times, but the cookbook is nowhere to be found. The fridge has cheese and a bell pepper, the table has a knife, the oven and stove are useful but empty. The user is going in circles, so the next action should be to check the oven again, but that's already been done. The answer is that the user needs to find the cookbook, but it's not there. The game might have an error, but the user has to keep trying. The next action is to look at the stove again, but that's not helpful. The user is stuck.
-</think>look at the stove.
+The table is undependable.
+
+
+
+>                                                                                                                                -= Kitchen =-0/60
+AGENT -------------------------------------------------
+look at the cookbook on the counter.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/60
+AGENT -------------------------------------------------
+look at the fridge.
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The fridge looks ominous. It is open.
+
+In the fridge are a block of cheese and an orange bell pepper.
+
+
+
+>                                                                                                                                -= Kitchen =-0/61
+AGENT -------------------------------------------------
+look at the stove.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Useful for frying things.
@@ -873,33 +930,24 @@ GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 You can't see any such thing.
 
 >                                                                                                                                -= Kitchen =-0/63
-AGENT -------------------------------------------------
-look at the table.
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, the user is stuck in the kitchen trying to find a cookbook. They've checked the fridge, oven, stove, table, and counter multiple times but can't find the cookbook. The fridge has cheese and a bell pepper, the table has a knife, but no cookbook. The oven and stove are empty. The user is going in circles.
+
+Maybe the cookbook is actually in the fridge, but the description didn't mention it. Wait, the user opened the fridge and saw cheese and a bell pepper. The cookbook wasn't there. The table has a knife, but that's not helpful. The oven and stove are empty. The user is stuck.
+
+The user needs to find the cookbook to proceed. Since all other locations have been checked and the cookbook isn't there, maybe the user is supposed to look in the oven or stove again, but those are empty. The only remaining option is to check the counter again, but the game says it's not there. The user might have to give up, but the game requires a command. The next action should be to look at the oven again, but that's already been done. The user is stuck.
+</think>look at the oven.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The table is undependable.
+Useful for roasting things.
 
 
 
 >                                                                                                                                -= Kitchen =-0/64
-AGENT -------------------------------------------------
-look at the cookbook on the counter.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-You can't see any such thing.
-
->                                                                                                                                -= Kitchen =-0/64
-AGENT -------------------------------------------------
-look at the fridge.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-The fridge looks ominous. It is open.
-
-In the fridge are a block of cheese and an orange bell pepper.
-
-
-
->                                                                                                                                -= Kitchen =-0/65
 AGENT -------------------------------------------------
 look at the stove.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -908,23 +956,14 @@ Useful for frying things.
 
 
 
->                                                                                                                                -= Kitchen =-0/66
-AGENT -------------------------------------------------
-look at the oven.
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Useful for roasting things.
-
-
-
->                                                                                                                                -= Kitchen =-0/67
+>                                                                                                                                -= Kitchen =-0/65
 AGENT -------------------------------------------------
 look at the counter again.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 You can't see any such thing.
 
->                                                                                                                                -= Kitchen =-0/67
+>                                                                                                                                -= Kitchen =-0/65
 AGENT -------------------------------------------------
 look at the table.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -933,14 +972,14 @@ The table is undependable.
 
 
 
->                                                                                                                                -= Kitchen =-0/68
+>                                                                                                                                -= Kitchen =-0/66
 AGENT -------------------------------------------------
 look at the cookbook on the counter.
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 You can't see any such thing.
 
->                                                                                                                                -= Kitchen =-0/68
+>                                                                                                                                -= Kitchen =-0/66
 AGENT -------------------------------------------------
 look at the fridge.
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
