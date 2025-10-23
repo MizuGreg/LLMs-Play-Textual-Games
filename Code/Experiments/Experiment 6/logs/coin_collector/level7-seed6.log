@@ -48,8 +48,21 @@ You don't like doors? Why not try going east, that entranceway is unblocked. The
 
 
 >                                                                                                                                -= Basement =-0/2
-AGENT -------------------------------------------------
-go east
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing a text-based game and has been given a series of directions. Their current location is the Basement, and they have to follow specific movements: south, east, south again, east again, then north, east, and finally retrieve a coin in the kitchenette.
+
+First, I need to track the user's progress. They started in the Recreation Zone, went south to the Basement. The next steps in their plan are to go east, then south, then east, then north, east, and finally get the coin. 
+
+Looking at the current environment in the Basement, the description mentions an unguarded exit to the north and an east entranceway that's unblocked. The user's next action, according to their plan, is to venture east. So the correct command here would be "go east". 
+
+I should make sure not to add any extra text and just output the command. The user might be testing if I follow the instructions correctly, so sticking strictly to the commands they listed is important. Also, the user asked if they're close to the goal, but the assistant isn't supposed to answer that; instead, the next action is to go east. 
+
+So the next step is "go east".
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -63,8 +76,19 @@ You need an unblocked exit? You should try going south. You don't like doors? Wh
 
 
 >                                                                                                                                -= Sauna =-0/3
-AGENT -------------------------------------------------
-go south
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text-based game and has a specific sequence of actions to follow. The original goal was to go south, then east, then south again, east again, north, east, and finally retrieve the coin from the kitchenette.
+
+So far, the user has gone south from the recreation zone to the basement, then east to the sauna. Now, in the sauna, the提示 says to try going south or west. The user's next action should follow the original plan. Let me check the steps again.
+
+Original steps: After going south once, then east, then south again, then east, then north, then east. So after the sauna, the next step was supposed to be south again. But the user is in the sauna now. The sauna's exit to the south is unblocked. So the next action should be going south. That would take them back to the basement, but according to the original plan, that's part of the sequence. Then after that, they need to go east again. But the user hasn't done that yet. Wait, the original instructions said after going south, east, then south again, then east again. So after the sauna, going south would take them back to the basement. Then from the basement, they need to go east again. But the basement's exit to the north is unblocked, but the user was previously in the basement and went east to the sauna. Wait, maybe the path is a loop. Let me think again.
+
+The user's current location is the sauna. The original plan was to go south (from recreation to basement), then east (basement to sauna), then south (sauna to basement again?), then east (basement to sauna again?), then north (sauna to basement?), then east (basement to sauna?), and then find the coin. But that seems like a loop. Maybe the original plan is to go through certain areas to reach the kitchenette. Alternatively, maybe the user is supposed to follow the directions given in the game's prompts. In the sauna, the prompt says to try going south. So the next action should be south. Then, after that, the user would be in the basement again. Then, from the basement, the next step in the original plan was to go east again, but the basement's east exit was already used to go to the sauna. Wait, maybe the user is supposed to go north from the basement? But the original plan said after going south, east, then south again, then east again. Hmm, perhaps the user is following the correct path, and the next step is to go south from the sauna. So the correct next action is south.
+</think>go south
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -78,8 +102,15 @@ You don't like doors? Why not try going east, that entranceway is unblocked. The
 
 
 >                                                                                                                                -= Cookhouse =-0/4
-AGENT -------------------------------------------------
-go east
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text-based game and has been moving through different rooms: Recreation Zone, Basement, Sauna, and now Cookhouse. The original goal was to take a trip south, then east, then south again, east again, then north, east, and finally recover the coin in the kitchenette.
+
+So far, the user has gone south from Recreation Zone to Basement, then east to Sauna, south to Cookhouse. The next step according to the original plan was to go east again. The current room is Cookhouse, and the available exits are east and north. The user's next action should be to go east as per the plan. The response should just be "go east" without any extra text.
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -98,21 +129,15 @@ Think about it, and then say your next action. Remember to only say the command 
 
 SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 <think>
-Okay, let's see. The user is playing this text-based game and has been moving through different rooms: Recreation Zone, Basement, Sauna, Cookhouse, and now Lounge. The original goal was to take a trip south, then east, then south again, east again, then north, east again, and finally recover the coin from the kitchenette.
+Okay, let's see. The user is playing this text-based game and has been moving through different rooms: Recreation Zone, Basement, Sauna, Cookhouse, and now Lounge. The original goal was to take a trip south, then east, then south again, east again, then north, east again, and finally recover the coin in the kitchenette.
 
-So far, the user has followed the instructions step by step. They started by going south from the Recreation Zone to the Basement, then east to the Sauna, south to the Cookhouse, east to the Lounge. Now, in the Lounge, they have exits to the north and west. 
+So far, the user has gone south from Recreation Zone to Basement, then east to Sauna, south to Cookhouse, east to Lounge. Wait, the current location is Lounge. The next steps according to the original instructions were after getting to the Lounge, maybe? Let me check the original instructions again.
 
-The next steps according to the original instructions were to go north, then east, then recover the coin. But in the current room (Lounge), the available exits are north and west. The user needs to go north first. Let me check the previous steps again to make sure. 
+Original instructions: After going south, east, south, east, north, east, then recover the coin in the kitchenette. So after the initial movements, the user needs to go north from Lounge (since Lounge has a north exit), then east again. But the user is now in Lounge, and the next action would be to go north. But the user's last action was going east to Lounge. Wait, the user's path so far is:
 
-Original instructions: After going east in the Cookhouse, the next was to go north, then east, then recover the coin. Wait, the user is now in the Lounge. So after the Lounge, the next step should be north. But the user's next action should be to go north from the Lounge. However, the user's last action was going east to the Lounge. So the next step is to go north from the Lounge. Then, after that, maybe east again? But the user needs to recover the coin from the kitchenette. 
+Recreation Zone (south) -> Basement (east) -> Sauna (south) -> Cookhouse (east) -> Lounge (north? Or west? Wait, in the Lounge description, there's an unblocked exit to the north and west. So the user is in Lounge, and the next step according to the original plan would be to go north from Lounge, then east. But the user hasn't done that yet. However, the user's last action was going east to Lounge. So the next step would be to go north from Lounge. But the user's current location is Lounge, and the next action would be to go north. But the user's previous actions were following the path: south, east, south, east. Now in Lounge, the next step according to the original plan is to go north. Then, after that, east again. Then, recover the coin in the kitchenette.
 
-Wait, the original goal was to recover the coin from the kitchenette. So maybe the coin is in the kitchenette, which is part of the basement? Or perhaps in the Cookhouse? The user hasn't found the coin yet. So after moving through the rooms, they need to check the kitchenette. But the current room is the Lounge. So perhaps after going north from the Lounge, they would enter a room that leads to the kitchenette. Alternatively, maybe the coin is in the Cookhouse or another room. 
-
-But according to the instructions, after going east in the Lounge, the next step is to go north. Wait, no. The original instructions said: after going east in the Cookhouse, go north, then east, then recover the coin. So after the Lounge, the next step is to go north. Let me check the previous steps again. 
-
-The user's path so far: Recreation Zone (south) -> Basement (east) -> Sauna (south) -> Cookhouse (east) -> Lounge (now). So the next step is to go north from the Lounge. Then, after that, maybe east again? But the user's original plan was to go north, then east, then recover the coin. So after going north from the Lounge, they would enter a room (maybe the Cookhouse again?), then go east to another room, and then find the coin. 
-
-Alternatively, maybe the coin is in the kitchenette, which is part of the basement. But the user hasn't checked there yet. However, the user's current position is the Lounge. So the next step is to go north from the Lounge. The user should follow the instructions step by step. The original goal was to go south, east, south, east, north, east, then recover the coin. So after the Lounge, the next step is north. So the correct action here is to go north.
+But the user hasn't reached the kitchenette yet. So the next action should be to go north from Lounge. But the user is in Lounge, and the next command would be "go north". However, the user's previous steps were moving east and south, so maybe the user is on the right path. The user is in Lounge, which is part of the path. The next step is to go north from Lounge, then east again. Then, perhaps the kitchenette is in one of those areas. So the correct next action is "go north".
 </think>go north
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -127,8 +152,15 @@ You need an unblocked exit? You should try going east. You don't like doors? Why
 
 
 >                                                                                                                                -= Workshop =-0/6
-AGENT -------------------------------------------------
-go east
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user has been moving through different rooms in the game: Recreation Zone, Basement, Sauna, Cookhouse, Lounge, and now Workshop. The original goal was to take a trip south, then east, then south again, east again, north, east again, and finally recover the coin in the kitchenette.
+
+So far, the user has gone south from Recreation Zone to Basement, then east to Sauna, south to Cookhouse, east to Lounge, north to Workshop. Now, in the Workshop, the directions mentioned are east and south. The next step according to the original plan was to go east again. But the user's current position is Workshop, and the next action should be east as per the previous pattern. However, the user might need to check if the coin is in the kitchenette, which is probably in a different area. But according to the instructions, after reaching the Workshop, the next step is to go east. So the correct action here is to go east.
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -143,6 +175,13 @@ There is a coin on the floor.
 
 
 >                                                                                                                                -= Kitchenette =-0/7
-AGENT -------------------------------------------------
-take coin
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user's goal is to recover the coin from the floor of the kitchenette. The previous steps have led them to the Kitchenette room, where the coin is already mentioned as being on the floor.
+
+The current room is the Kitchenette, and the user needs to pick up the coin. The available exits are west, but the main task is to collect the coin. Since the coin is on the floor, the next logical step is to pick it up. However, the system's response doesn't mention a 'pick up' command, so maybe the correct action is to take the coin directly. The user's last action was entering the Kitchenette, so the next step should be to retrieve the coin. The answer should be "take coin" or similar. But the system might expect "get coin" or "pick up coin". Since the user's previous commands were directional, but now the action is to interact with the coin, the correct command here is to take the coin.
+</think>take coin
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
