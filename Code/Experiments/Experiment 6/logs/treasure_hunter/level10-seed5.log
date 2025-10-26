@@ -48,8 +48,15 @@ There is an exit to the east. Don't worry, it is unguarded. You need an unblocke
 
 
 >                                                                                                                                -= Kitchenette =-0/2
-AGENT -------------------------------------------------
-go east
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is in a text-based game where they need to follow specific directions to reach the fondue in the cookhouse. So far, they've gone north from the bedroom into the kitchenette. The next steps according to the initial instructions were to go east, then south, then east again, and finally pick up the fondue.
+
+In the kitchenette, the user can exit east or south. The original plan was to go east first. But the user is now asking if they're on the right track. The assistant needs to confirm that going east is the correct next step. The kitchenette has an exit to the east, so moving east would be the next logical step. Then, after that, they need to go south, then east again to reach the cookhouse. The user hasn't picked up the fondue yet, so the next actions should follow the sequence: east, south, east, then pick up the fondue. The current location is the kitchenette, so the next action should be to go east. The user's previous action was going north, then the current step is to go east. The assistant should respond with "go east" as the next command.
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -64,8 +71,15 @@ There is a disk on the floor.
 
 
 >                                                                                                                                -= Study =-0/3
-AGENT -------------------------------------------------
-go south
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is in a text-based game where they need to navigate through different rooms and collect items. The original goal was to pick up the fondue from the cookhouse. So far, they've gone north from the bedroom to the kitchenette, then east to the study. Now they're in the study, which has a disk on the floor.
+
+The user is asking if they're on the right track and close to the goal. The disk in the study might be a clue or a red herring. The original goal is the fondue in the cookhouse. The current room is the study, so the next step would be to check if there's a path leading to the cookhouse. The exits here are south and west. The south exit is unblocked, and the west is unguarded. Since the cookhouse hasn't been mentioned yet, maybe the study is part of the path. The user needs to continue moving towards the cookhouse. The next logical step would be to go south from the study to reach the cookhouse. So the next action should be 'go south'.
+</think>go south
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -79,8 +93,17 @@ You need an unguarded exit? You should try going east. You don't like doors? Why
 
 
 >                                                                                                                                -= Chamber =-0/4
-AGENT -------------------------------------------------
-go east
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is navigating through different rooms in a text-based game. The original goal was to pick up the fondue from the cookhouse. So far, they've gone north from the bedroom to the kitchenette, then east to the study, then south back to the chamber. 
+
+In the chamber, the clues mention exits to the east and north, and there's a disk on the floor. The user is supposed to pick up the fondue, which they haven't done yet. The disk might be a red herring or part of the puzzle. Since the cookhouse hasn't been mentioned in the current room, maybe the next step is to check the exits again.
+
+The user's last action was going south from the study to the chamber. Now, in the chamber, the options are east or north. The original path was north, then east, then south. Maybe the cookhouse is in a different direction. Wait, the initial instructions said to go north, then east, then south, then east again. But the user is now in the chamber. Maybe the cookhouse is in the east direction from here. Let me check the previous rooms. The kitchenette had an east exit, but that led to the study. The chamber's east exit hasn't been explored yet. So the next logical step would be to go east from the chamber to check that area, which might lead to the cookhouse where the fondue is. Alternatively, going north from the chamber might lead back to the study. But since the user needs to pick up the fondue, which is in the cookhouse, the correct path would be to go east from the chamber. So the next action should be go east.
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -95,13 +118,13 @@ There is a fondue on the floor.
 
 
 >                                                                                                                                -= Cookhouse =-0/5
-AGENT -------------------------------------------------
-pick-up fondue
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
 
-That's not a verb I recognise.
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let me try to figure out what's going on here. The user is playing a text-based game where they have to navigate through different rooms and pick up a fondue from the cookhouse. The goal seems to be to follow a series of directions: go north, then east, then south, then east again, and finally pick up the fondue.
 
->                                                                                                                                -= Cookhouse =-0/5
-AGENT -------------------------------------------------
-pick up fondue
+So far, the user has moved from the bedroom north to the kitchenette, then east to the study, south back to the chamber, and then east into the cookhouse. The current room is the cookhouse, where there's a fondue on the floor. The user's next step should be to pick up the fondue. But the game's instructions mention that after going east twice, they need to pick up the fondue. Since they're already in the cookhouse, the next action should be to take the fondue. However, the user's previous actions have been moving around, and the last command was "go east" to reach the cookhouse. Now, the correct action would be to pick up the fondue. But the system message says to only output the action, like "go north". So the answer should be "take fondue" or something similar. But I need to check if the game uses "take" or "pick up" as the command. Since the user was told to "pick-up the fondue", maybe the correct command is "pick up". But the example given in the initial instructions was "go north", so maybe the correct command here is "take fondue". Alternatively, maybe the game expects "get fondue". But in the context of TextWorld, the correct command is usually "take" followed by the item. So the next action should be "take fondue".
+</think>take fondue
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

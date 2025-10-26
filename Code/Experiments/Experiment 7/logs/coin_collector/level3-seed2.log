@@ -48,8 +48,20 @@ You don't like doors? Why not try going east, that entranceway is unguarded. The
 
 
 >                                                                                                                                -= Kitchen =-0/2
-AGENT -------------------------------------------------
-go east
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is in the Kitchen, having come from the Spare Room. The goal is to lift the coin from the bedchamber. So first, I need to recall the steps mentioned in the initial prompt. The user was told to go north, then east, and then lift the coin.
+
+In the Spare Room, they went north to the Kitchen. Now, in the Kitchen, the next step according to the initial instructions was to go east. The user hasn't done that yet. The Kitchen has an exit to the south and an unguarded east entranceway. So the next logical step is to go east from the Kitchen. 
+
+Looking at the current location, the user is in the Kitchen. The previous action was going north from the Spare Room. The next step should be going east in the Kitchen. The user hasn't explored east yet, so that's the next move. There's no indication of a loop here because the directions are different. The user needs to proceed east to continue towards the bedchamber where the coin is. So the next command should be "go east".
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -64,13 +76,41 @@ There is a coin on the floor.
 
 
 >                                                                                                                                -= Bedchamber =-0/3
-AGENT -------------------------------------------------
-lift the coin
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing a text adventure game. The goal is to lift the coin from the bedchamber. So far, they've gone north from the spare room to the kitchen, then east to the bedchamber. Now, in the bedchamber, there's a coin on the floor.
+
+First step: The goal is to lift the coin. The user has already reached the bedchamber, which is the location where the coin is. The next step should be to pick up the coin.
+
+Second step: Past actions are going north, then east. Now, in the bedchamber, the next action is to take the coin. The user might have already tried that, but maybe they didn't. Wait, the prompt says "lift the coin from the floor of the bedchamber. That's it!" So the final step is lifting the coin. The user is in the bedchamber, so the next action is to take the coin.
+
+Third step: Check if there's a loop. The user has moved from spare room to kitchen to bedchamber. No loops detected here. So the next action is to take the coin. The command should be "take coin" or "lift coin". The game might expect "take" or "lift". Since the instruction says "lift the coin", maybe "lift coin" is the correct command. But in text adventures, sometimes "take" is used. But the user's previous action was "go north" and "go east", so following the instructions, the next step is to lift the coin. So the answer is "lift coin".
+</think>lift coin
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 That's not a verb I recognise.
 
 >                                                                                                                                -= Bedchamber =-0/3
-AGENT -------------------------------------------------
-pick up the coin
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is trying to play TextWorld and has encountered an issue where "lift coin" wasn't recognized. The goal is to figure out the correct steps to win the game.
+
+First, I need to recall the original instructions. The user was told to venture north, then east, and lift the coin from the bedchamber. But in the current scenario, they're in the Bedchamber, and the coin is on the floor. The problem is that "lift coin" isn't a valid command here.
+
+So, maybe the correct verb is "pick up" instead of "lift". In many text adventures, "take" or "pick up" are the standard commands for拾取 items. The game might be expecting "take coin" or "pick up coin". Since "lift" didn't work, the next step is to try a synonym.
+
+Looking at the previous steps: the user went north to the Kitchen, then east to the Bedchamber. Now, they need to pick up the coin. The error message indicates that "lift" isn't recognized, so switching to "take" or "pick up" would be the right move. The next action should be "take coin" or "pick up coin". Since the user's previous action was "lift coin", which failed, the correct command here is likely "take coin".
+</think>take coin
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

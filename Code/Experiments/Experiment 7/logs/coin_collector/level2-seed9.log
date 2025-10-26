@@ -49,6 +49,22 @@ There is a coin on the floor.
 
 
 >                                                                                                                                -= Bedchamber =-0/2
-AGENT -------------------------------------------------
-pick up coin
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is in a text adventure game. The first objective is to head south, then pick up the coin in the bedchamber, and then win. 
+
+Looking at the current situation: The user just moved south from the basement to the bedchamber. The bedchamber has a coin on the floor. The next step is to pick up the coin. But the user's last action was "go south", which was the first step. Now, they need to pick up the coin. However, in text adventures, picking up items usually requires a command like "take coin" or "pick up coin". 
+
+Wait, the user's previous action was "go south", which was correct. Now, in the bedchamber, the coin is on the floor. So the next step is to pick up the coin. But the user might have already done that? Wait, no. The user is at the bedchamber, and the coin is on the floor. So the next action should be to take the coin. Then, after taking it, the game would be won. 
+
+But the user's last message shows that they are in the bedchamber, and the coin is there. So the next action is to pick up the coin. The user needs to say "take coin" or "pick up coin". But the user's previous action was "go south", which was the first step. Now, the second step is to pick up the coin. Then, once that's done, the game is won. 
+
+So the next command should be "take coin" or "pick up coin". But the user's last action was "go south", and now they need to do the next step. The answer should be "take coin".
+</think>take coin
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

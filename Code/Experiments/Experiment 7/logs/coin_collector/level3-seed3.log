@@ -48,8 +48,24 @@ You need an unblocked exit? You should try going east. You need an unguarded exi
 
 
 >                                                                                                                                -= Basement =-0/2
-AGENT -------------------------------------------------
-go east
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is playing a text-based game where they need to navigate through different rooms and retrieve a coin to win. The initial steps mentioned were to go north, then east, get the coin from the bedroom, and then win.
+
+First, I need to recall the current state. The user started in the kitchenette, went north to the basement. The basement has options to go east or south. The next step according to the original plan was to retrieve the coin from the bedroom. But the user is now in the basement, so maybe they need to move east to reach the bedroom.
+
+Wait, the user's previous action was going north to the basement. The basement's description says to go east or south. The original plan was to go north, then east. So after going north to the basement, the next step should be east. But the user hasn't done that yet. So the next action should be going east from the basement.
+
+But the user's last input was the basement, and the assistant's previous response was "go north". Now, the user is in the basement, and the next step is to go east. So the next action should be "go east". But I need to check if that's the correct path. The original plan was to go north (kitchenette to basement), then east to reach the bedroom where the coin is. So yes, going east from the basement would lead to the bedroom. Then, retrieve the coin and win.
+
+So the next step is to go east. But the user might be in a loop if they keep going back and forth. But according to the current state, the basement's east is unblocked, so going east should proceed. Therefore, the next action is "go east".
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -64,6 +80,16 @@ There is a coin on the floor.
 
 
 >                                                                                                                                -= Bedroom =-0/3
-AGENT -------------------------------------------------
-take the coin
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing a text adventure game, and they need to follow specific steps to win. The goal is to venture north, then east, retrieve the coin from the bedroom floor, and then win.
+
+So far, the user has gone north from the kitchenette to the basement, then east to the bedroom. Now they're in the bedroom, which is the third step. The next thing they need to do is pick up the coin on the floor. The current prompt mentions there's a coin on the floor, so the next action should be to pick it up. The user has already taken the first two steps (north and east), so the third step is retrieving the coin. The command should be "take coin" or "pick up coin". Since the game might expect a specific verb, "take" is probably correct. I need to make sure not to repeat previous actions and that the next step is logically following the goal.
+</think>take coin
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

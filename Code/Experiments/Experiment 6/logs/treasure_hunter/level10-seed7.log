@@ -48,8 +48,19 @@ You don't like doors? Why not try going north, that entranceway is unblocked. Th
 
 
 >                                                                                                                                -= Dish-Pit =-0/2
-AGENT -------------------------------------------------
-go west
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is in a text-based game called TextWorld. The goal is to recover the key from the washroom floor and win. So far, they've gone north from the bedroom into the dish-pit. The current location is the dish-pit, which has exits to the north, south, and west. The user is asking if they're making the right moves and if they're close to the goal.
+
+First, I need to recall the previous steps. The user started by going north from the bedroom, which led them to the dish-pit. The next steps mentioned in the initial instruction were to go west, then north again, east, and finally retrieve the key. But the user is now at the dish-pit and is asking if they're on the right track.
+
+Looking at the current room description: the dish-pit has an unblocked exit to the north and south. The west exit is mentioned as unblocked as well. The user's next action in the previous step was to go west. Wait, the user's last action was going north from the bedroom, leading to the dish-pit. The next instruction in the initial prompt was to try going west. So the user should go west from the dish-pit next. But the user is now asking if they're making the right moves, so maybe they're confused about the path.
+
+But the user is asking if they're close to the goal. The key is in the washroom, so the path must lead to the washroom. The current room is the dish-pit. From there, going west might lead to another area. The user's next action should be to go west. However, the user's previous action was going north, then the next step was to go west. But the user is now at the dish-pit and is asking for the next move. The initial instructions said to go north, then west, then north again, east, then get the key. So after the dish-pit, going west would be the next step. But the user is asking if they're on the right track. The assistant should confirm that going west is the correct next step. So the next command should be "go west".
+</think>go west
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -64,37 +75,17 @@ There is a keycard on the floor.
 
 
 >                                                                                                                                -= Lounge =-0/3
-AGENT -------------------------------------------------
-go north
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
 
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is trying to navigate through different rooms in TextWorld. The goal is to recover the key from the washroom floor and then win. So far, they've gone north from the bedroom into the dish-pit, then west to the lounge. Now, in the lounge, there's a keycard on the floor.
 
--= Parlor =-
-You've entered a parlor.
+The next step would be to pick up the keycard. But the user's previous actions were moving around, so maybe they need to collect items. The keycard is in the lounge, so the correct action here is to take the keycard. Then, they need to find the washroom. But the current room is the lounge, so maybe they need to go north again to reach the washroom. However, the user's next move should be to pick up the keycard first. Wait, the problem says to recover the key from the washroom floor. But in the lounge, there's a keycard on the floor. Maybe that's the key they need. So taking the keycard would be the next step. Then, they need to go to the washroom. But the current room is the lounge, so maybe going north from here would lead to the washroom. Let me check the previous steps again.
 
+The user was in the lounge, and the next action is to take the keycard. Then, they need to go to the washroom. But the instruction says to recover the key from the washroom floor. Wait, maybe the keycard in the lounge is not the one from the washroom. Hmm, maybe there's a confusion here. Let me retrace.
 
-
-There is an exit to the east. Don't worry, it is unblocked. There is an exit to the south. Don't worry, it is unblocked.
-
-
-
->                                                                                                                                -= Parlor =-0/4
-AGENT -------------------------------------------------
-go east
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
--= Washroom =-
-Guess what, you are in a place we're calling a washroom.
-
-
-
-You don't like doors? Why not try going south, that entranceway is unguarded. There is an unguarded exit to the west.
-
-There is a key on the floor.
-
-
->                                                                                                                                -= Washroom =-0/5
-AGENT -------------------------------------------------
-take key
+Original instructions: recover the key from the floor of the washroom. But in the current room (lounge), there's a keycard on the floor. Maybe that's the key they need. So taking the keycard would be the correct action here. Then, they need to go to the washroom. But how? The user needs to find the path to the washroom. The previous rooms were bedroom -> dish-pit -> lounge. Maybe from the lounge, going north leads to the washroom. So after taking the keycard, go north to the washroom, then pick up the key from the floor. But the user's next action is to take the keycard in the lounge. So the next command should be "take keycard".
+</think>take keycard
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

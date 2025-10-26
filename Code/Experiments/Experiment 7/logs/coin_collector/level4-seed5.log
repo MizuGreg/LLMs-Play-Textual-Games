@@ -48,8 +48,18 @@ You don't like doors? Why not try going east, that entranceway is unguarded. You
 
 
 >                                                                                                                                -= Kitchenette =-0/2
-AGENT -------------------------------------------------
-go east
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is in a text-based game where they need to follow specific directions. The first objective is to go north, then east, then south, and finally retrieve a coin.
+
+Looking at the current environment, the user is in the Kitchenette. The previous action was "go north", which led them here. The current room's description mentions trying east or south. The user's next step should be to go east as per the initial goal. But the system message says to check if there's a loop. Since the user has already gone north and is now in the Kitchenette, going east would be the next step. The next step after east would be south, then retrieve the coin. Since the user hasn't done any of those yet, the next action is to go east.
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -63,8 +73,24 @@ You don't like doors? Why not try going south, that entranceway is unguarded. Th
 
 
 >                                                                                                                                -= Study =-0/3
-AGENT -------------------------------------------------
-go south
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text-based game where they have to navigate through different rooms and complete certain tasks. The goal is to go north, then east, then south, and finally retrieve a coin from a chamber.
+
+First, I need to recall the previous steps. The user started in the Cookhouse, went north to the Kitchenette, then east to the Study. Now they're in the Study. The current room's description says there's an unblocked exit to the west. The user's next step should be to go south, as per the initial objective. But wait, the Study's prompt says to try going south because that entranceway is unguarded. However, the user has already gone north, east, and now is in the Study. The next step in the objective is to go south. But the Study's description mentions a west exit. Hmm, maybe the user is getting confused between directions.
+
+Wait, the original task was: first go north, then east, then south. So after the Study, the next step should be to go south. But the Study's prompt says to try going south, which is unguarded. So the user should go south from the Study. But the current room's description says there's an unblocked exit to the west. Maybe the user is in a loop? Let me check the path again.
+
+Starting in Cookhouse, go north to Kitchenette, then east to Study. Now, from Study, the options are south or west. The user's next step is to go south, as per the objective. But the Study's description says "try going south, that entranceway is unguarded." So the correct action is to go south. However, if the user is in a loop, maybe they need to use a synonym. But the user hasn't repeated the same action. The previous actions were north, east, and now south. So the next step is to go south. But the Study's description says there's a west exit. Wait, maybe the user is supposed to go west instead? But the objective is to go south next. Maybe the user is in a loop between rooms. Let me think again.
+
+The initial steps were: go north (done), then east (done), then south (next). So from the Study, going south would be the next step. But the Study's prompt says to try going south. So the correct action is to go south. The user should do that. The answer should be "go south".
+</think>go south
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -79,37 +105,18 @@ There is a coin on the floor.
 
 
 >                                                                                                                                -= Chamber =-0/4
-AGENT -------------------------------------------------
-go north
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
 
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text-based game where they have to navigate through different rooms and retrieve a coin. The goal is to go north, then east, then south, and finally get the coin from the chamber.
 
--= Study =-
-You are in a study. An ordinary one.
+So far, the user has moved from the Cookhouse to the Kitchenette, then to the Study, and now they're in the Chamber. The current room is the Chamber, and they've already completed the first three steps: going north, east, and south. The next step is to retrieve the coin on the floor.
 
-
-
-You don't like doors? Why not try going south, that entranceway is unguarded. There is an unblocked exit to the west.
-
-
-
->                                                                                                                                -= Study =-0/5
-AGENT -------------------------------------------------
-go south
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
--= Chamber =-
-You find yourself in a chamber. A standard kind of place. I guess you better just go and list everything you see here.
-
-
-
-You need an unblocked exit? You should try going north.
-
-There is a coin on the floor.
-
-
->                                                                                                                                -= Chamber =-0/6
-AGENT -------------------------------------------------
-pick up coin
+Looking at the previous actions, the user went north from Cookhouse, then east from Kitchenette, then south from Study to reach the Chamber. Now, in the Chamber, the coin is on the floor. The next logical step is to pick up the coin. The prompt says to retrieve the coin from the floor of the chamber. So the correct action here is to take the coin. The user hasn't done that yet, so the next command should be "take coin" or "get coin". Since the game uses "take" as the command, I'll go with that.
+</think>take coin
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

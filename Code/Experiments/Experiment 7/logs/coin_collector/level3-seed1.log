@@ -48,8 +48,22 @@ You need an unblocked exit? You should try going east. You don't like doors? Why
 
 
 >                                                                                                                                -= Spare Room =-0/2
-AGENT -------------------------------------------------
-go east
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is playing a text-based game where they need to follow specific steps to win. The goal is to move south, then east, pick up the coin, and win. 
+
+First, the user started in the Cookhouse and moved south to the Spare Room. The next step was to go east as instructed. But in the current prompt, the user is in the Spare Room and the system is prompting them to go east or north. The user's previous action was moving south, which is the first step. Now, the next step should be going east.
+
+Wait, the user's last action was "go south", which took them to the Spare Room. The next step in the goal is to take a trip east. So from the Spare Room, they need to go east. But the system message says that in the Spare Room, the user is told to try going east or north. The user hasn't gone east yet, so the next action should be "go east".
+
+But the user might be in a loop if they keep going back and forth. However, the instructions say that after moving south, they should go east. So the next step is definitely east. The user hasn't done that yet, so the correct next action is "go east".
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -64,6 +78,16 @@ There is a coin on the floor.
 
 
 >                                                                                                                                -= Studio =-0/3
-AGENT -------------------------------------------------
-pick up coin
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing a text-based game where they need to follow specific steps to win. The goal is to move south, then east, pick up the coin, and win. Let me break down the current situation.
+
+First, the user started in the Cookhouse, moved south to the Spare Room, then east to the Studio. Now they're in the Studio, which has a coin on the floor. The next step according to the initial instructions was to pick up the coin. The user's last action was going east, which led them to the Studio. Now, they need to pick up the coin. The prompt says to pick up the coin from the floor of the studio and then win. So the next action should be to pick up the coin. The previous steps have been completed: moving south, then east. The coin is now in the Studio, so the next step is to pick it up. There's no loop here because each action leads to a new room. The user needs to pick up the coin, which is the final step before winning. So the correct command is to pick up the coin.
+</think>pick up the coin
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

@@ -48,8 +48,19 @@ There is an unblocked exit to the east. There is an unguarded exit to the west.
 
 
 >                                                                                                                                -= Bedroom =-0/2
-AGENT -------------------------------------------------
-go west
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text-based game. The goal is to go west, then pick up the broom from the basement, and then win. So far, they started in the kitchenette, went west into the bedroom. Now, the current room is the bedroom. The exits are east and west.
+
+The user is asking if they're on the right track and if they're close to the goal. The original plan was to go west from the kitchenette, which they did, entering the bedroom. Now, they need to find the basement to get the broom. But the bedroom's exits are east and west. The basement isn't mentioned here. Maybe the basement is accessible from the bedroom through one of the exits?
+
+Wait, the initial instruction said to first venture west, which they did. Then, after getting through, travel west again? Or maybe the basement is west from the bedroom? The user is in the bedroom now. The exit to the west is unguarded. So maybe going west from the bedroom leads to the basement? Alternatively, maybe the basement is east? But the user needs to get to the basement to pick up the broom. 
+
+The original goal was to go west (from kitchenette), then pick up the broom in the basement. So perhaps the basement is west of the bedroom? Or maybe the bedroom is part of the path to the basement. The user needs to check the west exit from the bedroom. Let me think: the user is in the bedroom, and the west exit is unguarded. So they should go west from here. That would take them to the next room, maybe the basement. Then, in the basement, they can pick up the broom and win. So the next action should be to go west again.
+</think>go west
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -64,6 +75,13 @@ There is a broom and a fly larva on the floor.
 
 
 >                                                                                                                                -= Basement =-0/3
-AGENT -------------------------------------------------
-pick up broom
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text-based game where they need to navigate through different rooms and collect the broom to win. So far, they've gone west from the kitchenette into the bedroom, then west again into the basement. Now, in the basement, they see a broom and a fly larva on the floor.
+
+The original goal was to venture west, then pick up the broom from the basement. The user has already reached the basement, which is the third room. The next step should be to pick up the broom. But the current description says there's a broom on the floor. So the correct action here is to pick up the broom. However, in text adventures, sometimes you need to pick up items by using a command like "take broom" or "get broom". But the user's previous actions were just moving west, so maybe the game expects them to pick up the broom directly. Wait, the original instruction said "pick-up the broom from the floor of the basement." So the user is in the basement, and the broom is there. The next action should be to pick up the broom. But the user's last input was "go west" which led them to the basement. Now, they need to take the broom. But the system message says to only output the action, like "go north". So the correct command here is "take broom" or "get broom". However, in some text games, you just pick up items without a specific command, but based on the previous interactions, the user has been using "go west" to move. Wait, in the basement description, the user is told there's a broom and a fly larva. So the next step is to pick up the broom. The correct command would be "take broom" or "get broom". But the user's previous actions were just moving, so maybe the game expects "take broom" as the next action. However, the user's last action was "go west" which led them to the basement. Now, they need to pick up the broom. So the next command should be "take broom".
+</think>take broom
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

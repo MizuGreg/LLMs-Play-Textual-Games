@@ -48,8 +48,18 @@ There is an unguarded exit to the east. There is an exit to the west. Don't worr
 
 
 >                                                                                                                                -= Cookery =-0/2
-AGENT -------------------------------------------------
-go east
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is in a text-based game where they need to find a coin in the pantry and lift it to win. So far, they've gone east from the shower into the cookery. The next step is to figure out how to get to the pantry.
+
+First, the goal is to lift the coin from the pantry. The user has already moved east once, which took them from the shower to the cookery. Now, they need to proceed further east again because the cookery has an exit to the east. Going east again would take them to the next room, probably the pantry. Once there, they can lift the coin. But wait, the cookery's east exit is unguarded, so moving east is straightforward. After that, they need to check the pantry's floor for the coin. So the next action is to go east again from the cookery. Then, once in the pantry, lift the coin. But the user hasn't done that yet. So the next step is to go east again.
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -64,64 +74,18 @@ There is a coin on the floor.
 
 
 >                                                                                                                                -= Pantry =-0/3
-AGENT -------------------------------------------------
-lift the coin
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
 
-That's not a verb I recognise.
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is trying to navigate through these different rooms in TextWorld. The goal is to lift the coin from the pantry and win. Let me break down the steps.
 
->                                                                                                                                -= Pantry =-0/3
-AGENT -------------------------------------------------
-lift the coin
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Pantry =-0/3
-AGENT -------------------------------------------------
-lift the coin
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Pantry =-0/3
-AGENT -------------------------------------------------
-lift the coin
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Pantry =-0/3
-AGENT -------------------------------------------------
-lift the coin
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Pantry =-0/3
-AGENT -------------------------------------------------
-lift the coin
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Pantry =-0/3
-AGENT -------------------------------------------------
-lift the coin
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Pantry =-0/3
-AGENT -------------------------------------------------
-lift the coin
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Pantry =-0/3
-AGENT -------------------------------------------------
-lift the coin
+First, the initial steps: they started in the shower, went east to the cookery, then east again to the pantry. Now they're in the pantry, which is the third room. The coin is on the floor here. So the next logical step is to pick up the coin. But the user's previous action was "go east", which might have been part of moving to the pantry. Wait, the current room is the pantry, so the next action should be to take the coin. But the user's last input was "go east" again, which might not be necessary anymore. Wait, the pantry's description says there's a coin on the floor. So the correct action here is to pick up the coin. The user needs to take the coin, which is the final step. So the next command should be "take coin" or "lift coin". Since the game mentions "lift the coin", maybe "lift coin" is the exact command needed. Let me check the previous steps again. The user was told to "lift the coin from the floor of the pantry" to win. So the correct action here is to lift the coin. The previous steps were moving east twice, now in the pantry, so the next step is to lift the coin. The answer should be "lift coin".
+</think>lift coin
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 That's not a verb I recognise.
@@ -135,10 +99,12 @@ FINALLY, say your next action as a short command. Only output the command, nothi
 
 SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 <think>
-Okay, let's see. The user is trying to play through this TextWorld game. The goal is to lift the coin in the pantry. They've already gone east twice, ending up in the pantry. Now they're trying to lift the coin, but the system keeps saying it's not a recognized verb.
+Okay, let's see. The user is trying to play through this TextWorld game. The goal is to lift the coin from the pantry and win. Let me break down the steps.
 
-Hmm, maybe the correct command is "pick up the coin" instead of "lift the coin"? The game might be expecting a different phrasing. Let me check the steps again. The user was told to "lift the coin from the floor of the pantry." But if "lift" isn't working, perhaps "take" or "pick up" is the right verb here.
+First, the user started in the shower, went east to the cookery, then east again to the pantry. Now they're in the pantry, which has a coin on the floor. The previous action was "lift coin", but the game didn't recognize it. So I need to figure out the correct verb here.
 
-Wait, in many text adventures, "take" is the standard command for picking up items. So maybe the user should use "take the coin" instead. Alternatively, "get the coin" might work. Since the system didn't recognize "lift," switching to a different verb could break the loop. The user has already tried "lift" multiple times, so changing the action to "take" would be the next step. That should be the correct command here.
-</think>take the coin
+In TextWorld, common verbs for picking up items are "take" or "get". Since the coin is on the floor, maybe "take coin" is the right command. The user tried "lift", which might not be the correct synonym here. So the next step is to use "take" instead.
+
+Looking back, the steps were: go east (done), then lift the coin (which failed). Now, the correct action should be "take coin". That should pick it up and complete the game. Let me make sure there's no loop. The user has already moved to the pantry, so the next action is to pick up the coin using the right verb.
+</think>take coin
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

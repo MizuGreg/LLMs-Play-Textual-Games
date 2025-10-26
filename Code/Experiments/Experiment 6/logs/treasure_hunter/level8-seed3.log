@@ -49,8 +49,17 @@ There is a broom on the floor.
 
 
 >                                                                                                                                -= Basement =-0/2
-AGENT -------------------------------------------------
-go east
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text-based game. The goal is to go north, then east, then east again, pick up the bug in the kitchenette, and win. But the current location is the basement.
+
+First, the user started by going north from the shower, which led them to the basement. The basement has an unguarded exit to the south and east. The prompt says to try going east because that entranceway is unguarded. The user was advised to go east again. So the next step should be to go east.
+
+Wait, the user's last action was going north, which took them to the basement. Now, the basement has exits to east and south. The original plan was to go north, then east, then east again. But after the first north, they're in the basement. So maybe the next step is to go east from the basement. The user was told to try going east, so that's the next action. The user's next command should be "go east".
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -64,8 +73,25 @@ There is an unblocked exit to the east. There is an unguarded exit to the west.
 
 
 >                                                                                                                                -= Bedroom =-0/3
-AGENT -------------------------------------------------
-go east
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text adventure game. The original goal was to go north, then east, then east again, pick up the bug in the kitchenette, and win. But the user ended up in the shower, then basement, then bedroom. 
+
+So far, the user has gone north from the shower to the basement, then east to the bedroom. The next step would be to check if they're moving towards the kitchenette. The original plan was to go north, east, east, then get the bug. But the current path is shower -> basement -> bedroom. Maybe the kitchenette is in a different direction.
+
+In the basement, there's a broom on the floor. The bedroom has exits east and west. The user is in the bedroom now. The original instruction said after going east twice, pick up the bug. But maybe the kitchenette is east from the basement? Or maybe the user needs to go south from the basement to get back?
+
+Wait, in the basement, the user was told to go east or south. They went east to the bedroom. Maybe the kitchenette is in the south direction from the basement. But the user is now in the bedroom. The original goal was to pick up the bug in the kitchenette. So maybe the user needs to go back south from the basement to reach the kitchenette?
+
+But the user is in the bedroom. The bedroom has an exit to the west (back to basement) and east. So maybe the next step is to go west back to the basement, then south to reach the kitchenette. But the original plan was to go east twice. Hmm, maybe the user is taking a wrong path. Alternatively, maybe the kitchenette is in the east direction from the bedroom? But the user hasn't found the bug yet.
+
+Alternatively, maybe the user needs to go east from the bedroom again. But the original plan was to go east twice. Wait, the initial instructions were: go north, then east, then east. So after going north (shower to basement), then east (basement to bedroom), then east again would be from bedroom to... but the bedroom's east exit is unblocked. If the user goes east from the bedroom, maybe that's the next step. But the user is in the bedroom now. So the next action should be to go east again, as per the original plan. But the user is in the bedroom, and the original goal was to pick up the bug in the kitchenette. Maybe the kitchenette is east of the bedroom? Or perhaps the user needs to go west back to the basement and then south.
+
+But the user is supposed to pick up the bug in the kitchenette. The user hasn't found it yet. So maybe the user needs to navigate to the kitchenette. The original path might not be correct. However, the user is following the initial instructions: go north, then east, then east. So after the first east (basement to bedroom), the next step is to go east again. So the user should go east from the bedroom. Let's check the current location: bedroom. The exits are east and west. So going east from the bedroom would be the next step. That's what the user should do according to the original plan. So the next action is go east.
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -80,71 +106,13 @@ There is a bug on the floor.
 
 
 >                                                                                                                                -= Kitchenette =-0/4
-AGENT -------------------------------------------------
-pick-up bug
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Kitchenette =-0/4
-AGENT -------------------------------------------------
-pick-up bug
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Kitchenette =-0/4
-AGENT -------------------------------------------------
-pick-up bug
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Kitchenette =-0/4
-AGENT -------------------------------------------------
-pick-up bug
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Kitchenette =-0/4
-AGENT -------------------------------------------------
-pick-up bug
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Kitchenette =-0/4
-AGENT -------------------------------------------------
-pick-up bug
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Kitchenette =-0/4
-AGENT -------------------------------------------------
-pick-up bug
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Kitchenette =-0/4
-AGENT -------------------------------------------------
-pick-up bug
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-That's not a verb I recognise.
-
->                                                                                                                                -= Kitchenette =-0/4
 Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
 Think about it, and then say your next action. Remember to only say the command and nothing else.
 
 SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 <think>
-Okay, let me try to figure out what's going on here. The user is playing a text-based game where they need to navigate through different rooms and pick up a bug to win. The current room is the Kitchenette, and there's a bug on the floor. The user has tried to pick up the bug multiple times, but the system keeps saying "That's not a verb I recognise." 
+Okay, let's see. The user has been moving through different rooms: shower, basement, bedroom, and now the kitchenette. The original goal was to go north, then east, then east again, pick up the bug in the kitchenette, and win.
 
-Hmm, maybe the correct command isn't "pick-up bug" but something else. In text adventures, common commands are like "take bug" or "get bug". The user might be using the wrong phrasing. Let me check the previous interactions. The user tried "pick-up bug" several times, but the system didn't accept it. So perhaps the correct verb is "take" instead of "pick-up".
-
-Also, the user is asking if they're making the right actions and if they're close to winning. The goal was to pick up the bug in the kitchenette. Since the system is not accepting "pick-up", maybe the correct command is "take bug". Let me try that. If that doesn't work, maybe "get bug" or "pick bug". But the user has to follow the system's accepted commands. Since the user is stuck, the next step is to try the correct verb. So the answer should be "take bug" or similar. But the user's previous attempts used "pick-up", which wasn't accepted. So maybe the correct command is "take".
-</think>take bug
+So far, the user went north from the shower to the basement, then east to the bedroom, then east again to the kitchenette. Now they're in the kitchenette, which is where the bug is. The next step is to pick up the bug. But the instruction says to pick it up from the floor of the kitchenette. So the correct action here is to pick up the bug. The user hasn't done that yet, so the next command should be to pick up the bug. Then, once that's done, they win. So the answer should be "pick up bug".
+</think>pick up bug
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

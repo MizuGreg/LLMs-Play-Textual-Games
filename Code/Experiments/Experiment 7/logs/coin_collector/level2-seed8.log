@@ -49,6 +49,16 @@ There is a coin on the floor.
 
 
 >                                                                                                                                -= Cubicle =-0/2
-AGENT -------------------------------------------------
-pick up coin
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is in a text-based game where they need to follow specific steps to win. The goal is to go east first, then pick up the coin in the cubicle, and then win.
+
+First, the user started by going east, which took them to the cubicle. Now, in the cubicle, the next step is to pick up the coin. But the current prompt says that the user is in the cubicle, and there's a coin on the floor. The previous action was going east, which led to the cubicle. The next logical step would be to pick up the coin. However, the user might need to check if there's a way to exit west back to the study, but the goal is to pick up the coin first. Wait, the instructions say after going east, pick up the coin in the cubicle, then win. So the next action should be to pick up the coin. But the user's last action was going east, which led to the cubicle. Now, the coin is on the floor, so the next step is to pick it up. However, the game might require moving west to exit, but the goal is to pick up the coin first. So the correct next action is to pick up the coin. But the user might be stuck if they can't move. Wait, the cubicle's description says "You need an unguarded exit? You should try going west." So maybe the user can go west to exit, but the coin is in the cubicle. The user needs to pick up the coin first. So the steps are: go east (done), then pick up the coin (next step), then exit west? But the win condition is after picking up the coin. Wait, the original goal was to go east, then pick up the coin, then win. So once the coin is picked up, the game is won. So the next action is to pick up the coin. But how? The user is in the cubicle. The coin is on the floor. So the command should be "pick up coin" or "take coin". But in the game's context, maybe the correct command is "take coin" or "get coin". However, the user's previous action was "go east", which led to the cubicle. Now, the next step is to pick up the coin. So the next command should be "take coin" or "pick up coin". But the game might require moving first. Wait, the user is already in the cubicle. The coin is on the floor, so the action is to pick it up. Therefore, the next command is "take coin".
+</think>pick up coin
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

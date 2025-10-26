@@ -49,8 +49,19 @@ There is a latchkey on the floor.
 
 
 >                                                                                                                                -= Attic =-0/2
-AGENT -------------------------------------------------
-go south
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is in a text-based game called TextWorld. Their task is to navigate through rooms and eventually retrieve a carrot. So far, they've gone east from the Spare Room into the Attic. The current room is the Attic, which has exits north, south, and west. There's also a latchkey on the floor.
+
+The user is asking if they're making the right moves and if they're close to the goal. The assistant needs to decide the next action. The previous steps were "go east" and then "go south" (from the Attic). Wait, no, looking back: the user first went east from the Spare Room, then the next prompt says they're in the Attic. The user's next action would be to go south, as per the initial instructions. But the user is now asking if they're on the right track.
+
+The initial task was to go east, then south, then west, then get the carrot. So after going east (to the Attic), the next step was supposed to be south. But in the Attic, the user is told to try going south. However, the current room is the Attic, and the user is at the Attic. The next step would be to go south from the Attic. But the user is asking if they're close. The assistant needs to confirm the next action.
+
+But the user's last action was "go east" leading to the Attic. Now, the next step according to the initial plan is to go south. However, in the Attic, the user is told to try going south. So the next action should be "go south". But the user is asking if they're making the right moves. The assistant should confirm that going south is the next correct step. However, the user's last input was the prompt after entering the Attic, and the user is now asking for the next action. The assistant needs to output the next command, which would be "go south".
+</think>go south
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -64,8 +75,53 @@ There is an unblocked exit to the north. There is an unblocked exit to the west.
 
 
 >                                                                                                                                -= Bedchamber =-0/3
-AGENT -------------------------------------------------
-go west
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user has been moving through different rooms in TextWorld. The original goal was to go east, then south, then west, and finally get the carrot from the floor of the chamber.
+
+First, they started in the Spare Room, went east to the Attic. Then they went south to the Bedchamber. Now, in the Bedchamber, there's an unblocked exit to the north and west. The next step according to the original plan was to go west after going south. But the user's last action was going south, so the next logical step would be to go west. However, the user is asking if they're on the right track and if they're close to the goal. 
+
+Looking at the rooms visited: Spare Room → Attic → Bedchamber. The original path required going east, then south, then west. The user has done east (to Attic), then south (to Bedchamber). The next step in the original plan was west, which would take them back to the Spare Room? Or maybe another room? But in the Bedchamber, the exits are north and west. Going west from Bedchamber would take them to the Spare Room, which was the starting point. But the carrot is supposed to be in the chamber (maybe the Bedchamber? Or another room?).
+
+Wait, the original task said to retrieve the carrot from the floor of the chamber. The user hasn't found the carrot yet. So maybe after going west from Bedchamber, they'd end up in the Spare Room, but the carrot isn't there. Alternatively, maybe the Bedchamber is the chamber where the carrot is. But in the Bedchamber description, there's no mention of a carrot. The Attic had a latchkey on the floor. The Spare Room was the starting point.
+
+Hmm, maybe the user needs to check the current room for the carrot. In the Bedchamber, maybe the carrot is there. But the user hasn't looked yet. The original plan was to go east, south, west, then get the carrot. So after going west from Bedchamber (which is the third step), they would be in the Spare Room. But the carrot is in the chamber. Wait, maybe the chamber is the Bedchamber? The original instruction says "the floor of the chamber". So perhaps the Bedchamber is the chamber. But in the Bedchamber, there's no mention of a carrot. The Attic had a latchkey. The Spare Room had nothing mentioned except the exit.
+
+Wait, maybe the user needs to check the current room for the carrot. So after moving to the Bedchamber, they should look around. But the user's next action is to go west. But the user is asking if they're close. Maybe they need to check the current room first. However, the original plan says after going west, retrieve the carrot. So perhaps the carrot is in the Bedchamber. But the user hasn't found it yet. So maybe the next step is to look for the carrot in the Bedchamber. But the user's last action was going south to the Bedchamber. The next step according to the original plan is to go west. But the user is asking if they're on the right track. 
+
+Alternatively, maybe the user should check the current room (Bedchamber) for the carrot. But the problem is that the user hasn't found it yet. The original plan says after going west, retrieve the carrot. So perhaps the carrot is in the room they'll reach after going west. But going west from Bedchamber takes them back to the Spare Room. The Spare Room's description doesn't mention a carrot. The Attic had a latchkey. So maybe the carrot is in the Bedchamber, and the user needs to look there. But the user hasn't checked yet. 
+
+But according to the original instructions, the user is supposed to go east, then south, then west, then get the carrot. So after going west, they would be in the Spare Room. But the carrot isn't there. So maybe the Bedchamber is the chamber where the carrot is. So after going south to Bedchamber, the next step is to look for the carrot there. But the user hasn't done that yet. So maybe the correct next action is to check the Bedchamber for the carrot. However, the user's next action is to go west, which would take them to the Spare Room. But that's not where the carrot is. 
+
+Alternatively, maybe the user made a mistake in the path. The original plan was to go east, then south, then west. But in the Bedchamber, going west would take them back to the Spare Room. Then, perhaps the carrot is in the Attic? But the Attic had a latchkey. 
+
+This is confusing. The user is following the steps as per the original plan: east, south, west. Now in the Bedchamber, the next step is west. But the carrot is supposed to be in the chamber. Maybe the Bedchamber is the chamber. So after going west, they would be in the Spare Room, but the carrot is in the Bedchamber. So the user needs to check the Bedchamber for the carrot. But the user hasn't done that yet. 
+
+So the user's next action should be to look for the carrot in the Bedchamber. But the user is supposed to go west first. However, the original plan says after going west, retrieve the carrot. So maybe the carrot is in the room they reach after going west. But that's the Spare Room, which doesn't have the carrot. 
+
+This suggests that maybe the user's path is incorrect. Alternatively, perhaps the Bedchamber is the chamber where the carrot is. So after going south to the Bedchamber, the user should look for the carrot there. But the user hasn't done that yet. 
+
+So the correct next action would be to look for the carrot in the Bedchamber. But the user's next action according to the original plan is to go west. However, the user is asking if they're on the right track. The answer is that they are, but they need to check the current room for the carrot. But the user is supposed to go west first. 
+
+Alternatively, maybe the user is supposed to go west, then check the room for the carrot. But in the Spare Room, there's no carrot. So this is a problem. 
+
+Wait, maybe the carrot is in the Attic. The Attic had a latchkey on the floor. But the user hasn't checked there. However, the original plan was to go east, then south, then west. So the user is following that path. 
+
+This is a bit of a puzzle. The user is in the Bedchamber, and the next step is to go west. But the carrot is supposed to be in the chamber. Maybe the Bedchamber is the chamber. So the user should look for the carrot there. But the user hasn't done that yet. 
+
+So the next action should be to check the Bedchamber for the carrot. But the user's next action according to the original plan is to go west. However, the user is asking if they're on the right track. The answer is yes, but they need to check the current room. 
+
+But the user is supposed to go west first. So maybe the correct next action is to go west, then check the room for the carrot. But that would take them to the Spare Room, which doesn't have the carrot. 
+
+This is confusing. Maybe the user made a mistake in the path. Alternatively, the carrot is in the Bedchamber, and the user needs to look for it there. So the next action should be to look for the carrot in the Bedchamber. But the user's next action according to the original plan is to go west. 
+
+But the user is asking if they're on the right track. The answer is yes, but they need to check the current room. So maybe the next action is to look for the carrot. However, the user's instructions say to only output the command. So the user should go west, then check. 
+
+But the user is in the Bedchamber, and the next step is to go west. So the correct next action is to go west.
+</think>go west
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -80,6 +136,13 @@ There is a carrot on the floor.
 
 
 >                                                                                                                                -= Chamber =-0/4
-AGENT -------------------------------------------------
-take carrot
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user has been moving through different rooms in TextWorld. The original task was to go east, then south, west, and retrieve the carrot.
+
+First, they started in the Spare Room, went east to the Attic. Then south to the Bedchamber, then west to the Chamber. Now, in the Chamber, there's a carrot on the floor. The next step should be to pick up the carrot. The user's last action was going west, which led them to the Chamber. The prompt here says there's a carrot on the floor, so the next command should be to take the carrot. But the user's instruction says to only output the action, like "go north". So the correct action here is "take carrot" or "get carrot". But in TextWorld, the command might be "take carrot". Let me check the previous interactions. The user was told to "retrieve the carrot from the floor of the chamber". So the correct command is "take carrot".
+</think>take carrot
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

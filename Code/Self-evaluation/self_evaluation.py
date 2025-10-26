@@ -433,7 +433,7 @@ FINALLY, say your next action as a short command. Only output the command, nothi
             thinking_response = tokenizer.decode(output_ids[:index], skip_special_tokens=True) \
             .replace("/no_think", "") \
             .strip("\n") # cannot replace /think bc </think> contains it...
-            response = tokenizer.decode(output_ids[(index):], skip_special_tokens=True) \
+            response = tokenizer.decode(output_ids[index:], skip_special_tokens=True) \
             .replace("<think>", "") \
             .replace("</think>", "") \
             .replace("/think", "") \

@@ -48,66 +48,6 @@ There is an exit to the south. Don't worry, it is unguarded. You need an unblock
 
 
 >                                                                                                                                -= Attic =-0/2
-AGENT -------------------------------------------------
-go west
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
--= Spare Room =-
-You've entered a spare room.
-
-
-
-You need an unblocked exit? You should try going east.
-
-
-
->                                                                                                                                -= Spare Room =-0/3
-AGENT -------------------------------------------------
-go east
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
--= Attic =-
-You've entered an attic. You decide to just list off a complete list of everything you see in the room, because hey, why not?
-
-
-
-There is an exit to the south. Don't worry, it is unguarded. You need an unblocked exit? You should try going west.
-
-
-
->                                                                                                                                -= Attic =-0/4
-AGENT -------------------------------------------------
-go west
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
--= Spare Room =-
-You've entered a spare room.
-
-
-
-You need an unblocked exit? You should try going east.
-
-
-
->                                                                                                                                -= Spare Room =-0/5
-AGENT -------------------------------------------------
-go east
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
--= Attic =-
-You've entered an attic. You decide to just list off a complete list of everything you see in the room, because hey, why not?
-
-
-
-There is an exit to the south. Don't worry, it is unguarded. You need an unblocked exit? You should try going west.
-
-
-
->                                                                                                                                -= Attic =-0/6
 THINK about how to win the game, but be concise and brief in 3 steps.
 FIRST STEP: State the goal of the game again, step by step.
 SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
@@ -116,7 +56,11 @@ FINALLY, say your next action as a short command. Only output the command, nothi
 
 SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 <think>
-Okay, let's see. The user is stuck in a loop between the Spare Room and the Attic. The goal is to recover the coin from the bedchamber and win. So far, they've been going back and forth between east and west, which isn't helping. The next step should be to find the bedchamber. Maybe the coin is in the Attic or Spare Room. Wait, the initial instructions said to go east, then south, then get the coin. But the user is looping. Maybe they need to go south from the Attic. The Attic has an exit to the south. Let me check the previous steps. The user went east to the Attic, then west back to Spare Room, repeating. So the next action should be to go south from the Attic. That's the unguarded exit mentioned. Then, once in the next room, look for the coin. But the user hasn't checked the rooms properly. So the correct next step is to go south from the Attic.
+Okay, let's break this down. The user is in a text-based game where they need to navigate through rooms and find a coin to win. The current scenario is in the Attic. The goal is to recover the coin from the bedchamber and then win.
+
+First, the user has already gone east from the Spare Room into the Attic. The Attic has an exit to the south and west. The提示 says to list everything in the room, but the user's next step should be strategic.
+
+The game's goal is three steps: venture east, then south, recover the coin, and win. So far, the user went east (from Spare Room to Attic). The next step should be to go south from the Attic. But the Attic's description mentions an exit to the south, so moving south would be the logical next step. However, the user might be in a loop if they keep moving between rooms without progressing towards the bedchamber. But since the Attic has a south exit, going south would take them to the next room, possibly closer to the bedchamber. The user needs to check if moving south is the correct direction. Since the original instructions mention going south after east, this seems correct. So the next action should be to go south.
 </think>go south
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -131,7 +75,19 @@ There is an unguarded exit to the north.
 There is a coin on the floor.
 
 
->                                                                                                                                -= Bedchamber =-0/7
-AGENT -------------------------------------------------
-pick up coin
+>                                                                                                                                -= Bedchamber =-0/3
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing a text-based game where they need to navigate through rooms and find a coin to win. The current room is the Bedchamber, which has an exit to the north and a coin on the floor.
+
+First, I need to recall the game's objective. The user has to venture east, then south, recover the coin from the bedchamber, and then win. So far, they've gone east to the Attic and then south to the Bedchamber. The next step is to pick up the coin.
+
+In the Bedchamber, the coin is on the floor. The user needs to pick it up. The previous actions were moving directions, so now the correct action is to take the coin. The command should be "take coin" or "get coin". Since the game's previous interactions used "go" commands, maybe "take" is the right verb here. The user hasn't picked up the coin yet, so the next step is to do that. There's no loop here because they're in a new room with the coin available. So the next action is to take the coin.
+</think>take coin
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

@@ -48,8 +48,22 @@ You don't like doors? Why not try going north, that entranceway is unguarded. Yo
 
 
 >                                                                                                                                -= Spare Room =-0/2
-AGENT -------------------------------------------------
-go south
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is in a text-based game where they need to follow specific steps to win. The goal is to lift the coin from the bedchamber.
+
+First, the initial steps mentioned were to go south, then south again, then west. But the user is now in the Spare Room. The previous actions were going south from the sauna into the spare room. The next step according to the instructions was to go west. But in the current room, the available directions are north and south. Wait, the user's last action was going south into the spare room. Now, the prompt says to attempt to go west, but the current room's description doesn't mention a west direction. The available directions here are north and south. So maybe the user is stuck in a loop between the sauna, spare room, and maybe another room?
+
+Wait, the original instructions said: first go south (from sauna to spare room), then try south again (but from spare room, south is unguarded, maybe leading to another room?), then go west. But in the current state, after going south into the spare room, the next step should be to go south again. But the user's last action was going south into the spare room, and now the prompt says to attempt to go west. However, in the spare room, the directions are north and south. So maybe the user is in a loop between the spare room and the sauna? Because going north from the spare room would take them back to the sauna, and going south from the spare room might lead to another room. Wait, the initial instruction said after going south (to spare room), then attempt to travel south again. But in the spare room, going south is unguarded. So maybe that leads to another room, like a hallway or something. Then from there, go west to reach the bedchamber.
+
+But the user is currently in the Spare Room, and the next step according to the original plan was to go west. However, in the Spare Room, west isn't an option. So perhaps the user needs to first go south from the Spare Room to another room, then west. But the user's last action was going south into the Spare Room. So the next step should be to go south again from the Spare Room. But the user's current prompt says that in the Spare Room, the available directions are north and south. So maybe going south from the Spare Room leads to another room, like a hallway. Then from there, go west to reach the bedchamber. So the user needs to first go south again, then west. But the user's previous action was going south into the Spare Room, so the next step is to go south again. However, the user's current prompt says that in the Spare Room, the available directions are north and south. So maybe the user is stuck in a loop between the Spare Room and the sauna. But the original instructions said to go south, then south again, then west. So perhaps the user needs to go south again from the Spare Room, then west. But the user is in the Spare Room, so the next step is to go south. But the user's last action was going south into the Spare Room, so maybe they need to go south again. However, the user's current prompt says that in the Spare Room, going south is unguarded. So perhaps that leads to another room. Then from there, go west. So the next action should be to go south again. But the user's previous action was going south into the Spare Room, so the next step is to go south again. However, the user might be in a loop, so maybe they need to find another way. Alternatively, maybe the user needs to go west from the Spare Room, but that's not an option. So the correct next step is to go south again from the Spare Room.
+</think>go south
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -63,8 +77,18 @@ You need an unguarded exit? You should try going north. You don't like doors? Wh
 
 
 >                                                                                                                                -= Basement =-0/3
-AGENT -------------------------------------------------
-go west
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is playing a text-based game where the goal is to lift the coin from the bedchamber. The current environment is the basement.
+
+First, the goal is to go south, then west, then lift the coin. So far, the user has gone south from the sauna to the spare room, then south again to the basement. Now, in the basement, the options are north or west. The previous steps were going south twice, but the user needs to go west next. However, the user might be stuck in a loop if they keep going south. But in the basement, the提示 says to try west. So the next step is to go west. But the user has already gone south twice. Wait, the initial instructions said first go south, then attempt to travel south again (maybe from the spare room to basement), then west. Then lift the coin. So in the basement, the next step is west. But the user is in the basement now. The prompt says "try going west, that entranceway is unguarded." So the next action should be west. But the user might have already tried that. Wait, the user's previous actions were go south (sauna to spare room), then go south again (spare room to basement). Now, in the basement, the options are north or west. The user needs to go west next. So the next command is go west. But the user might be in a loop if they keep going back. But according to the instructions, the next step after basement is west. So the answer should be go west.
+</think>go west
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -79,13 +103,16 @@ There is a coin on the floor.
 
 
 >                                                                                                                                -= Bedchamber =-0/4
-AGENT -------------------------------------------------
-lift the coin
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
 
-That's not a verb I recognise.
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let me try to figure out how to win this game. The user mentioned that the goal is to lift the coin from the floor of the bedchamber. So first, I need to make sure I'm in the bedchamber. From the previous steps, the user went south from the sauna, then south again into the spare room, then west into the basement, and then west again to the bedchamber. Wait, no, looking back: the first move was go south from the sauna to the spare room. Then from the spare room, they tried going south again, which led to the basement. Then from the basement, they went west to the bedchamber. Now they're in the bedchamber, which has a coin on the floor.
 
->                                                                                                                                -= Bedchamber =-0/4
-AGENT -------------------------------------------------
-pick up the coin
+So the next step is to pick up the coin. The instruction says to "lift the coin from the floor of the bedchamber." So the correct action here is to take the coin. But in TextWorld, the command might be "take coin" or "get coin." The user needs to do that. Since the previous steps were moving through rooms, the next logical step is to pick up the coin. There's no loop here because they've reached the bedchamber, which is the target room. So the next action should be to take the coin.
+</think>take coin
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
