@@ -48,8 +48,18 @@ You need an unguarded exit? You should try going east. There is an exit to the n
 
 
 >                                                                                                                                -= Cubicle =-0/2
-AGENT -------------------------------------------------
-go north
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is in a text-based game where they need to navigate through different rooms and recover a shoe from the attic. The current location is a cubicle. The goal is to move east, then go to the east again, and then recover the shoe from the attic.
+
+First, the user has already moved east from the study to the cubicle. The next step would be to go north from the cubicle since there's an unguarded exit there. But the user needs to check if that's the right path. The next step after that might be to proceed east again to reach the attic. However, the user needs to make sure they're not stuck in a loop. Since the previous action was going east, maybe trying a different direction like north or west could help. But according to the current room description, the cubicle has exits to the north, east, and west. The user should go north to continue towards the attic. Wait, the original goal was to move east first, then go to the east again. Maybe the user needs to go north from the cubicle to reach the attic. But the shoe is in the attic's floor. So the correct path is study -> cubicle -> north to reach the attic, then find the shoe. The user's next action should be to go north from the cubicle.
+</think>go north
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -63,8 +73,30 @@ You need an unguarded exit? You should try going south.
 
 
 >                                                                                                                                -= Recreation Zone =-0/3
-AGENT -------------------------------------------------
-go south
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is trying to navigate through different rooms in a text-based game. Their goal is to recover a shoe from the attic. So far, they've moved east from the study to the cubicle, then north to the recreation zone. Now, in the recreation zone, the prompt says to try going south.
+
+First, I need to recap the game's objective. The main goal is to move east, then go to the east (maybe that's a typo and should be north or another direction?), then recover the shoe from the attic. Wait, the initial instructions said first move east, then go to the east again? That might be a mistake. Maybe the user meant to go east once, then proceed to the attic.
+
+Looking at the current location: the user is in the recreation zone. The previous action was going north from the cubicle, which led here. The prompt says to try going south from here. So the next step would be to go south to return to the cubicle. But the user's goal is to get to the attic. Maybe the attic is north of the recreation zone? Or perhaps the path requires moving through different areas.
+
+Wait, the initial study had an unblocked exit east and north. Then the cubicle had east, north, west. Then the recreation zone has south as an exit. So maybe the path is study -> cubicle -> recreation zone -> south back to cubicle? But that seems like a loop. Alternatively, maybe from the recreation zone, going south leads back to the cubicle, then from there east again to the study, but that's where they started.
+
+Alternatively, maybe the attic is in a different direction. The user needs to recover the shoe from the attic's floor. So perhaps the attic is north of the study? But the study's north was unblocked. Wait, the first step was to move east from the study. Then the cubicle's north is unguarded. Then the recreation zone's south is unguarded. Maybe the path is study (east to cubicle, north to recreation zone?), but the user is now in the recreation zone. Maybe the next step is to go south to the cubicle again, then try east again to the study, but that seems like a loop.
+
+But the user's goal is to get to the attic. Maybe the attic is in the study? Or perhaps the shoe is in the cubicle or recreation zone. But the user hasn't found it yet. The problem is that the current path seems to be looping between cubicle and recreation zone. The user needs to find a way to reach the attic. Maybe the attic is north of the study, but the user has already moved east. Alternatively, maybe the correct path is study -> east (cubicle) -> north (recreation zone) -> north again to reach the attic? But the recreation zone's north is not mentioned. Wait, the recreation zone's prompt says to try going south. Maybe the user needs to go north from the recreation zone to find the attic. But the prompt doesn't mention that. Alternatively, maybe the user is supposed to go west from the cubicle to the study again, then north to the attic.
+
+But the user's previous actions were: go east (study to cubicle), then go north (cubicle to recreation zone). Now, in the recreation zone, the prompt says to go south. So the next step is to go south back to the cubicle. Then, from the cubicle, maybe go west back to the study, then north to the attic. But the study's north was unblocked. Wait, the initial study had an unblocked exit north and east. So maybe the attic is north of the study. So the user needs to go from study north to the attic. But the user is in the recreation zone, so going south to cubicle, then west to study, then north to attic. Then, once in the attic, find the shoe.
+
+But the user hasn't found the shoe yet. The problem is that the current path is looping. The user needs to find a way to reach the attic. So the next action is to go south from the recreation zone to the cubicle, then west to the study, then north to the attic. But the user is in the recreation zone, so the next step is to go south. Then, from cubicle, go west to study, then north to attic. Then, in the attic, find the shoe. So the next command is to go south.
+</think>go south
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -78,8 +110,20 @@ You need an unguarded exit? You should try going east. There is an exit to the n
 
 
 >                                                                                                                                -= Cubicle =-0/4
-AGENT -------------------------------------------------
-go east
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is trying to navigate through different rooms in a text-based game. The goal is to recover a shoe from the attic. So far, they've moved east from the study, then north to the recreation zone, then south back to the cubicle. Now they're in the cubicle again, and the previous action was going south.
+
+Looking at the current room description, the cubicle has exits to east, north, and west. The user needs to get to the attic to find the shoe. But they've been looping between the cubicle and recreation zone. The problem is that going south from the recreation zone brings them back to the cubicle, which they've already been in. So they need a different approach.
+
+The next step should be to find a way to get out of the cubicle towards the east, which was mentioned as an unguarded exit. But wait, the user just came from the south to the cubicle. The exit to the east is unguarded, so maybe they should go east from here. However, the user might be stuck in a loop between the cubicle and recreation zone. So instead of going south again, they need to try a different direction. The previous action was going south, which led back to the cubicle. So the next action should be to go east from the cubicle to break the loop. That makes sense because the user needs to move towards the attic, which is likely in a different direction. So the next command should be "go east".
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -94,6 +138,18 @@ There is a latchkey and a shoe on the floor.
 
 
 >                                                                                                                                -= Attic =-0/5
-AGENT -------------------------------------------------
-take shoe
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user's goal is to recover the shoe from the attic. So far, they've moved through the study, cubicle, recreation zone, and back to the cubicle, then to the attic. Now in the attic, they see the shoe on the floor.
+
+First step: The main objective is to get the shoe. The user needs to pick it up. But the current room is the attic, and the shoe is there. So the next action should be to take the shoe.
+
+Wait, but the previous actions were moving around. The user has already reached the attic. The next logical step is to pick up the shoe. The command should be "take shoe" or "get shoe". Since the game uses "take", maybe that's the right verb. The user is in the attic, so "take shoe" is the correct command here. No loops because they've finally reached the target room. So the next action is to take the shoe.
+</think>take shoe
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

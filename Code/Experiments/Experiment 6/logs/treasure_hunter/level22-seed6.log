@@ -48,8 +48,27 @@ There is an unblocked exit to the south. You don't like doors? Why not try going
 
 
 >                                                                                                                                -= Bathroom =-0/2
-AGENT -------------------------------------------------
-go west
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text adventure game. Their goal is to follow a series of steps: first go north, then west, then west again, then west once more. After that, they need to take a sandwich from the kitchen and win.
+
+So far, they started in the Workshop, went north to the Bathroom. Now they're in the Bathroom. The next step according to the original task was after going north, then try to go west, then move west again, then west again. But wait, the user's current location is the Bathroom. Let me check the environment again.
+
+In the Bathroom, the exits are south (unblocked), and west is unblocked. The user's previous action was "go north" from the Workshop to the Bathroom. Now, the next step in the original plan was to go west. So the user should go west from the Bathroom. But the user hasn't done that yet. The current prompt says that in the Bathroom, there's an unblocked exit to the south and west. So the next action should be to go west. But wait, the user's task says after going north, try to go west, then move west, then west again. So maybe the user needs to go west three times? Let me check the original instructions again.
+
+Original task: First stop, head north. After that, try to go west. Then, move west. With that over with, head west. Then, take the sandwich from the table within the kitchen. And once you've done that, you win!
+
+So the sequence is: North, then West (once), then West (again?), then West again? Wait, the wording is a bit ambiguous. Let me parse it again.
+
+"First stop, head north. After that, try to go west. Then, move west. With that over with, head west." So after north, go west once, then move west again (so two wests?), then head west again? Or maybe after north, go west three times? Because the next step after the three wests is to take the sandwich in the kitchen.
+
+But the user is currently in the Bathroom. Let's think about the path. Starting in Workshop, go north to Bathroom. Then from Bathroom, go west. But the Bathroom's west exit is unblocked. So the next action should be "go west". Then, after that, maybe another west? But where would that take them? Let's assume that after going west from the Bathroom, they enter another room. Maybe the kitchen? Or another area. But the user needs to reach the kitchen to take the sandwich.
+
+Alternatively, maybe the path is Workshop -> North (Bathroom) -> West (some room) -> West (another room) -> West (kitchen). But the user hasn't done that yet. So the next step is to go west from the Bathroom. The user's next action should be "go west".
+</think>go west
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -63,8 +82,15 @@ There is an open hatch leading south. There is an open wooden door leading west.
 
 
 >                                                                                                                                -= Scullery =-0/3
-AGENT -------------------------------------------------
-go west
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text adventure game. Their goal is to follow a series of directions: first go north, then west, then west again, then west once more. After that, they need to take a sandwich from the kitchen and win.
+
+So far, the user has gone north from the workshop to the bathroom, then west to the scullery. The next step in their plan is to go west again. The scullery has an open hatch south, a wooden door west, and an unblocked exit east. Since they need to go west, the next command should be "go west". That's the correct direction according to the original task. The user is on the right track, moving through the rooms as instructed. The sandwich in the kitchen is the final goal, but they need to navigate through the current rooms first. So the next action is definitely "go west".
+</think>go west
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -78,8 +104,21 @@ There is an open wooden door leading east. There is an open stone hatch leading 
 
 
 >                                                                                                                                -= Shower =-0/4
-AGENT -------------------------------------------------
-go west
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text adventure game. Their goal is to follow a series of directions: first go north, then west, then west again, then west once more. After that, they need to take a sandwich from the kitchen and win.
+
+So far, the user has moved north from the workshop to the bathroom, then west to the scullery, and then west again to the shower. The next step in the original plan was to go west again. But in the shower description, the exits are east and west. So going west from the shower would be the next logical step. But wait, the user's next move after the shower is to take the sandwich from the kitchen. But the current location is the shower. So maybe the user is getting confused about the path.
+
+Wait, the original instructions said after moving west three times (north, west, west, west?), but the user's path so far is workshop -> bathroom (north), then scullery (west), then shower (west). So that's two wests after the initial north. The original plan was to go north, then west, then west, then west. So maybe the user is supposed to go west again from the shower. But the problem is that the kitchen hasn't been reached yet. The user needs to find the kitchen where the sandwich is.
+
+But the current location is the shower. The exits from the shower are east (to scullery) and west (to the stone hatch). Maybe the user needs to go back east to the scullery, then find another exit. Wait, the scullery had an open wooden door west and an exit east. Maybe the user needs to go east from the scullery to the workshop again? But that's not helpful. Alternatively, maybe the user is supposed to go west from the shower to the stone hatch, which might lead to another area. But the original plan was to go west three times. Let me check the original instructions again.
+
+Original task: First stop, head north. After that, try to go west. Then, move west. With that over with, head west. Then, take the sandwich from the table within the kitchen. So the user needs to go north, then west three times. So after the initial north (workshop to bathroom), then west (bathroom to scullery), then west again (scullery to shower), then west again (shower to... where? The shower's west exit is a stone hatch. Maybe that's leading to the kitchen? Or maybe the user is supposed to go east from the shower back to scullery, then east again to bathroom, then south to workshop, but that seems like going back. Alternatively, maybe the user is supposed to go west from the shower, which is the next step in the original plan. So the user's next action should be go west again. But the user's current location is the shower. So the next step is to go west, which would take them to the stone hatch. But the user's goal is to reach the kitchen. So maybe the user is on the right path, but needs to continue west. However, the user might be stuck if the stone hatch leads to a dead end. Alternatively, maybe the user needs to go east from the shower back to scullery, then find another way. But according to the original plan, the user should go west three times. So the next action is go west again. The user's last move was to go west to the shower. So the next step is to go west again. The user's next action should be "go west".
+</think>go west
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -93,6 +132,13 @@ There is an open stone hatch leading east. You don't like doors? Why not try goi
 
 
 >                                                                                                                                -= Kitchen =-0/5
-AGENT -------------------------------------------------
-take sandwich
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user has been moving through different rooms in the game: Workshop, Bathroom, Scullery, Shower, and now Kitchen. The original goal was to go north, then west twice more, then take the sandwich from the kitchen table.
+
+So far, the user went north from the workshop, then west to the bathroom, then west again to the scullery, then west to the shower, and now they're in the kitchen. The next step according to the original task was to take the sandwich from the kitchen table. The user is in the kitchen, and the prompt mentions there's a sandwich on the table. So the next action should be to take the sandwich. The user's last action was moving west to the kitchen, so now they need to pick up the sandwich. The command should be "take sandwich" or "take the sandwich". But in the game's context, maybe just "take sandwich" is sufficient. Let me check the previous interactions. The user was told to "take the sandwich from the table within the kitchen." So the correct command here is "take sandwich".
+</think>take sandwich
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

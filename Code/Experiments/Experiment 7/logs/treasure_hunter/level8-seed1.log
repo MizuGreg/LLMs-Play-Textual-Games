@@ -48,8 +48,18 @@ You don't like doors? Why not try going north, that entranceway is unblocked. Yo
 
 
 >                                                                                                                                -= Cookhouse =-0/2
-AGENT -------------------------------------------------
-go north
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is in the Cookhouse, and the goal is to venture east, then north, then north again, pick up the passkey from the cookery floor, and win.
+
+First, the user has already gone east from the Dish-Pit to the Cookhouse. The next step according to the goal is to go north from the Cookhouse. The user's past action was "go east", so the next step should be "go north". But the prompt says to check if there's a loop. Since the user is in the Cookhouse now, and the previous action was east, moving north should be the next step. The user hasn't picked up the passkey yet, so the next action is to go north. The answer should be "go north".
+</think>go north
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -63,22 +73,108 @@ You don't like doors? Why not try going north, that entranceway is unblocked. Yo
 
 
 >                                                                                                                                -= Studio =-0/3
-AGENT -------------------------------------------------
-go north
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text-based game called TextWorld. The goal is to venture east, then go north twice, pick up the passkey from the cookery, and win.
+
+First, I need to break down the steps. The initial steps were going east from the dish-pit, then north into the cookhouse. Then, from the cookhouse, they went north again into the studio. Now, the current location is the studio. The next step according to the original plan was to go north again, but maybe that's not working.
+
+Looking at the current room description: the studio has exits north, south, and west. The user has already gone north once (from cookhouse to studio). The next step in the original plan was to go north again, but maybe that's not the right path. The user needs to find the cookery area to pick up the passkey. So perhaps instead of going north again, they should check other directions. The user is in the studio, and the exits are north, south, west. The original plan said after going north twice, but maybe the path is different.
+
+Wait, the original instructions said after venturing east, go north, then travel north again. So from the dish-pit, east to cookhouse, then north to studio, then north again. But maybe from the studio, going north is not the right direction. Alternatively, maybe the cookery is in a different direction. The user needs to find the cookery's floor where the passkey is. So perhaps from the studio, going south or west might lead to the cookery. The user needs to check those directions instead of going north again. The previous action was going north from cookhouse to studio, so now they need to try south or west. The user might be in a loop if they keep going north. So the next action should be to go south or west instead of north again. Let me check the room description again. The studio's exits are north (unblocked), south (unguarded), west (unblocked). So maybe going south or west from the studio would lead to the cookery. The user needs to pick the correct direction. The original plan was to go north twice, but maybe that's not the case. So the next step is to go south or west. The user should try south first, perhaps. So the next action is go south.
+</think>go south
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
--= Cookery =-
-You arrive in a cookery. A normal kind of place. You can barely contain your excitement.
+-= Cookhouse =-
+You arrive in a cookhouse. A typical one.
 
 
 
-You don't like doors? Why not try going south, that entranceway is unguarded.
-
-There is a passkey on the floor.
+You don't like doors? Why not try going north, that entranceway is unblocked. You don't like doors? Why not try going west, that entranceway is unguarded.
 
 
->                                                                                                                                -= Cookery =-0/4
-AGENT -------------------------------------------------
-pick up passkey
+
+>                                                                                                                                -= Cookhouse =-0/4
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text-based game called TextWorld. The goal is to venture east, then go north twice, pick up the passkey from the cookery, and win.
+
+Looking at the history of commands, the user first went east from the dish-pit. Then they went north to the cookhouse. Then from the cookhouse, they went south to the studio, then back north to the cookhouse again. Now they're in the cookhouse again, and the prompt says to think through the steps.
+
+First, the goal is to go east, then north, then north again, then pick up the passkey. So far, the user has already gone east once (from dish-pit to cookhouse). Then they went north from cookhouse to studio, then south back to cookhouse. So they're back in the cookhouse. The next step should be to go north again from the cookhouse to proceed further. But the user might be looping between cookhouse and studio. Wait, the initial plan was to go east, then north, then north. So after the first east, they need to go north twice. But in the current state, they are in the cookhouse again. So maybe they need to go north again from here. But the previous action was going south, which brought them back. So the next step is to go north again from the cookhouse. But the user might be stuck in a loop between cookhouse and studio. However, the instructions say to not repeat the same action if it's not progressing. But in this case, going north from cookhouse is part of the plan. So the next action should be north again.
+</think>go north
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Studio =-
+This might come as a shock to you, but you've just entered a studio.
+
+
+
+You don't like doors? Why not try going north, that entranceway is unblocked. You need an unguarded exit? You should try going south. You don't like doors? Why not try going west, that entranceway is unblocked.
+
+
+
+>                                                                                                                                -= Studio =-0/5
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is playing a text-based game where the goal is to follow specific directions to reach the cookery room, pick up the passkey, and win. The current challenge is to navigate through the rooms without getting stuck in a loop.
+
+First, the initial steps were to go east from the dish-pit, then north to the cookhouse. Then, the player tried going south from the studio, which brought them back to the cookhouse. Now, they're in the studio again, and the previous action was going north again, which loops back to the studio.
+
+So, the problem here is that the player is stuck between the studio and the cookhouse, moving back and forth. The goal is to reach the cookery room, pick up the passkey, and then go north twice. But the current path isn't leading them forward.
+
+Looking at the directions given in the studio: "You don't like doors? Why not try going north, that entranceway is unblocked. You need an unguarded exit? You should try going south. You don't like doors? Why not try going west, that entranceway is unblocked." So, the options are north, south, or west.
+
+Since going north and south just loops between the studio and cookhouse, maybe the correct path is to go west from the studio. That way, they can move towards the cookery room without looping. The cookery room is mentioned as being in the dish-pit, but the player needs to get there through the cookhouse and studio. Wait, no—the original instructions said to go east from the dish-pit, then north to the cookhouse, then travel north again. But the current position is in the studio, so maybe the correct next step is to go west to exit the studio and proceed to the cookhouse again, then find the passkey.
+
+But the user's previous action was going north again, which loops. So the next step should be to try a different direction, like west, to avoid the loop. Therefore, the next action should be "go west" to move out of the studio and proceed to the cookhouse, then check for the passkey.
+</think>go west
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Spare Room =-
+If you're wondering why everything seems so standard all of a sudden, it's because you've just shown up in the spare room.
+
+
+
+You don't like doors? Why not try going east, that entranceway is unblocked. There is an unguarded exit to the south.
+
+There is a keycard on the floor.
+
+
+>                                                                                                                                -= Spare Room =-0/6
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing this text-based game called TextWorld. The goal is to venture east, then go north twice, pick up the passkey from the cookery floor, and win.
+
+Looking at the current room, they're in the Spare Room. The description says there's a keycard on the floor. The previous steps involved moving through different rooms: starting in the Dish-Pit, going east to Cookhouse, then north to Studio, south back to Cookhouse, north again to Studio, west to Spare Room. Now, in the Spare Room, the keycard is present.
+
+The next step should be to pick up the passkey. But the user's last action was going west. The current room's exits are east (unblocked) and south (unguarded). But the key is on the floor, so the correct action is to pick it up. However, the game might require interacting with the keycard. But the user's instructions say to pick up the passkey from the floor of the cookery. Wait, the key is in the Spare Room now. Wait, the original goal was to pick up the passkey from the cookery's floor. Maybe there's a confusion here. Wait, the initial objective was to go east, then north, then north again, then pick up the passkey from the cookery's floor. But in the current room, the key is in the Spare Room. Maybe there's a mistake in the room descriptions, or perhaps the key is in the cookery area. But according to the latest room description, the key is in the Spare Room. So the user needs to pick it up here. But the original goal said cookery. Maybe the cookery is a different room. Wait, the user has to go through the rooms as per the steps. The current room is Spare Room, and the key is here. So the next step is to pick up the key. But the game might require moving to the cookery room. Wait, but the user's previous steps have them in the Spare Room. So perhaps the key is here, and the user needs to take it. But the original goal was to pick up the passkey from the cookery's floor. Maybe there's a mix-up in the room names. Alternatively, maybe the key is in the Spare Room, and that's the correct place. So the next action is to pick up the key. But the user's previous actions have them in the Spare Room. So the correct command would be to take the keycard. But the game's commands might require using "take" or "pick up". However, the user's previous actions were moving directions. The initial instructions said to output a short command like "go north". But in this case, the key is here, so the action would be to pick it up. However, the user's previous steps have them moving through rooms, and the current room has the key. So the next step is to take the key. But the user's last action was going west, which led them to the Spare Room. So the next command should be to take the keycard. But the system message says to output only the command, nothing else. So the answer is "take keycard" or "pick up keycard". But in the game's context, maybe the correct command is "take keycard". However, the user's previous actions were moving, so maybe the correct action here is to take the key. But the original goal was to pick up the passkey from the cookery. Wait, maybe the cookery is the Spare Room? Or maybe there's a mistake. But according to the latest room description, the key is in the Spare Room. Therefore, the user needs to take it here. So the next action is to take the keycard.
+</think>take keycard
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

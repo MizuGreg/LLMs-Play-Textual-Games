@@ -48,8 +48,18 @@ There is an exit to the east. Don't worry, it is unblocked. There is an unblocke
 
 
 >                                                                                                                                -= Kitchen =-0/2
-AGENT -------------------------------------------------
-go east
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is in a text-based game where they need to navigate through different rooms and retrieve a latchkey. The current location is the Kitchen. The goal, as mentioned, is to go north, then east, then south, and finally get the latchkey from the workshop floor.
+
+First, the user started by going north from the Bar to the Kitchen. Then, in the Kitchen, they can go east or south. The next step after entering the Kitchen would be to go east as per the initial instructions. But the user's last action was going north, which took them to the Kitchen. Now, the next logical step would be to go east. However, the user might be confused if they're stuck in a loop. But since the Kitchen has an exit to the east, that's the next step. The latchkey is in the workshop, so after moving east, they might reach the workshop. But the user hasn't found the latchkey yet. So the next action should be to go east. Wait, but the user's previous action was going north, then the current location is the Kitchen. The instructions say after going north, try east, then south, then get the latchkey. So the next step is to go east from the Kitchen. Then, after that, maybe go south, but the user needs to check the workshop's floor for the latchkey. So the next action is go east.
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -63,8 +73,24 @@ You don't like doors? Why not try going south, that entranceway is unguarded. Th
 
 
 >                                                                                                                                -= Bedchamber =-0/3
-AGENT -------------------------------------------------
-go south
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is trying to navigate through different rooms in a text-based game. The goal is to eventually retrieve the latchkey from the workshop floor. Let me break down the steps they've taken so far.
+
+First, they started in the bar, went north to the kitchen. Then from the kitchen, they went east to the bedchamber. Now, they're in the bedchamber, and the options are south or west. The previous actions were going north, then east. The next step in the original plan was to go south from the kitchen, but they went east instead. Wait, the initial instructions said after going north and east, try to venture south. But in the current state, they're in the bedchamber. So maybe they need to go south from here to return to the kitchen? But the user's goal is to get to the workshop. Hmm.
+
+Wait, the original plan was: go north, then east, then south, then get the latchkey. But in the current position, they're in the bedchamber. The previous action was going east from the kitchen. Now, the options are south or west. If they go south from the bedchamber, they'd return to the kitchen. Then maybe from the kitchen, go west to the bar again? But that seems like a loop. Alternatively, maybe the workshop is in a different direction. Wait, the initial instruction mentioned the workshop, but the current rooms are bar, kitchen, bedchamber. Maybe the workshop is in another part of the map. The user needs to find the workshop and get the latchkey.
+
+But the current step is in the bedchamber. The next logical step might be to go west from the bedchamber to the kitchen again, but that's where they came from. Alternatively, maybe the workshop is in the south direction from the bedchamber? But the bedchamber's exits are south and west. Wait, the user's goal is to get to the workshop's floor. So perhaps after going through the bedchamber, they need to find the correct path to the workshop. But the user hasn't mentioned the workshop yet. Maybe the workshop is in the south direction from the bedchamber? But the kitchen is south of the bedchamber? Wait, the bedchamber's description says there's an exit to the south and west. So going south from bedchamber would take them back to the kitchen. Then from the kitchen, maybe the exit to the west is the bar, but that's where they started. Hmm.
+
+Wait, the original plan was to go north (bar to kitchen), then east (kitchen to bedchamber), then south (bedchamber to kitchen again?), but that's not progressing. Maybe the user is stuck in a loop between kitchen and bedchamber. So the next step would be to try a different direction. But the bedchamber only has south and west. If going south leads back to kitchen, and west leads to bar, which is where they started. So maybe they need to find another way. But the initial goal was to get to the workshop. Maybe the workshop is in the west direction from the bedchamber? But the bedchamber's exits are south and west. Wait, the user's previous actions were north, east, then south (from kitchen to bedchamber). Wait, no, the user went from kitchen east to bedchamber. Then from bedchamber, the options are south (back to kitchen) or west (to bar). So maybe the user needs to go west from bedchamber to bar, but that's where they started. But the initial instruction said to go north, then east, then south. So perhaps the user is supposed to go south from the bedchamber to get back to kitchen, then find another exit. But the kitchen has exits to east (bedchamber), south, and west (bar). Wait, the kitchen's description says there's an exit to the east (bedchamber), south, and west? Or maybe the kitchen's exits are east (bedchamber), south (maybe the workshop?), and west (bar). But the user hasn't found the workshop yet. So maybe from the kitchen, going south would lead to the workshop. But in the current state, the user is in the bedchamber. So the next step would be to go south from bedchamber to kitchen, then south again from kitchen to workshop. But the user hasn't done that yet. So the next action should be to go south from bedchamber to kitchen, then from kitchen go south to workshop. But the user is currently in the bedchamber. So the next command should be south. But the user's previous action was east from kitchen to bedchamber. Now, in the bedchamber, the options are south and west. So the next step is to go south to return to kitchen. Then from kitchen, go south to workshop. But the user hasn't done that yet. So the next action is south.
+</think>south
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -79,6 +105,16 @@ There is a gummy bear and a latchkey on the floor.
 
 
 >                                                                                                                                -= Workshop =-0/4
-AGENT -------------------------------------------------
-take latchkey
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user's goal is to recover the latchkey from the floor of the workshop. So far, the path taken has been North from the bar, then East to the kitchen, then South to the bedchamber, and then South again to the workshop. Wait, no, the last move was South from the bedchamber to the workshop. Now in the workshop, there's a gummy bear and a latchkey on the floor. The goal is to get the latchkey.
+
+So the next step is to pick up the latchkey. The previous actions have already moved through the rooms, and now the player is in the workshop. The instruction says to recover the latchkey from the floor of the workshop. So the next action should be to take the latchkey. The command would be "take latchkey" or "get latchkey". But the game might expect a specific command. Since the user is in the workshop, and the latchkey is on the floor, the correct action is to pick it up. The previous steps have already done the traveling, so the final step is to take the latchkey. Therefore, the next command is "take latchkey".
+</think>take latchkey
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

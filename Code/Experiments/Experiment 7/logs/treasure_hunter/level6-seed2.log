@@ -48,8 +48,20 @@ You don't like doors? Why not try going south, that entranceway is unguarded. Th
 
 
 >                                                                                                                                -= Bedchamber =-0/2
-AGENT -------------------------------------------------
-go south
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user wants me to navigate through the TextWorld game. The initial goal is to go east, then south, pick up the latchkey from the workshop, and win. 
+
+First, the user started in the kitchen. They went east to the bedchamber. Now, the bedchamber has a south exit that's unguarded. The next step after going east was supposed to be venturing south, but the user is in the bedchamber now. Wait, the original instructions said after going east, venture south. But in the bedchamber, the south exit is available. So maybe the next step is to go south from the bedchamber.
+
+But the user is in the bedchamber, and the next step after going east was to go south. However, the bedchamber's south exit is unguarded. So the user should go south from here. Then, after that, they need to go west to the kitchen again? Wait, no. The original plan was to go east (to bedchamber), then south from the kitchen. Wait, no, the initial instructions said: first go east (from kitchen), then venture south (from where? Maybe from the bedchamber? Or maybe the kitchen's south exit was blocked, so after going east to bedchamber, then go south from there? But the user is in the bedchamber now. So the next step is to go south from the bedchamber. Then, after that, maybe they need to go west back to the kitchen, but the original plan was to go east, then south. Wait, maybe the user is in the bedchamber, and the next step is to go south from here. Then, after that, they might reach the workshop where the latchkey is. But the user hasn't picked it up yet. So the steps so far: go east (done), then go south (next step). Then, once in the workshop, pick up the latchkey. But the user is in the bedchamber now, so the next action is to go south. Then, after that, maybe they can go west to the kitchen again, but the original plan was to go east, then south. Wait, maybe the user is in the bedchamber, and the next step is to go south. Then, after that, they would be in the next room, perhaps the workshop. Then pick up the latchkey. So the next action is to go south from the bedchamber. But the user is in the bedchamber, so the next command should be "go south".
+</think>go south
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -64,6 +76,16 @@ There is a gummy bear and a latchkey on the floor.
 
 
 >                                                                                                                                -= Workshop =-0/3
-AGENT -------------------------------------------------
-pick up latchkey
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user wants me to figure out the next action for the text game. The goal is to travel east, then south, pick up the latchkey, and win.
+
+So far, the player has gone east from the kitchen to the bedchamber, then south to the workshop. Now they're in the workshop. The next step according to the original instructions was to pick up the latchkey. The workshop has a latchkey on the floor. So the next action should be to pick it up. But the user's previous action was "go south", which might have been part of the path. Wait, the user's last move was going south from the bedchamber to the workshop. Now, in the workshop, the player needs to pick up the latchkey. The correct command would be "take latchkey" or "pick up latchkey". But in the game's context, maybe "take" is the right verb. Let me check the previous commands. The user first went east, then south. Now, in the workshop, the latchkey is present. So the next step is to take the latchkey. Then, after that, the player wins. So the answer should be "take latchkey".
+</think>take latchkey
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

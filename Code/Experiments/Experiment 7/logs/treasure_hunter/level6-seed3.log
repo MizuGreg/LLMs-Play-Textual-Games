@@ -48,8 +48,22 @@ There is an unblocked exit to the east. There is an unguarded exit to the west.
 
 
 >                                                                                                                                -= Bedroom =-0/2
-AGENT -------------------------------------------------
-go west
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user wants me to figure out the next step in the game. The goal is to venture west, pick up the broom from the basement, and then win. 
+
+First, the user started in the Kitchenette, went west to the Bedroom. Now, in the Bedroom, there's an exit to the east and west. The previous action was "go west" from the Kitchenette, which led to the Bedroom. Now, the next step is to continue west from the Bedroom. But wait, the user needs to get to the basement to pick up the broom. So from the Bedroom, going west again might lead to the basement. But I need to check if that's the case.
+
+Wait, the initial instruction said to venture west first. The user did that, moving from Kitchenette to Bedroom. Now, the next step is to go west again from the Bedroom. But the user has to make sure they reach the basement. The problem is that the user might be in a loop if moving west and east repeatedly. But according to the current room description, the Bedroom has an unguarded exit to the west. So going west from the Bedroom would take them to the next room, possibly the basement. But the user hasn't picked up the broom yet, so they need to check if the basement is accessible from the Bedroom.
+
+Alternatively, maybe the basement is west of the Bedroom. So the next action should be to go west again. But the user needs to confirm that moving west from the Bedroom leads to the basement. Since the initial instruction said to venture west, and the first move was west from Kitchenette to Bedroom, the next logical step is to go west again from Bedroom to reach the basement. Then pick up the broom. So the next command is "go west".
+</think>go west
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -64,6 +78,18 @@ There is a broom and a fly larva on the floor.
 
 
 >                                                                                                                                -= Basement =-0/3
-AGENT -------------------------------------------------
-pick up broom
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is trying to navigate through different rooms in a text-based game. The goal is to go west from the kitchenette, then go west again to the bedroom, and then go west once more to the basement. Once in the basement, they need to pick up the broom and win.
+
+So far, the user has gone west from the kitchenette to the bedroom. Then, they went west again to the basement. Now, they're in the basement and need to pick up the broom. The current room description mentions a broom and a fly larva on the floor. The user's next step should be to pick up the broom.
+
+Wait, the previous action was "go west" from the bedroom to the basement. Now, in the basement, the user needs to take the broom. The correct command here would be "take broom" or "pick up broom". Since the game's previous interactions used "go west" for movement, the next action should be to take the broom. The user hasn't done that yet, so the next step is to pick up the broom to win the game.
+</think>take broom
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

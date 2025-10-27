@@ -49,8 +49,20 @@ There is a broom on the floor.
 
 
 >                                                                                                                                -= Basement =-0/2
-AGENT -------------------------------------------------
-go east
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is in a text-based game where they need to follow specific steps to win. The goal is to go north, then east, then east again, pick up the bug in the kitchenette, and win. But the current situation is in the basement.
+
+First, the user started by going north from the shower into the basement. The basement has exits to east and south. The user is told to go east, but they might be stuck in a loop. The previous actions were going north, then east, but maybe they need to try a different direction or find another way to reach the kitchenette.
+
+The user needs to pick up the bug in the kitchenette. So, the path from the basement to the kitchenette isn't clear yet. The basement has a broom, but that's not helpful. The user might need to go south from the basement to get back to the shower, then go north again to the kitchenette. But the initial instruction said to go north first, then east twice. Wait, maybe the user is in the basement and needs to go east again to reach the kitchenette. But the basement's east exit is unguarded. So, going east from the basement would be the next step. But the user might have already tried that. Alternatively, maybe the user needs to go south from the basement to the shower, then north again to the kitchenette. But the initial steps were to go north, then east, then east. So perhaps the user is in the basement and needs to go east again to reach the kitchenette. But the problem is that the user might be in a loop between the basement and shower. So the next action should be to go east from the basement to reach the kitchenette, then pick up the bug. But the user is in the basement, so the next step is to go east.
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -64,8 +76,24 @@ There is an unblocked exit to the east. There is an unguarded exit to the west.
 
 
 >                                                                                                                                -= Bedroom =-0/3
-AGENT -------------------------------------------------
-go east
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is trying to navigate through different rooms in TextWorld. The goal is to go north, then east, then east again, pick up the bug in the kitchenette, and win. But the current setup seems a bit confusing.
+
+First, the user started in the shower, went north to the basement, then east to the bedroom. Now they're in the bedroom. The previous steps were: go north (shower to basement), then go east (basement to bedroom). The next step according to the original instructions was to go east again, but in the bedroom, the exits are east and west. Wait, the original plan was after going north, then east, then east again. But in the basement, the user went east to the bedroom. Now, from the bedroom, going east again would be the third east. But the problem is that the user hasn't reached the kitchenette yet. The bug is in the kitchenette, so maybe the path isn't straightforward.
+
+Wait, the initial instructions said: travel north, then east, then east again, then pick up the bug. But the current location is the bedroom. So maybe the user needs to find a way to get to the kitchenette. However, the current rooms are shower -> basement -> bedroom. The exits from the bedroom are east and west. If they go east from the bedroom, maybe that's a path towards the kitchenette. But the user hasn't picked up the bug yet. Alternatively, maybe the user is in a loop, moving between rooms without progress. But the user needs to get to the kitchenette.
+
+Wait, the original plan was to go north (shower to basement), then east (basement to bedroom), then east again (bedroom to maybe another room?), but the problem is that from the bedroom, going east might not lead directly to the kitchenette. Alternatively, maybe the user needs to go west from the bedroom to get back to the basement, then find another exit. But the user's goal is to pick up the bug in the kitchenette. So perhaps the correct path is to go from the basement east to the bedroom, then find a way to get to the kitchenette. But the current setup doesn't show a direct path. Maybe the user needs to check for items or other exits.
+
+But according to the latest prompt, the user is in the bedroom. The previous actions were go north (shower to basement), then go east (basement to bedroom). The next step in the original plan was to go east again. But in the bedroom, going east is an option. So the next action should be go east again. However, the user might be in a loop if moving east and west repeatedly. But the user hasn't picked up the bug yet, so maybe that's the next step. Alternatively, maybe the user needs to find a different path. But the instructions say to go east again. So the next action is go east.
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -80,13 +108,16 @@ There is a bug on the floor.
 
 
 >                                                                                                                                -= Kitchenette =-0/4
-AGENT -------------------------------------------------
-pick-up bug
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
 
-That's not a verb I recognise.
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is trying to navigate through these rooms to pick up the bug and win. The goal is to go north, then east, then east again, pick up the bug in the kitchenette, and then win.
 
->                                                                                                                                -= Kitchenette =-0/4
-AGENT -------------------------------------------------
-pick up bug
+So far, the user started by going north from the shower to the basement. Then they went east to the bedroom, and then east again to the kitchenette. Now they're in the kitchenette, which is where the bug is. The next step is to pick up the bug. But the previous action was going east, which led them here. Since they're already here, the next command should be to pick up the bug. But the game might require a specific command like "take bug" or "pick up bug". However, the user's past actions were moving directions, so maybe the correct command here is to pick up the bug. The user needs to check if they can pick it up directly. Since the bug is on the floor, the correct action is to pick it up. So the next step is to pick up the bug, which would then allow them to win.
+</think>pick up bug
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
