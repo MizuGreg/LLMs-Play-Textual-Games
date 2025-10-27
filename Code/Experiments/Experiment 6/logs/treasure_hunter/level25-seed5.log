@@ -48,8 +48,25 @@ You don't like doors? Why not try going east, that entranceway is unblocked. The
 
 
 >                                                                                                                                -= Canteen =-0/2
-AGENT -------------------------------------------------
-go north
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing a text adventure game and has followed a sequence of directions to move through different rooms. The initial goal was to navigate through the launderette, canteen, and other rooms, collect the gummy bear, and win.
+
+First, the user started by going north from the launderette, which led them to the canteen. Now, in the canteen, they can move east, north, south, or west. The next step in the original instructions was to go east, then east again, then south, west, and pick up the gummy bear.
+
+But in the current room (canteen), the user needs to decide the next direction. The original plan after the canteen was to go east, so maybe that's the next step. However, the user's previous actions were to go north, then the next steps were to go east, then east again, then south, etc. Wait, the original instructions said: after going north from the launderette, then go north again, then west, then north, then east, then east, then east, then south, then south, then west, then pick up the gummy bear.
+
+Wait, the user's initial instructions were a bit confusing. Let me parse them again. The user said: "First off, if it's not too much trouble, I need you to go to the north. Following that, make an effort to go north. After that, attempt to go to the west. Then, make an effort to head north. And then, attempt to take a trip east. And then, travel east. And then, head east. With that done, go south. And then, make an attempt to take a trip south. And then, attempt to go to the west. And then, lift the gummy bear from the floor of the chamber. And once you've done that, you win!"
+
+So the sequence is: North, North, West, North, East, East, East, South, South, West, pick up gummy bear.
+
+But in the current scenario, the user is in the canteen. Let's track their movement so far. Starting in the launderette, they went north to the canteen. Then, according to the sequence, next is to go north again. But in the canteen, the possible directions are east, north, south, west. So going north from the canteen would be the next step. But the user's next action should be to go north again. However, the user's previous action was to go north from the launderette, leading to the canteen. Then the next step in the sequence is to go north again. So the next command should be "go north".
+
+But wait, the user's current location is the canteen. The original plan says after going north (from launderette) then go north again, then west, etc. So in the canteen, the next step is to go north. But the canteen's description says there's an exit to the north. So the user should go north again. However, the user's next action is to go north, which would take them to the next room. But the user's previous action was to go north from the launderette, leading to the canteen. Then the next step is to go north again. So the answer should be "go north".
+</think>go north
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -63,68 +80,74 @@ There is an exit to the east. Don't worry, it is unblocked. There is an exit to 
 
 
 >                                                                                                                                -= Dish-Pit =-0/3
-AGENT -------------------------------------------------
-go north
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing a text adventure game called TextWorld. The goal is to pick up the gummy bear and put it in a place to win. So far, the player has moved north from the launderette to the canteen, then north again to the dish-pit. Now, they're in the dish-pit.
+
+Looking at the current room description: the dish-pit has a plate, but it's empty. The exits are east, north, south, and west, all unblocked or unguarded. The previous moves were all north, then east, then north again. The original instructions said to go north, then north again, then east, then east, then east, then south, then south, then west, then pick up the gummy bear.
+
+Wait, the user's path so far is: launderette (north) -> canteen (north) -> dish-pit (north again?). Wait, the user's last action was go north from the dish-pit? Wait, no. Let me check the history again.
+
+Wait, the user's first action was go north from the launderette. Then, in the canteen, they went north again. Then in the dish-pit, they went north again? Or was the previous move from the dish-pit? Wait, the current room is dish-pit. The user's last action was "go north" leading to dish-pit. Now, the next step is to decide the next action.
+
+The original plan was: after going north, north, east, east, east, then south, south, west, then pick up the gummy bear. But so far, the user has gone north three times (launderette -> canteen -> dish-pit). Then the next steps in the original plan were to go east, east, east. But in the current room (dish-pit), the exits are east, north, south, west. So maybe the next step is to go east from the dish-pit. Because the original plan said after going north three times, go east three times. So from dish-pit, go east. Then maybe the next rooms would be...?
+
+Alternatively, maybe the gummy bear is in one of the previous rooms. But the user hasn't picked anything up yet. The original instruction says to lift the gummy bear from the floor of the chamber. So maybe the gummy bear is in the dish-pit? But the plate there is empty. Or maybe in the canteen? The chest was empty, the bowl was empty. Or maybe in the launderette? The shelf was empty.
+
+Wait, the original goal was to pick up the gummy bear from the floor of the chamber. So maybe the chamber is the dish-pit? Or maybe the canteen? Or another room. But the user hasn't found it yet.
+
+So the user's current position is dish-pit. The next step according to the original plan was to go east three times. So from dish-pit, go east. Then, after three easts, go south, south, west, then pick up the gummy bear.
+
+But the user is at dish-pit. The exits are east, north, south, west. So the next action should be east. So the next command is go east.
+</think>go east
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
--= Basement =-
-Well how about that, you are in the place we're calling the basement.
+-= Kitchenette =-
+You find yourself in a kitchenette. A typical one.
 
-You scan the room, seeing a counter. The counter is normal. Looks like someone's already been here and taken everything off it, though.
+You make out a closed fridge here.
 
-You don't like doors? Why not try going east, that entranceway is unguarded. You don't like doors? Why not try going north, that entranceway is unblocked. There is an unguarded exit to the south. You need an unguarded exit? You should try going west.
+You don't like doors? Why not try going east, that entranceway is unblocked. There is an exit to the south. Don't worry, it is unguarded. There is an unblocked exit to the west.
 
 
 
->                                                                                                                                -= Basement =-0/4
-AGENT -------------------------------------------------
-go north
+>                                                                                                                                -= Kitchenette =-0/4
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is playing a text adventure game called TextWorld. The goal is to pick up the gummy bear and put it in a specific place to win. So far, the user has moved through several rooms: the launderette, canteen, dish-pit, and now the kitchenette.
+
+In the kitchenette, the user sees a closed fridge. The previous actions were moving north, then east, then north again, and now east again. The next step mentioned in the original instruction was to travel east again. But in the current room, the exits are east, south, and west. The user needs to find the gummy bear, which is in a chamber. The original path mentioned going east, then east again, then south, etc. But maybe the fridge is a clue here. Sometimes in these games, objects like fridges might have items inside. Since the fridge is closed, maybe the next step is to open it. But the user's instructions said to lift the gummy bear from the floor of the chamber. Wait, the original plan was to go north, then west, take the gummy bear. But the current path is through the kitchenette. Maybe the fridge is part of the path to the chamber. Alternatively, maybe the user needs to check the fridge for the gummy bear. But the user's previous actions were moving around, and the next step in the original plan was to go south from the kitchenette. Let me check the exits again. The kitchenette has exits to east, south, and west. The user's next action should be to go south, as per the original plan. But the user is supposed to go east, then east, then south, etc. Wait, the original instructions said after going east, travel east again, then go south. So maybe after the kitchenette, the next step is to go south. But the user is in the kitchenette, and the exit to the south is unguarded. So the next action should be to go south. But the user's previous action was going east to get here. So the next step is to go south. But the user's original plan was to go east, then east, then south. So maybe that's the next step. Alternatively, maybe the fridge needs to be opened. But the user's goal is to pick up the gummy bear from the chamber. So perhaps the path is leading towards the chamber. The user needs to follow the original plan: after the kitchenette, go south. So the next action is go south.
+</think>go south
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
--= Kitchen =-
-You arrive in a kitchen. An ordinary kind of place. Let's see what's in here.
+-= Chamber =-
+You've entered a chamber.
+
+You make out a locker!
+
+You need an unblocked exit? You should try going east. There is an unblocked exit to the north. There is an exit to the west. Don't worry, it is unblocked.
+
+There is a gummy bear on the floor.
 
 
+>                                                                                                                                -= Chamber =-0/5
+Do you think you're making the right actions in the game so far? Do you think you're close to reaching the original goal?
+Think about it, and then say your next action. Remember to only say the command and nothing else.
 
-There is an unguarded exit to the south.
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user has been moving through different rooms in the game: launderette, canteen, dish-pit, kitchenette, and now the chamber. The original goal was to pick up the gummy bear and put it in a place, but the user's instructions said to lift the gummy bear from the floor of the chamber and then win. 
 
-There is a knife on the floor.
+In the current chamber, the user sees a gummy bear on the floor. The previous actions were moving around the rooms, and now they're in the chamber. The next logical step would be to pick up the gummy bear. But the user's last command was "go south" which led them to the chamber. Now, since the gummy bear is here, the next action should be to take it.
 
-
->                                                                                                                                -= Kitchen =-0/5
-AGENT -------------------------------------------------
-go north
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-You can't go that way.
-
-
->                                                                                                                                -= Kitchen =-0/6
-AGENT -------------------------------------------------
-go east
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-You can't go that way.
-
-
->                                                                                                                                -= Kitchen =-0/7
-AGENT -------------------------------------------------
-go west
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-You can't go that way.
-
-
->                                                                                                                                -= Kitchen =-0/8
-AGENT -------------------------------------------------
-take gummy bear
-GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
-
-You can't see any such thing.
-
->                                                                                                                                -= Kitchen =-0/8
-AGENT -------------------------------------------------
-take knife
+Wait, but the user's instructions said to "lift the gummy bear from the floor of the chamber. And once you've done that, you win!" So the correct action now is to take the gummy bear. The user has to use the "take" command. But in the game's context, the available commands are usually "go [direction]" or "take [item]". Since the gummy bear is in the chamber, the next step is to take it. The user hasn't done that yet, so the next action should be "take gummy bear".
+</think>take gummy bear
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

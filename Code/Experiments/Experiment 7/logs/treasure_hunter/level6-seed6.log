@@ -48,8 +48,26 @@ There is an unblocked exit to the north. There is an unblocked exit to the west.
 
 
 >                                                                                                                                -= Kitchenette =-0/2
-AGENT -------------------------------------------------
-go north
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user is in a text-based game where they need to follow specific steps. The initial task was to go east, then north, and then pick up the cucumber in the lounge. 
+
+First, the user went east from the sauna, ending up in the kitchenette. Now, the next step according to the original task was to travel north. The kitchenette has an unblocked exit to the north, so the next logical step is to go north. 
+
+Looking at the current location (kitchenette), the exits are north and west. The user has already taken the first two steps: going east and then north. Wait, no—the original task said first go east, then north. The user went east (from sauna to kitchenette), then needs to go north from kitchenette. So the next step is to go north from the kitchenette. 
+
+But the user's last action was "go east", leading to kitchenette. Now, the next step is to go north. The user hasn't done that yet. So the next command should be "go north". 
+
+Wait, but the user's previous message shows that after going east, they are in the kitchenette. The task was to first go east, then north. So the next step is to go north from the kitchenette. Then, after that, they need to pick up the cucumber in the lounge. 
+
+But the user hasn't done that yet. So the next action is "go north". The user needs to move north from the kitchenette to proceed. The answer should be "go north".
+</think>go north
 GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -64,6 +82,16 @@ There is a cucumber on the floor.
 
 
 >                                                                                                                                -= Lounge =-0/3
-AGENT -------------------------------------------------
-pick up cucumber
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is in the Lounge now. The goal is to pick up the cucumber from the floor and put it in a place. Wait, the original task said to pick up the cucumber from the lounge's floor. So the user has already traveled east to the Kitchenette, then north to the Lounge. Now, in the Lounge, there's a cucumber on the floor.
+
+So the next step is to pick up the cucumber. The previous actions were going east, then north. Now, in the Lounge, the user needs to pick up the cucumber. The command should be "take cucumber" or "pick up cucumber". But the game might expect "take" as the verb. Let me check the previous interactions. The user was told to "pick up the cucumber", so maybe "take" is the correct command here. But in TextWorld, sometimes "take" is used. Alternatively, "get" might work. But the exact command depends on the game's vocabulary. Since the user was instructed to "pick up", maybe "take" is the right action. So the next command should be "take cucumber".
+</think>take cucumber
 CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
