@@ -273,6 +273,7 @@ Think about it, and then say your next action. Remember to only say the command 
 
         if selfeval_turns <= 0:
             self.selfeval_turns = -1 # actual default value for deactivating self-evaluation
+            random_selfeval = False #override
         else:
             self.selfeval_turns = selfeval_turns
             self.random_mean = selfeval_turns

@@ -182,9 +182,6 @@ Before printing the name of a food (called the food item) while looking, examini
 
 
 
-The carrying capacity of the player is 0.
-
-
 [Ingredient]
 Rule for printing the name of an ingredient-like (called I):
 	if type of cutting of I is not uncut:
@@ -389,8 +386,6 @@ The r_0 and the r_1 and the r_6 and the r_5 and the r_7 and the r_2 and the r_3 
 The r_0 and the r_1 and the r_6 and the r_5 and the r_7 and the r_2 and the r_3 and the r_4 and the r_8 are privately-named.
 The s_0 and the s_1 and the s_2 and the s_3 and the s_4 and the s_5 and the s_6 and the s_7 and the s_8 are supporters.
 The s_0 and the s_1 and the s_2 and the s_3 and the s_4 and the s_5 and the s_6 and the s_7 and the s_8 are privately-named.
-The slot_0 and the slot_1 and the slot_2 are things.
-The slot_0 and the slot_1 and the slot_2 are privately-named.
 The stove_0 are stove-likes.
 The stove_0 are privately-named.
 The toaster_0 are toaster-likes.
@@ -586,15 +581,6 @@ The printed name of meal_0 is "meal".
 Understand "meal" as meal_0.
 The meal_0 is edible.
 The meal of the RECIPE is the meal_0..
-The description of slot_0 is "".
-The printed name of slot_0 is "".
-When play begins, increase the carrying capacity of the player by 1..
-The description of slot_1 is "".
-The printed name of slot_1 is "".
-When play begins, increase the carrying capacity of the player by 1..
-The description of slot_2 is "".
-The printed name of slot_2 is "".
-When play begins, increase the carrying capacity of the player by 1..
 The description of RECIPE is "".
 The printed name of RECIPE is "".
 The description of o_0 is "You open the copy of 'Cooking: A Modern Approach (3rd Ed.)' and start reading:[line break][line break]Recipe #1[line break]---------[line break]Gather all following ingredients and follow the directions to prepare this tasty meal.[line break][line break]Ingredients:[line break]banana[line break]  lettuce[line break]  yellow bell pepper[line break][line break]Directions:[line break]dice the banana[line break]  grill the banana[line break]  dice the lettuce[line break]  fry the lettuce[line break]  dice the yellow bell pepper[line break]  grill the yellow bell pepper[line break]  prepare meal[line break]".
@@ -622,7 +608,7 @@ Every turn:
 The quest1 completed is a truth state that varies.
 The quest1 completed is usually false.
 
-Test quest1_0 with ""
+Test quest1_0 with "inventory / go north / examine cookbook / take banana from counter"
 
 Every turn:
 	if quest1 completed is true:
@@ -635,16 +621,16 @@ Every turn:
 The quest2 completed is a truth state that varies.
 The quest2 completed is usually false.
 
-Test quest2_0 with ""
+Test quest2_0 with "inventory / go north / examine cookbook / take banana from counter / open fridge / take lettuce from fridge / take lettuce from fridge / take yellow bell pepper from fridge / go west / open screen door / go west / cook banana with BBQ"
 
 Every turn:
 	if quest2 completed is true:
 		do nothing;
 	else if The f_0 is consumed:
 		end the story; [Lost]
-	else if The f_0 is fried:
-		end the story; [Lost]
 	else if The f_0 is roasted:
+		end the story; [Lost]
+	else if The f_0 is fried:
 		end the story; [Lost]
 	else if The f_0 is grilled:
 		increase the score by 1; [Quest completed]
@@ -654,7 +640,7 @@ Every turn:
 The quest3 completed is a truth state that varies.
 The quest3 completed is usually false.
 
-Test quest3_0 with ""
+Test quest3_0 with "inventory / go north / examine cookbook / take banana from counter / open fridge / take lettuce from fridge / take lettuce from fridge / take yellow bell pepper from fridge / go west / open screen door / go west / cook banana with BBQ / cook banana with BBQ / go east / go east / cook lettuce with stove / go west / go west / go west / cook yellow bell pepper with BBQ / cook yellow bell pepper with BBQ / go east / go east / take knife from table / dice banana with knife"
 
 Every turn:
 	if quest3 completed is true:
@@ -681,7 +667,7 @@ Every turn:
 The quest5 completed is a truth state that varies.
 The quest5 completed is usually false.
 
-Test quest5_0 with ""
+Test quest5_0 with "inventory / go north / examine cookbook / take banana from counter / open fridge / take lettuce from fridge"
 
 Every turn:
 	if quest5 completed is true:
@@ -694,7 +680,7 @@ Every turn:
 The quest6 completed is a truth state that varies.
 The quest6 completed is usually false.
 
-Test quest6_0 with ""
+Test quest6_0 with "inventory / go north / examine cookbook / take banana from counter / open fridge / take lettuce from fridge / take lettuce from fridge / take yellow bell pepper from fridge / go west / open screen door / go west / cook banana with BBQ / cook banana with BBQ / go east / go east / cook lettuce with stove"
 
 Every turn:
 	if quest6 completed is true:
@@ -713,7 +699,7 @@ Every turn:
 The quest7 completed is a truth state that varies.
 The quest7 completed is usually false.
 
-Test quest7_0 with ""
+Test quest7_0 with "inventory / go north / examine cookbook / take banana from counter / open fridge / take lettuce from fridge / take lettuce from fridge / take yellow bell pepper from fridge / go west / open screen door / go west / cook banana with BBQ / cook banana with BBQ / go east / go east / cook lettuce with stove / go west / go west / go west / cook yellow bell pepper with BBQ / cook yellow bell pepper with BBQ / go east / go east / take knife from table / dice banana with knife / drop knife / take knife / dice lettuce with knife"
 
 Every turn:
 	if quest7 completed is true:
@@ -740,7 +726,7 @@ Every turn:
 The quest9 completed is a truth state that varies.
 The quest9 completed is usually false.
 
-Test quest9_0 with ""
+Test quest9_0 with "inventory / go north / examine cookbook / take banana from counter / open fridge / take lettuce from fridge / take lettuce from fridge / take yellow bell pepper from fridge"
 
 Every turn:
 	if quest9 completed is true:
@@ -753,16 +739,16 @@ Every turn:
 The quest10 completed is a truth state that varies.
 The quest10 completed is usually false.
 
-Test quest10_0 with ""
+Test quest10_0 with "inventory / go north / examine cookbook / take banana from counter / open fridge / take lettuce from fridge / take lettuce from fridge / take yellow bell pepper from fridge / go west / open screen door / go west / cook banana with BBQ / cook banana with BBQ / go east / go east / cook lettuce with stove / go west / go west / go west / cook yellow bell pepper with BBQ"
 
 Every turn:
 	if quest10 completed is true:
 		do nothing;
 	else if The f_1 is consumed:
 		end the story; [Lost]
-	else if The f_1 is fried:
-		end the story; [Lost]
 	else if The f_1 is roasted:
+		end the story; [Lost]
+	else if The f_1 is fried:
 		end the story; [Lost]
 	else if The f_1 is grilled:
 		increase the score by 1; [Quest completed]
@@ -772,7 +758,7 @@ Every turn:
 The quest11 completed is a truth state that varies.
 The quest11 completed is usually false.
 
-Test quest11_0 with ""
+Test quest11_0 with "inventory / go north / examine cookbook / take banana from counter / open fridge / take lettuce from fridge / take lettuce from fridge / take yellow bell pepper from fridge / go west / open screen door / go west / cook banana with BBQ / cook banana with BBQ / go east / go east / cook lettuce with stove / go west / go west / go west / cook yellow bell pepper with BBQ / cook yellow bell pepper with BBQ / go east / go east / take knife from table / dice banana with knife / drop knife / take knife / dice lettuce with knife / drop knife / take knife / dice yellow bell pepper with knife"
 
 Every turn:
 	if quest11 completed is true:
@@ -791,7 +777,7 @@ Every turn:
 The quest12 completed is a truth state that varies.
 The quest12 completed is usually false.
 
-Test quest12_0 with ""
+Test quest12_0 with "inventory / go north / examine cookbook / take banana from counter / open fridge / take lettuce from fridge / take lettuce from fridge / take yellow bell pepper from fridge / go west / open screen door / go west / cook banana with BBQ / cook banana with BBQ / go east / go east / cook lettuce with stove / go west / go west / go west / cook yellow bell pepper with BBQ / cook yellow bell pepper with BBQ / go east / go east / take knife from table / dice banana with knife / drop knife / take knife / dice lettuce with knife / drop knife / take knife / dice yellow bell pepper with knife / drop knife / prepare meal"
 
 Every turn:
 	if quest12 completed is true:
@@ -810,7 +796,7 @@ Every turn:
 The quest13 completed is a truth state that varies.
 The quest13 completed is usually false.
 
-Test quest13_0 with ""
+Test quest13_0 with "inventory / go north / examine cookbook / take banana from counter / open fridge / take lettuce from fridge / take lettuce from fridge / take yellow bell pepper from fridge / go west / open screen door / go west / cook banana with BBQ / cook banana with BBQ / go east / go east / cook lettuce with stove / go west / go west / go west / cook yellow bell pepper with BBQ / cook yellow bell pepper with BBQ / go east / go east / take knife from table / dice banana with knife / drop knife / take knife / dice lettuce with knife / drop knife / take knife / dice yellow bell pepper with knife / drop knife / prepare meal / eat meal"
 
 Every turn:
 	if quest13 completed is true:

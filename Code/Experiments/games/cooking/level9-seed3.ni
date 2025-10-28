@@ -182,9 +182,6 @@ Before printing the name of a food (called the food item) while looking, examini
 
 
 
-The carrying capacity of the player is 0.
-
-
 [Ingredient]
 Rule for printing the name of an ingredient-like (called I):
 	if type of cutting of I is not uncut:
@@ -388,8 +385,6 @@ The r_0 and the r_1 and the r_2 and the r_3 and the r_6 and the r_7 and the r_8 
 The r_0 and the r_1 and the r_2 and the r_3 and the r_6 and the r_7 and the r_8 and the r_4 and the r_5 are privately-named.
 The s_0 and the s_1 and the s_2 and the s_3 and the s_4 and the s_5 and the s_6 and the s_7 and the s_8 are supporters.
 The s_0 and the s_1 and the s_2 and the s_3 and the s_4 and the s_5 and the s_6 and the s_7 and the s_8 are privately-named.
-The slot_0 and the slot_1 and the slot_2 are things.
-The slot_0 and the slot_1 and the slot_2 are privately-named.
 The stove_0 are stove-likes.
 The stove_0 are privately-named.
 The toaster_0 are toaster-likes.
@@ -642,15 +637,6 @@ The printed name of meal_0 is "meal".
 Understand "meal" as meal_0.
 The meal_0 is edible.
 The meal of the RECIPE is the meal_0..
-The description of slot_0 is "".
-The printed name of slot_0 is "".
-When play begins, increase the carrying capacity of the player by 1..
-The description of slot_1 is "".
-The printed name of slot_1 is "".
-When play begins, increase the carrying capacity of the player by 1..
-The description of slot_2 is "".
-The printed name of slot_2 is "".
-When play begins, increase the carrying capacity of the player by 1..
 The description of RECIPE is "".
 The printed name of RECIPE is "".
 The description of o_0 is "You open the copy of 'Cooking: A Modern Approach (3rd Ed.)' and start reading:[line break][line break]Recipe #1[line break]---------[line break]Gather all following ingredients and follow the directions to prepare this tasty meal.[line break][line break]Ingredients:[line break]pork chop[line break]  purple potato[line break]  red potato[line break][line break]Directions:[line break]dice the pork chop[line break]  fry the pork chop[line break]  chop the purple potato[line break]  roast the purple potato[line break]  dice the red potato[line break]  grill the red potato[line break]  prepare meal[line break]".
@@ -678,7 +664,7 @@ Every turn:
 The quest1 completed is a truth state that varies.
 The quest1 completed is usually false.
 
-Test quest1_0 with ""
+Test quest1_0 with "inventory / open barn door / go west / open patio door / go north / go east / go east / examine cookbook / open fridge / take pork chop from fridge"
 
 Every turn:
 	if quest1 completed is true:
@@ -691,16 +677,16 @@ Every turn:
 The quest2 completed is a truth state that varies.
 The quest2 completed is usually false.
 
-Test quest2_0 with ""
+Test quest2_0 with "inventory / open barn door / go west / open patio door / go north / go east / go east / examine cookbook / open fridge / take pork chop from fridge / go west / go west / go west / go south / go west / take purple potato / go east / go east / go north / go east / go east / take red potato from counter / cook pork chop with stove"
 
 Every turn:
 	if quest2 completed is true:
 		do nothing;
 	else if The f_0 is consumed:
 		end the story; [Lost]
-	else if The f_0 is roasted:
-		end the story; [Lost]
 	else if The f_0 is grilled:
+		end the story; [Lost]
+	else if The f_0 is roasted:
 		end the story; [Lost]
 	else if The f_0 is fried:
 		increase the score by 1; [Quest completed]
@@ -710,7 +696,7 @@ Every turn:
 The quest3 completed is a truth state that varies.
 The quest3 completed is usually false.
 
-Test quest3_0 with ""
+Test quest3_0 with "inventory / open barn door / go west / open patio door / go north / go east / go east / examine cookbook / open fridge / take pork chop from fridge / go west / go west / go west / go south / go west / take purple potato / go east / go east / go north / go east / go east / take red potato from counter / cook pork chop with stove / cook purple potato with oven / go west / go west / go west / go south / cook red potato with BBQ / cook red potato with BBQ / go north / go east / go east / take knife from table / dice pork chop with knife"
 
 Every turn:
 	if quest3 completed is true:
@@ -737,7 +723,7 @@ Every turn:
 The quest5 completed is a truth state that varies.
 The quest5 completed is usually false.
 
-Test quest5_0 with ""
+Test quest5_0 with "inventory / open barn door / go west / open patio door / go north / go east / go east / examine cookbook / open fridge / take pork chop from fridge / go west / go west / go west / go south / go west / take purple potato"
 
 Every turn:
 	if quest5 completed is true:
@@ -750,16 +736,16 @@ Every turn:
 The quest6 completed is a truth state that varies.
 The quest6 completed is usually false.
 
-Test quest6_0 with ""
+Test quest6_0 with "inventory / open barn door / go west / open patio door / go north / go east / go east / examine cookbook / open fridge / take pork chop from fridge / go west / go west / go west / go south / go west / take purple potato / go east / go east / go north / go east / go east / take red potato from counter / cook pork chop with stove / cook purple potato with oven"
 
 Every turn:
 	if quest6 completed is true:
 		do nothing;
 	else if The f_2 is consumed:
 		end the story; [Lost]
-	else if The f_2 is fried:
-		end the story; [Lost]
 	else if The f_2 is grilled:
+		end the story; [Lost]
+	else if The f_2 is fried:
 		end the story; [Lost]
 	else if The f_2 is roasted:
 		increase the score by 1; [Quest completed]
@@ -769,16 +755,16 @@ Every turn:
 The quest7 completed is a truth state that varies.
 The quest7 completed is usually false.
 
-Test quest7_0 with ""
+Test quest7_0 with "inventory / open barn door / go west / open patio door / go north / go east / go east / examine cookbook / open fridge / take pork chop from fridge / go west / go west / go west / go south / go west / take purple potato / go east / go east / go north / go east / go east / take red potato from counter / cook pork chop with stove / cook purple potato with oven / go west / go west / go west / go south / cook red potato with BBQ / cook red potato with BBQ / go north / go east / go east / take knife from table / dice pork chop with knife / drop knife / take knife / chop purple potato with knife"
 
 Every turn:
 	if quest7 completed is true:
 		do nothing;
 	else if The f_2 is consumed:
 		end the story; [Lost]
-	else if The f_2 is diced:
-		end the story; [Lost]
 	else if The f_2 is sliced:
+		end the story; [Lost]
+	else if The f_2 is diced:
 		end the story; [Lost]
 	else if The f_2 is chopped:
 		increase the score by 1; [Quest completed]
@@ -796,7 +782,7 @@ Every turn:
 The quest9 completed is a truth state that varies.
 The quest9 completed is usually false.
 
-Test quest9_0 with ""
+Test quest9_0 with "inventory / open barn door / go west / open patio door / go north / go east / go east / examine cookbook / open fridge / take pork chop from fridge / go west / go west / go west / go south / go west / take purple potato / go east / go east / go north / go east / go east / take red potato from counter"
 
 Every turn:
 	if quest9 completed is true:
@@ -809,16 +795,16 @@ Every turn:
 The quest10 completed is a truth state that varies.
 The quest10 completed is usually false.
 
-Test quest10_0 with ""
+Test quest10_0 with "inventory / open barn door / go west / open patio door / go north / go east / go east / examine cookbook / open fridge / take pork chop from fridge / go west / go west / go west / go south / go west / take purple potato / go east / go east / go north / go east / go east / take red potato from counter / cook pork chop with stove / cook purple potato with oven / go west / go west / go west / go south / cook red potato with BBQ"
 
 Every turn:
 	if quest10 completed is true:
 		do nothing;
 	else if The f_1 is consumed:
 		end the story; [Lost]
-	else if The f_1 is roasted:
-		end the story; [Lost]
 	else if The f_1 is fried:
+		end the story; [Lost]
+	else if The f_1 is roasted:
 		end the story; [Lost]
 	else if The f_1 is grilled:
 		increase the score by 1; [Quest completed]
@@ -828,7 +814,7 @@ Every turn:
 The quest11 completed is a truth state that varies.
 The quest11 completed is usually false.
 
-Test quest11_0 with ""
+Test quest11_0 with "inventory / open barn door / go west / open patio door / go north / go east / go east / examine cookbook / open fridge / take pork chop from fridge / go west / go west / go west / go south / go west / take purple potato / go east / go east / go north / go east / go east / take red potato from counter / cook pork chop with stove / cook purple potato with oven / go west / go west / go west / go south / cook red potato with BBQ / cook red potato with BBQ / go north / go east / go east / take knife from table / dice pork chop with knife / drop knife / take knife / chop purple potato with knife / drop knife / take knife / dice red potato with knife"
 
 Every turn:
 	if quest11 completed is true:
@@ -847,7 +833,7 @@ Every turn:
 The quest12 completed is a truth state that varies.
 The quest12 completed is usually false.
 
-Test quest12_0 with ""
+Test quest12_0 with "inventory / open barn door / go west / open patio door / go north / go east / go east / examine cookbook / open fridge / take pork chop from fridge / go west / go west / go west / go south / go west / take purple potato / go east / go east / go north / go east / go east / take red potato from counter / cook pork chop with stove / cook purple potato with oven / go west / go west / go west / go south / cook red potato with BBQ / cook red potato with BBQ / go north / go east / go east / take knife from table / dice pork chop with knife / drop knife / take knife / chop purple potato with knife / drop knife / take knife / dice red potato with knife / drop knife / prepare meal"
 
 Every turn:
 	if quest12 completed is true:
@@ -866,7 +852,7 @@ Every turn:
 The quest13 completed is a truth state that varies.
 The quest13 completed is usually false.
 
-Test quest13_0 with ""
+Test quest13_0 with "inventory / open barn door / go west / open patio door / go north / go east / go east / examine cookbook / open fridge / take pork chop from fridge / go west / go west / go west / go south / go west / take purple potato / go east / go east / go north / go east / go east / take red potato from counter / cook pork chop with stove / cook purple potato with oven / go west / go west / go west / go south / cook red potato with BBQ / cook red potato with BBQ / go north / go east / go east / take knife from table / dice pork chop with knife / drop knife / take knife / chop purple potato with knife / drop knife / take knife / dice red potato with knife / drop knife / prepare meal / eat meal"
 
 Every turn:
 	if quest13 completed is true:
