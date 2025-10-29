@@ -413,10 +413,11 @@ FINALLY, say your next action as a short command. Only output the command, nothi
                         eos_token_id = self.tokenizer.eos_token_id
                         ) # default temperature=0.6, top_p=0.95, min_p=0, top_k=20
             output_ids = generated_ids[0][len(input_ids[0]):].tolist()
-        except KeyboardInterrupt:
-            raise KeyboardInterrupt
-        except:
-            return "help" # model is in distress :)
+        except KeyboardInterrupt as ki:
+            raise ki
+        except OutOfMemoryError as oome:
+            raise oome
+            # return "help" # model is in distress :/
 
         if len(output_ids) >= 0.95 * max_new_tokens: # reached or almost reached cap -- let's help the model a bit
             substitute_command = random.choice(["help", "look"])
@@ -440,6 +441,8 @@ FINALLY, say your next action as a short command. Only output the command, nothi
             .replace("/think", "") \
             .replace("/no_think", "") \
             .strip("\n")
+            #print(f"LENGTHS: {len(thinking_response), len(response)}")
+            #print(f"TEXTS: {thinking_response}\n{response}")
             return (thinking_response, response)
         else:
             response = tokenizer.decode(output_ids[index:], skip_special_tokens=True) \
@@ -481,9 +484,9 @@ FINALLY, say your next action as a short command. Only output the command, nothi
             
             self.context += command + self.token_endofturn
 
-            turn_string = "GAME ++++++++++++++++++++++++++++++++++++++++++++++++++\n"                                           \
+            turn_string = "GAME ++++++++++++++++++++++++++++++++++++++++++++++++++\n"               \
                         + obs + (self.token_nothink if self.selfevaluated_last_turn else "") + "\n" \
-                        + "AGENT -------------------------------------------------\n"                                           \
+                        + "AGENT -------------------------------------------------\n"               \
                         + command
             if self.verbose:
                 print(turn_string)
@@ -498,11 +501,15 @@ FINALLY, say your next action as a short command. Only output the command, nothi
     def self_evaluation(self, obs) -> str :
         self.context += self.token_user + obs + self.selfeval_prompt + self.token_think + self.token_endofturn 
         self.context += self.token_assistant # induce thinking
-        
-        (thinking_response, response) = self.generate_response(think=True)
+
+        try:
+            return_value = self.generate_response(think=True)
+            (thinking_response, response) = return_value
+        except ValueError:
+            print("RETURN_VALUE LEN", len(return_value), "RETURN_VALUE", return_value)
 
         turn_string = "GAME ++++++++++++++++++++++++++++++++++++++++++++++++++\n" \
-                    + obs + self.selfeval_prompt + "\n"                                                  \
+                    + obs + self.selfeval_prompt + "\n"                           \
                     + "SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-\n" \
                     + thinking_response + response
         if self.verbose:

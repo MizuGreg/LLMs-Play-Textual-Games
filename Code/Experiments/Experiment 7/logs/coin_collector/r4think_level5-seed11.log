@@ -1,0 +1,125 @@
+CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+                    ________  ________  __    __  ________        
+                   |        \|        \|  \  |  \|        \       
+                    \$$$$$$$$| $$$$$$$$| $$  | $$ \$$$$$$$$       
+                      | $$   | $$__     \$$\/  $$   | $$          
+                      | $$   | $$  \     >$$  $$    | $$          
+                      | $$   | $$$$$    /  $$$$\    | $$          
+                      | $$   | $$_____ |  $$ \$$\   | $$          
+                      | $$   | $$     \| $$  | $$   | $$          
+                       \$$    \$$$$$$$$ \$$   \$$    \$$          
+              __       __   ______   _______   __        _______  
+             |  \  _  |  \ /      \ |       \ |  \      |       \ 
+             | $$ / \ | $$|  $$$$$$\| $$$$$$$\| $$      | $$$$$$$\
+             | $$/  $\| $$| $$  | $$| $$__| $$| $$      | $$  | $$
+             | $$  $$$\ $$| $$  | $$| $$    $$| $$      | $$  | $$
+             | $$ $$\$$\$$| $$  | $$| $$$$$$$\| $$      | $$  | $$
+             | $$$$  \$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$
+             | $$$    \$$$ \$$    $$| $$  | $$| $$     \| $$    $$
+              \$$      \$$  \$$$$$$  \$$   \$$ \$$$$$$$$ \$$$$$$$ 
+
+Hey, thanks for coming over to the TextWorld today, there is something I need you to do for me. First, it would be great if you could attempt to move south. With that done, attempt to go east. And then, take a trip north. Once you do that, make an effort to travel west. With that accomplished, pick up the coin from the floor of the office. Once that's all handled, you can stop!
+
+-= Cookhouse =-
+You are in a cookhouse. An ordinary one.
+
+
+
+You don't like doors? Why not try going south, that entranceway is unguarded.
+
+>                                                                                                                                -= Cookhouse =-0/1
+AGENT -------------------------------------------------
+go south
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Kitchen =-
+You find yourself in an ordinary kind of place. That is to say, you're in a kitchen. The room is well lit.
+
+
+
+There is an unguarded exit to the east. There is an exit to the north. Don't worry, it is unguarded.
+
+
+
+>                                                                                                                                -= Kitchen =-0/2
+AGENT -------------------------------------------------
+go east
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Sauna =-
+You are in a sauna. An ordinary one.
+
+
+
+There is an exit to the north. Don't worry, it is unguarded. There is an unguarded exit to the west.
+
+
+
+>                                                                                                                                -= Sauna =-0/3
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let me try to figure out what's going on here. The user is in a text-based game where they need to navigate through different rooms and collect a coin. The goal is to move south, then east, then north, west, and pick up the coin.
+
+So far, the user has gone south from the cookhouse to the kitchen, then east to the sauna. Now they're in the sauna. The next step according to the initial instructions was to go north from the sauna. But the user's last action was going east, which took them to the sauna. Wait, the initial instructions said after going east, they should go north. But the current location is the sauna, which has an exit to the north and west. 
+
+Wait, the user's previous steps were: go south (cookhouse -> kitchen), then go east (kitchen -> sauna). Now, the next step should be to go north from the sauna. But the user hasn't done that yet. The next step in the plan is to go north from the sauna. Then, after that, go west. But maybe the user is stuck in a loop? Let me check the rooms again.
+
+In the sauna, there's an exit to the north and west. If they go north from the sauna, they might end up in a different room. But the user hasn't done that yet. The next step should be to go north from the sauna. Then, after that, go west. But maybe the user is repeating actions. Wait, the initial instructions said after going east (to sauna), then go north. So the next action should be go north. But the user hasn't done that yet. So the next step is to go north from the sauna. Then, after that, go west. Then pick up the coin.
+
+But the user's last action was going east, so the next step is to go north. But the user might be in a loop if they keep moving between rooms without progress. However, the user hasn't picked up the coin yet, so they need to continue moving. So the next action is to go north from the sauna. Then, after that, go west. Then, perhaps they can find the coin. So the next command should be "go north".
+</think>go north
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Studio =-
+You've entered a studio. The room seems oddly familiar, as though it were only superficially different from the other rooms in the building.
+
+
+
+You don't like doors? Why not try going south, that entranceway is unblocked. You don't like doors? Why not try going west, that entranceway is unguarded.
+
+
+
+>                                                                                                                                -= Studio =-0/4
+AGENT -------------------------------------------------
+go west
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Office =-
+You are in an office. An usual kind of place.
+
+
+
+There is an unguarded exit to the east.
+
+There is a coin on the floor.
+
+
+>                                                                                                                                -= Office =-0/5
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's break this down. The user's goal is to navigate through the rooms and pick up the coin. The steps mentioned earlier were: go south, east, north, west, then pick up the coin. 
+
+So far, the user has gone south (cookhouse -> kitchen), east (kitchen -> sauna), north (sauna -> studio), and west (studio -> office). Now they're in the office, which has the coin. The next step should be to pick up the coin. But the user hasn't done that yet. The instruction says once in the office, pick up the coin. So the next action is to take the coin. But the previous actions were moving around, and now they're in the correct room. The user needs to pick up the coin here. The next command should be to take the coin. But the game might require using a specific verb, like 'take' or 'pick up'. Since the prompt says "pick up the coin from the floor", the correct command is 'take coin' or 'pick up coin'. The user needs to do that now.
+</think>take coin
+CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
