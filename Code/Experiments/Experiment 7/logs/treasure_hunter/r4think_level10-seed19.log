@@ -1,0 +1,120 @@
+CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+                    ________  ________  __    __  ________        
+                   |        \|        \|  \  |  \|        \       
+                    \$$$$$$$$| $$$$$$$$| $$  | $$ \$$$$$$$$       
+                      | $$   | $$__     \$$\/  $$   | $$          
+                      | $$   | $$  \     >$$  $$    | $$          
+                      | $$   | $$$$$    /  $$$$\    | $$          
+                      | $$   | $$_____ |  $$ \$$\   | $$          
+                      | $$   | $$     \| $$  | $$   | $$          
+                       \$$    \$$$$$$$$ \$$   \$$    \$$          
+              __       __   ______   _______   __        _______  
+             |  \  _  |  \ /      \ |       \ |  \      |       \ 
+             | $$ / \ | $$|  $$$$$$\| $$$$$$$\| $$      | $$$$$$$\
+             | $$/  $\| $$| $$  | $$| $$__| $$| $$      | $$  | $$
+             | $$  $$$\ $$| $$  | $$| $$    $$| $$      | $$  | $$
+             | $$ $$\$$\$$| $$  | $$| $$$$$$$\| $$      | $$  | $$
+             | $$$$  \$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$
+             | $$$    \$$$ \$$    $$| $$  | $$| $$     \| $$    $$
+              \$$      \$$  \$$$$$$  \$$   \$$ \$$$$$$$$ \$$$$$$$ 
+
+Hey, thanks for coming over to the TextWorld today, there is something I need you to do for me. First off, if it's not too much trouble, I need you to make an attempt to go west. Then, try to travel north. After that, go east. Then, venture north. Following that, pick up the passkey from the floor of the cookhouse. Once that's all handled, you can stop!
+
+-= Laundry Place =-
+You arrive in a laundry place. A normal one. You begin to take stock of what's here.
+
+
+
+You don't like doors? Why not try going west, that entranceway is unblocked.
+
+>                                                                                                                                -= Laundry Place =-0/1
+AGENT -------------------------------------------------
+go west
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Cubicle =-
+I am sorry to announce that you are now in the cubicle.
+
+
+
+There is an exit to the east. Don't worry, it is unguarded. You need an unblocked exit? You should try going north.
+
+There is a key on the floor.
+
+
+>                                                                                                                                -= Cubicle =-0/2
+AGENT -------------------------------------------------
+go north
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Basement =-
+You find yourself in a basement. An ordinary kind of place. You decide to start listing off everything you see in the room, as if you were in a text adventure.
+
+
+
+There is an exit to the east. Don't worry, it is unguarded. There is an unguarded exit to the south.
+
+
+
+>                                                                                                                                -= Basement =-0/3
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let me try to figure out what's going on here. The user is in a text adventure game, and their goal is to pick up the passkey from the cookhouse. The current location is the Basement, and they've already gone west, then north. The next step was to go east, but maybe that's not the right direction.
+
+Looking at the current room description: the Basement has an exit to the east and south. The user needs to get to the cookhouse. The key is on the floor in the Cubicle, but they're now in the Basement. Wait, the previous steps were: Laundry Place -> Cubicle -> Basement. The key was in the Cubicle, but they didn't pick it up yet. Wait, the Cubicle had a key on the floor. But the user hasn't picked it up yet. So maybe the next step is to go back to the Cubicle to pick up the key. But how?
+
+Wait, the user's goal is to pick up the passkey from the cookhouse. But in the Cubicle, there's a key on the floor. Maybe that's the passkey? Or is the cookhouse a different location? The user needs to go to the cookhouse and pick up the passkey. But the current location is the Basement. The exits are east and south. Maybe the cookhouse is in the east direction. Let me check the previous steps again.
+
+Original instructions: go west, then north, then east, then north. But after going west, they were in the Cubicle, then north to the Basement. Now, the next step was to go east, but maybe that's not the right direction. Alternatively, maybe the user needs to go south from the Basement to get back to the Laundry Place, then east to the Cubicle again to pick up the key. But the key was already there in the Cubicle. Wait, the user hasn't picked up the key yet. So maybe the next step is to go back to the Cubicle to pick up the key. But how?
+
+The current location is the Basement. The exits are east and south. If they go south, they'd return to the Laundry Place. Then, maybe go east to the Cubicle again to pick up the key. But the user's goal is to get to the cookhouse. Maybe the cookhouse is in the east direction from the Basement. Let me think. The user needs to go east from the Basement, then north to reach the cookhouse. But the user hasn't done that yet. The previous steps were: Laundry Place (west), Cubicle (north), Basement (north). Now, the next step should be to go east from the Basement to reach the cookhouse. But the user might be stuck in a loop if they keep going back and forth. Alternatively, maybe the key is in the Basement, but the description doesn't mention it. Wait, the Cubicle had a key on the floor. So the user needs to go back to the Cubicle to pick up the key. But how?
+
+The user is in the Basement. The exit to the east is unguarded. If they go east, they might reach the cookhouse. But the user's next step should be to go east from the Basement. However, the user might have already tried that. Wait, the initial instructions said to go west, then north, then east, then north. But after going west, then north to the Basement, the next step was to go east. But maybe that's not the right direction. Alternatively, maybe the user needs to go south from the Basement to get back to the Laundry Place, then east to the Cubicle again to pick up the key. But the key was already there. Hmm.
+
+Wait, the user's goal is to pick up the passkey from the cookhouse. But in the Cubicle, there's a key on the floor. Maybe that's the passkey. So the user needs to go back to the Cubicle, pick up the key, then proceed to the cookhouse. But how to get there. The user is in the Basement. So from the Basement, go south to Laundry Place, then east to Cubicle, pick up the key, then go north to the cookhouse. But the user hasn't done that yet. The next step is to go east from the Basement to reach the cookhouse. But the user might be in a loop if they keep moving east and south. Alternatively, maybe the cookhouse is in the east direction from the Basement. So the next action should be to go east.
+</think>go east
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Garage =-
+You have stumbled into the most usual of all possible garages. I guess you better just go and list everything you see here.
+
+
+
+There is an unblocked exit to the north. There is an unblocked exit to the west.
+
+
+
+>                                                                                                                                -= Garage =-0/4
+AGENT -------------------------------------------------
+go north
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Cookhouse =-
+Well, here we are in the cookhouse.
+
+
+
+There is an exit to the south. Don't worry, it is unblocked.
+
+There is a passkey on the floor.
+
+
+>                                                                                                                                -= Cookhouse =-0/5
+AGENT -------------------------------------------------
+pick up passkey
+CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

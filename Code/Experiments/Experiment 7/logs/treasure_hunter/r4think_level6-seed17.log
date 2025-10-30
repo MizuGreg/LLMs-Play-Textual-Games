@@ -1,0 +1,81 @@
+CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+                    ________  ________  __    __  ________        
+                   |        \|        \|  \  |  \|        \       
+                    \$$$$$$$$| $$$$$$$$| $$  | $$ \$$$$$$$$       
+                      | $$   | $$__     \$$\/  $$   | $$          
+                      | $$   | $$  \     >$$  $$    | $$          
+                      | $$   | $$$$$    /  $$$$\    | $$          
+                      | $$   | $$_____ |  $$ \$$\   | $$          
+                      | $$   | $$     \| $$  | $$   | $$          
+                       \$$    \$$$$$$$$ \$$   \$$    \$$          
+              __       __   ______   _______   __        _______  
+             |  \  _  |  \ /      \ |       \ |  \      |       \ 
+             | $$ / \ | $$|  $$$$$$\| $$$$$$$\| $$      | $$$$$$$\
+             | $$/  $\| $$| $$  | $$| $$__| $$| $$      | $$  | $$
+             | $$  $$$\ $$| $$  | $$| $$    $$| $$      | $$  | $$
+             | $$ $$\$$\$$| $$  | $$| $$$$$$$\| $$      | $$  | $$
+             | $$$$  \$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$
+             | $$$    \$$$ \$$    $$| $$  | $$| $$     \| $$    $$
+              \$$      \$$  \$$$$$$  \$$   \$$ \$$$$$$$$ \$$$$$$$ 
+
+I hope you're ready to go into rooms and interact with objects, because you've just entered TextWorld! Here is how to play! Your first objective is to head west. With that done, make an attempt to take a trip west. After that, recover the fondue from the floor of the pantry. And if you do that, you're the winner!
+
+-= Salon =-
+You arrive in a salon. A typical kind of place. You start to take note of what's in the room.
+
+
+
+There is an unguarded exit to the west.
+
+There is a key on the floor.
+
+>                                                                                                                                -= Salon =-0/1
+AGENT -------------------------------------------------
+go west
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Bar =-
+You've just walked into a bar.
+
+
+
+There is an exit to the east. Don't worry, it is unguarded. There is an unguarded exit to the west.
+
+
+
+>                                                                                                                                -= Bar =-0/2
+AGENT -------------------------------------------------
+go west
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Pantry =-
+You are in a pantry. A normal kind of place.
+
+
+
+You need an unblocked exit? You should try going east. You need an unblocked exit? You should try going north. You need an unblocked exit? You should try going south.
+
+There is a fondue on the floor.
+
+
+>                                                                                                                                -= Pantry =-0/3
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let me try to figure out how to win this game. The user mentioned that the goal is to head west, then take the fondue from the pantry. So first, I need to go west from the salon. Then, maybe go to the bar, but the user already went west twice. Wait, the first step was going west from the salon, which led to the bar. Then going west again from the bar led to the pantry. Now in the pantry, there's a fondue on the floor. The user needs to recover the fondue.
+
+But the problem is that the pantry's exits are east, north, south. The user is told to try going east, north, or south. But the user is already in the pantry. The current position is the pantry. The fondue is on the floor, so the next step is to take the fondue. But the user hasn't done that yet. Wait, the user's previous actions were go west (salon to bar), then go west again (bar to pantry). Now, in the pantry, the fondue is there. So the next step is to take the fondue. But the user hasn't done that yet. The instruction says to take the fondue from the floor of the pantry. So the next action should be to take the fondue. But the user needs to check if that's possible. The current room is the pantry, and the fondue is on the floor. So the correct command is "take fondue" or "take the fondue". But the user's previous actions were moving west twice. So the next step is to take the fondue. But the user might have to check if they can do that. The game's current state says there's a fondue on the floor, so taking it should be possible. Therefore, the next action is to take the fondue.
+</think>take fondue
+CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-

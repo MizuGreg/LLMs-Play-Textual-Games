@@ -1,0 +1,95 @@
+CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+                    ________  ________  __    __  ________        
+                   |        \|        \|  \  |  \|        \       
+                    \$$$$$$$$| $$$$$$$$| $$  | $$ \$$$$$$$$       
+                      | $$   | $$__     \$$\/  $$   | $$          
+                      | $$   | $$  \     >$$  $$    | $$          
+                      | $$   | $$$$$    /  $$$$\    | $$          
+                      | $$   | $$_____ |  $$ \$$\   | $$          
+                      | $$   | $$     \| $$  | $$   | $$          
+                       \$$    \$$$$$$$$ \$$   \$$    \$$          
+              __       __   ______   _______   __        _______  
+             |  \  _  |  \ /      \ |       \ |  \      |       \ 
+             | $$ / \ | $$|  $$$$$$\| $$$$$$$\| $$      | $$$$$$$\
+             | $$/  $\| $$| $$  | $$| $$__| $$| $$      | $$  | $$
+             | $$  $$$\ $$| $$  | $$| $$    $$| $$      | $$  | $$
+             | $$ $$\$$\$$| $$  | $$| $$$$$$$\| $$      | $$  | $$
+             | $$$$  \$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$
+             | $$$    \$$$ \$$    $$| $$  | $$| $$     \| $$    $$
+              \$$      \$$  \$$$$$$  \$$   \$$ \$$$$$$$$ \$$$$$$$ 
+
+Hey, thanks for coming over to the TextWorld today, there is something I need you to do for me. First of all, try to take a trip north. And then, recover the fondue from the floor of the pantry. Alright, thanks!
+
+-= Kitchen =-
+Of every kitchen you could have sauntered into, you had to walk into an ordinary one.
+
+
+
+You need an unblocked exit? You should try going north.
+
+>                                                                                                                                -= Kitchen =-0/1
+AGENT -------------------------------------------------
+go north
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Pantry =-
+You are in a pantry. A normal kind of place.
+
+
+
+You need an unblocked exit? You should try going east. You need an unblocked exit? You should try going north. You need an unblocked exit? You should try going south.
+
+There is a fondue on the floor.
+
+
+>                                                                                                                                -= Pantry =-0/2
+AGENT -------------------------------------------------
+go east
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Bar =-
+You've just walked into a bar.
+
+
+
+There is an exit to the east. Don't worry, it is unguarded. There is an unguarded exit to the west.
+
+
+
+>                                                                                                                                -= Bar =-0/3
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let me try to figure out how to solve this game. The user's goal is to recover the fondue from the pantry's floor. So first, I need to get to the pantry. The initial step was going north from the kitchen, which led to the pantry. Then, in the pantry, the user was told to go east, which took them to the bar. Now, in the bar, there's an exit to the east and west. But the fondue is in the pantry, so I need to find a way back to the pantry.
+
+Wait, the user is currently in the bar. The pantry is probably to the west since the bar has a west exit. So maybe going west from the bar would take them back to the pantry. But the user was already in the pantry earlier. Let me check the previous steps again. The user went north from the kitchen to the pantry, then east to the bar. Now, from the bar, going west would return to the pantry. Then, once back in the pantry, the fondue is on the floor, so they can pick it up. But the user needs to make sure they can exit the pantry again. The pantry had exits east (to the bar), north, south, and maybe west? Wait, the pantry's exits were east, north, south, but the user was in the bar, so maybe the pantry's west exit is blocked? Or maybe the user needs to go back through the bar to the kitchen? But the goal is to recover the fondue, so once in the pantry, pick it up. But the user might be stuck in a loop if they keep moving between the bar and pantry. So the next step is to go west from the bar back to the pantry, then pick up the fondue. But the user needs to make sure they can exit the pantry again. Alternatively, maybe the pantry's exit is north, but the user needs to check. Wait, in the pantry, the user was told to try east, north, or south. So maybe the pantry has a north exit leading back to the kitchen? But the user was already in the pantry, so going north from there would take them back to the kitchen. But the fondue is in the pantry, so once in the pantry, pick it up. So the correct path is: go north from kitchen to pantry, then go west from bar to pantry, then pick up the fondue. But the user is currently in the bar. So the next action should be to go west back to the pantry, then pick up the fondue. However, the user might have already been in the pantry before. So the next step is to go west from the bar to the pantry, then take the fondue. But the user needs to make sure they can do that. So the next command is go west.
+</think>go west
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Pantry =-
+You are in a pantry. A normal kind of place.
+
+
+
+You need an unblocked exit? You should try going east. You need an unblocked exit? You should try going north. You need an unblocked exit? You should try going south.
+
+There is a fondue on the floor.
+
+
+>                                                                                                                                -= Pantry =-0/4
+AGENT -------------------------------------------------
+take fondue
+CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
