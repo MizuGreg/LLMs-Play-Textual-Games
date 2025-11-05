@@ -1,0 +1,133 @@
+CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+                    ________  ________  __    __  ________        
+                   |        \|        \|  \  |  \|        \       
+                    \$$$$$$$$| $$$$$$$$| $$  | $$ \$$$$$$$$       
+                      | $$   | $$__     \$$\/  $$   | $$          
+                      | $$   | $$  \     >$$  $$    | $$          
+                      | $$   | $$$$$    /  $$$$\    | $$          
+                      | $$   | $$_____ |  $$ \$$\   | $$          
+                      | $$   | $$     \| $$  | $$   | $$          
+                       \$$    \$$$$$$$$ \$$   \$$    \$$          
+              __       __   ______   _______   __        _______  
+             |  \  _  |  \ /      \ |       \ |  \      |       \ 
+             | $$ / \ | $$|  $$$$$$\| $$$$$$$\| $$      | $$$$$$$\
+             | $$/  $\| $$| $$  | $$| $$__| $$| $$      | $$  | $$
+             | $$  $$$\ $$| $$  | $$| $$    $$| $$      | $$  | $$
+             | $$ $$\$$\$$| $$  | $$| $$$$$$$\| $$      | $$  | $$
+             | $$$$  \$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$
+             | $$$    \$$$ \$$    $$| $$  | $$| $$     \| $$    $$
+              \$$      \$$  \$$$$$$  \$$   \$$ \$$$$$$$$ \$$$$$$$ 
+
+It's time to explore the amazing world of TextWorld! Here is your task for today. First step, make an attempt to go south. Then, try to travel west. After that, go south. Then, lift the passkey from the floor of the cubicle. Once that's all handled, you can stop!
+
+-= Cookhouse =-
+Well, here we are in the cookhouse.
+
+
+
+There is an exit to the south. Don't worry, it is unblocked.
+
+>                                                                                                                                -= Cookhouse =-0/1
+AGENT -------------------------------------------------
+go south
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Garage =-
+You have stumbled into the most usual of all possible garages. I guess you better just go and list everything you see here.
+
+
+
+There is an unblocked exit to the north. There is an unblocked exit to the west.
+
+
+
+>                                                                                                                                -= Garage =-0/2
+AGENT -------------------------------------------------
+go west
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Basement =-
+You find yourself in a basement. An ordinary kind of place. You decide to start listing off everything you see in the room, as if you were in a text adventure.
+
+
+
+There is an exit to the east. Don't worry, it is unguarded. There is an unguarded exit to the south.
+
+
+
+>                                                                                                                                -= Basement =-0/3
+AGENT -------------------------------------------------
+go south
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-= Cubicle =-
+I am sorry to announce that you are now in the cubicle.
+
+
+
+There is an exit to the east. Don't worry, it is unguarded. You need an unblocked exit? You should try going north.
+
+There is a passkey and a key on the floor.
+
+
+>                                                                                                                                -= Cubicle =-0/4
+AGENT -------------------------------------------------
+lift passkey
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+That's not a verb I recognise.
+
+>                                                                                                                                -= Cubicle =-0/4
+AGENT -------------------------------------------------
+lift the passkey
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+That's not a verb I recognise.
+
+>                                                                                                                                -= Cubicle =-0/4
+AGENT -------------------------------------------------
+lift passkey
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+That's not a verb I recognise.
+
+>                                                                                                                                -= Cubicle =-0/4
+AGENT -------------------------------------------------
+lift the passkey
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+That's not a verb I recognise.
+
+>                                                                                                                                -= Cubicle =-0/4
+AGENT -------------------------------------------------
+lift passkey
+GAME ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+That's not a verb I recognise.
+
+>                                                                                                                                -= Cubicle =-0/4
+THINK about how to win the game, but be concise and brief in 3 steps.
+FIRST STEP: State the goal of the game again, step by step.
+SECOND STEP: State your past actions so far. Which steps of the goal have you already taken? And what is the next step?
+THIRD STEP: Recognize if you find yourself in a loop. Your most important goal is to break the loop: if the previous actions didn't make any progress you have to say a different action, maybe by using a synonym. It is fundamental that you do NOT repeat the same action if it's not being recognized.
+FINALLY, say your next action as a short command. Only output the command, nothing else.
+
+SELF-EVALUATION: +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+<think>
+Okay, let's see. The user is stuck in the Cubicle room. They need to lift the passkey but keep getting errors. The previous attempts were "lift passkey" and "lift the passkey", both of which aren't recognized. The game expects a different command.
+
+First, I need to recall the goal: go south, west, south again, then lift the passkey. The user has already done the first three steps: went south from Cookhouse, west to Garage, then south to Basement, then to Cubicle. Now they're at the Cubicle, needing to lift the passkey.
+
+The problem is the command "lift passkey" isn't working. Maybe the correct verb is "take" instead of "lift"? In some text adventures, "take" is used for picking up items. The user tried "lift" but it's not recognized. So the next step is to use "take passkey" instead.
+
+Also, checking if there's a loop. The user has already done the necessary movements, so the issue is just the incorrect verb. Changing "lift" to "take" should work. So the next action is to take the passkey.
+</think>take passkey
+CONTEXT INITIALIZED +-+-+-+-+-+-+-+-+-+-
