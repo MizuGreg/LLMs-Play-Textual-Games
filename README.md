@@ -4,6 +4,9 @@ Repository for the code related to my MSc thesis project.
 
 The project explores the capabilities of RLMs playing textual games, and tentatively defines a game-agnostic framework for exploiting the advantages of reasoning and CoT prompting while avoiding some of the associated pitfalls and disadvantages.
 
+<img width="1366" height="792" alt="overview1" src="https://github.com/user-attachments/assets/0cd3b957-89fe-4cf5-8d8c-bcf28e975b63" />
+
+
 ## Abstract
 
 Reasoning Language Models have remarkable problem-solving capabilities that bring them even closer to human performance compared to standard LLMs, albeit gaining two traits that are typical of human agents: an increased response time and a heightened risk of overthinking. We choose the text-based games of TextWorld as a comprehensive example of a complex task environment, and present two novel and related techniques that counteract high response time and overthinking: <b>$n$-think</b> and <b>ephemerality</b>.
