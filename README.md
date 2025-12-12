@@ -1,6 +1,6 @@
 # LLMs-Play-Textual-Games
 
-Repository for the code related to my MSc thesis project.
+Repository for the code related to my MSc thesis project, called "Don't Overthink It: Intermittent Self-Evaluation in Reasoning Language Models Playing Textual Games".
 
 The project explores the capabilities of RLMs playing textual games, and tentatively defines a game-agnostic framework for exploiting the advantages of reasoning and CoT prompting while avoiding some of the associated pitfalls and disadvantages.
 
