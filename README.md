@@ -1,6 +1,6 @@
 # Don't Overthink It: Intermittent Self-Evaluation in Reasoning Language Models Playing Textual Games
 
-Repository for the code related to my MSc thesis project.
+### **Repository for the code related to my MSc thesis project. The thesis can be read in full, along with a summary, at [this link](https://www.politesi.polimi.it/item/preview.htm?uuid=c4bb41bc-fbc1-4c33-8809-87e73d10467b).**
 
 The project explores the capabilities of RLMs playing textual games, and tentatively defines a game-agnostic framework for exploiting the advantages of reasoning and CoT prompting while avoiding some of the associated pitfalls and disadvantages.
 
