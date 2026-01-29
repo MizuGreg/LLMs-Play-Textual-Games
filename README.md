@@ -9,7 +9,7 @@ The project explores the capabilities of RLMs playing textual games, and tentati
 
 ## Abstract
 
-Reasoning Language Models have remarkable problem-solving capabilities that bring them even closer to human performance compared to standard LLMs, albeit gaining two traits that are typical of human agents: an increased response time and a heightened risk of overthinking. We choose the text-based games of TextWorld as a comprehensive example of a complex task environment, and present two novel and related techniques that counteract high response time and overthinking: <b>$n$-think</b> and <b>ephemerality</b>.
+Reasoning Language Models have remarkable problem-solving capabilities that bring them even closer to human performance compared to standard LLMs, albeit gaining two traits that are typical of human agents: an increased response time and a heightened risk of overthinking. We choose the text-based games of TextWorld as a comprehensive example of a complex task environment, and present two novel and related techniques that counteract high response time and overthinking: <b>n-think</b> and <b>ephemerality</b>.
 
 N-think models employ reasoning only every $n$ turns and, in that turn, they follow a self-evaluation prompt that increases context awareness, recall, and performance; in all other turns, reasoning is deactivated and thus inference time is minimized. Ephemeral $n$-think models instead do not retain their thought process in the context once the self-evaluation turn ends, but only their final response; in this way, the game content is not diluted by excessive thinking. These techniques curtail answer length and context length respectively, which are two critical components that slow down inference and carry an increased risk of overthinking.
 
